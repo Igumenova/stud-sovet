@@ -1,0 +1,10 @@
+mixin partner(src, name , content)
+    .partner 
+        .partner__img
+            if src != ''
+                img(src= src, alt= name)&attributes(attributes)
+            else   
+                h1= name
+        .partner__content 
+            h4= content 
+

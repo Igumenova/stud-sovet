@@ -1,0 +1,620 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  link(rel='stylesheet' type='text/css' href='style.css')
+  script(src='script.js' type='text/javascript' defer='')
+nav#nav
+  svg.nav-logo(viewbox='0 0 276 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+    g(clip-path='url(#clip0_74_295)')
+      path(d='M0 0H69L67 2H2V13L0 15V0Z' fill='white')
+      path(d='M0 60H69L67 58H2V47L0 45V60Z' fill='white')
+      path(d='M276 0H207L209 2H274V13L276 15V0Z' fill='white')
+      path(d='M276 60H207L209 58H274V46.5L276 45V60Z' fill='white')
+      path(d='M274 30.0527V29.0364L264 24.26V25.8454L272.004 29.4633L264 32.6746V34.26L274 30.0527Z' fill='white')
+      path(d='M157.776 29.592H164.832V36.72C163.072 38.432 160.88 39.288 158.256 39.288C155.52 39.288 153.288 38.368 151.56 36.528C149.864 34.784 149.016 32.576 149.016 29.904C149.016 27.232 149.864 25.016 151.56 23.256C153.288 21.416 155.52 20.496 158.256 20.496C160.064 20.496 161.696 20.928 163.152 21.792V24.576C161.888 23.264 160.256 22.608 158.256 22.608C156.192 22.608 154.504 23.328 153.192 24.768C151.928 26.144 151.296 27.856 151.296 29.904C151.296 31.952 151.928 33.656 153.192 35.016C154.504 36.456 156.192 37.176 158.256 37.176C159.904 37.176 161.336 36.704 162.552 35.76V31.704H157.776V29.592ZM181.624 26.76V39H179.344V33.24H171.376V39H169.096V26.76C169.096 25.016 169.704 23.536 170.92 22.32C172.136 21.104 173.616 20.496 175.36 20.496C177.104 20.496 178.584 21.104 179.8 22.32C181.016 23.536 181.624 25.016 181.624 26.76ZM171.376 26.76V31.128H179.344V26.76C179.344 25.64 178.96 24.672 178.192 23.856C177.408 23.024 176.464 22.608 175.36 22.608C174.272 22.608 173.336 23.024 172.552 23.856C171.768 24.688 171.376 25.656 171.376 26.76ZM182.673 39V36.888C184.193 36.888 185.265 36.376 185.889 35.352C186.129 34.968 186.297 34.528 186.393 34.032C186.473 33.632 186.513 33.256 186.513 32.904V27.024C186.513 25.12 187.065 23.608 188.169 22.488C189.273 21.336 190.769 20.76 192.657 20.76V22.872C191.137 22.872 190.057 23.384 189.417 24.408C189.177 24.792 189.009 25.232 188.913 25.728C188.833 26.128 188.793 26.504 188.793 26.856V32.736C188.793 34.592 188.249 36.104 187.161 37.272C186.025 38.424 184.529 39 182.673 39ZM206.48 33.048V20.784H208.76V33.048C208.76 34.904 208.216 36.416 207.128 37.584C205.992 38.736 204.496 39.312 202.64 39.312C200.784 39.312 199.288 38.736 198.152 37.584C197.048 36.432 196.496 34.92 196.496 33.048V20.784H198.776V33.048C198.776 33.416 198.816 33.8 198.896 34.2C198.992 34.728 199.16 35.184 199.4 35.568C200.056 36.656 201.136 37.2 202.64 37.2C204.128 37.2 205.2 36.656 205.856 35.568C206.096 35.184 206.264 34.728 206.36 34.2C206.44 33.8 206.48 33.416 206.48 33.048ZM212.934 20.76H216.102C218.854 20.76 221.094 21.632 222.822 23.376C224.502 25.088 225.342 27.256 225.342 29.88C225.342 32.504 224.502 34.672 222.822 36.384C221.094 38.128 218.854 39 216.102 39H212.934V20.76ZM215.214 36.888H216.102C218.182 36.888 219.87 36.208 221.166 34.848C222.414 33.52 223.038 31.864 223.038 29.88C223.038 27.88 222.414 26.216 221.166 24.888C219.87 23.544 218.182 22.872 216.102 22.872H215.214V36.888ZM237.521 20.76V22.872H230.681V31.104H236.369V33.216H230.681V36.888H237.521V39H228.401V20.76H237.521ZM237.096 20.76H239.568L244.608 34.128L249.624 20.76H252.096L244.608 39.72L237.096 20.76Z' fill='#EB6B44')
+      path(d='M135.935 29.8881L132.183 25H134.211L137.01 28.7687L139.789 25H141.797L138.045 29.8881L142 35H139.972L137.01 31.0075L134.008 35H132L135.935 29.8881Z' fill='white')
+      path(d='M21.624 39H19.056L24.144 29.4L19.56 20.76H22.152L25.44 27.24L28.752 20.76H31.32L26.736 29.4L31.848 39H29.256L25.44 31.56L21.624 39ZM37.8756 39H35.5956V26.76C35.5956 25 36.2036 23.52 37.4196 22.32C38.6356 21.104 40.1156 20.496 41.8596 20.496C43.6196 20.496 45.0996 21.104 46.2996 22.32C47.5156 23.52 48.1236 25 48.1236 26.76V39H45.8436V33.312H37.8756V39ZM37.8756 26.76V31.032H45.8436V26.76C45.8436 25.64 45.4596 24.696 44.6916 23.928C43.9236 23.16 42.9796 22.776 41.8596 22.776C40.7556 22.776 39.8196 23.16 39.0516 23.928C38.2676 24.712 37.8756 25.656 37.8756 26.76ZM52.2452 39V20.76H54.5252V28.704L62.1812 20.76H65.0612L56.9492 29.184L64.9412 39H62.0132L55.3652 30.84L54.5252 31.704V39H52.2452ZM69.4928 39H67.2128V26.76C67.2128 25 67.8208 23.52 69.0368 22.32C70.2528 21.104 71.7328 20.496 73.4768 20.496C75.2368 20.496 76.7168 21.104 77.9168 22.32C79.1328 23.52 79.7408 25 79.7408 26.76V39H77.4608V33.312H69.4928V39ZM69.4928 26.76V31.032H77.4608V26.76C77.4608 25.64 77.0768 24.696 76.3088 23.928C75.5408 23.16 74.5968 22.776 73.4768 22.776C72.3728 22.776 71.4368 23.16 70.6688 23.928C69.8848 24.712 69.4928 25.656 69.4928 26.76ZM85.3024 22.872H80.7904V20.76H92.0944V22.872H87.5824V39H85.3024V22.872ZM101.542 20.472C103.414 20.472 105.014 21.136 106.342 22.464C107.67 23.792 108.334 25.392 108.334 27.264C108.334 29.136 107.67 30.736 106.342 32.064C105.014 33.392 103.414 34.056 101.542 34.056C99.6539 34.056 98.0539 33.4 96.7419 32.088C95.4299 30.776 94.7739 29.168 94.7739 27.264C94.7739 25.36 95.4299 23.752 96.7419 22.44C98.0539 21.128 99.6539 20.472 101.542 20.472ZM98.3739 30.456C99.2379 31.336 100.294 31.776 101.542 31.776C102.806 31.776 103.87 31.336 104.734 30.456C105.614 29.592 106.054 28.528 106.054 27.264C106.054 26.016 105.614 24.952 104.734 24.072C103.838 23.208 102.774 22.776 101.542 22.776C100.31 22.776 99.2539 23.216 98.3739 24.096C97.4939 24.976 97.0539 26.032 97.0539 27.264C97.0539 28.512 97.4939 29.576 98.3739 30.456ZM107.182 39H95.9019V36.72H107.182V39ZM114.736 33.216V39H112.456V20.76H114.736V31.104H122.704V20.76H124.984V39H122.704V33.216H114.736Z' fill='#EB6B44')
+      path(d='M2 30.0524V29.0362L12 24.2598V25.8451L3.99575 29.463L12 32.6744V34.2598L2 30.0524Z' fill='white')
+      path(d='M67 1H210' stroke='white' stroke-width='2')
+      path(d='M67 59H210' stroke='white' stroke-width='2')
+    defs
+      clippath#clip0_74_295
+        rect(width='276' height='60' fill='white')
+  .navigation
+    h3
+      a(href='#HakatonBlock__block') &Ocy; &khcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy;&iecy;
+    h3(style='margin-left: 2.5rem; margin-right: 2.5rem')
+      a(href='#track-info-block') &Mcy;&acy;&tcy;&iecy;&rcy;&icy;&acy;&lcy;&ycy; &khcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy;&acy;
+    h3
+      a(href='#ProgramInfoBlock__block') &Pcy;&rcy;&ocy;&gcy;&rcy;&acy;&mcy;&mcy;&acy;
+  button.button-wo-color(onclick='navMenuOpen()')
+    svg.nav-burger(viewbox='0 0 48 28' fill='none' xmlns='http://www.w3.org/2000/svg')
+      rect(width='48' height='2' fill='white')
+      rect(y='13' width='48' height='2' fill='white')
+      rect(y='26' width='48' height='2' fill='white')
+#nav-burger-menu.nav-burger-menu
+  .nav-burger__exit
+    button.button-wo-color(onclick='navMenuClose()')
+      svg(width='60' height='60' viewbox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M28.4657 30L20 38.4657L21.5343 40L30 31.5343L38.4657 40L40 38.4657L31.5343 30L40 21.5343L38.4657 20L30 28.4657L21.5343 20L20 21.5343L28.4657 30Z' fill='#EB6B44')
+  .nav-burger__filling
+    .nav-burger__nav
+      svg.nav-logo(viewbox='0 0 276 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+        g(clip-path='url(#clip0_74_295)')
+          path(d='M0 0H69L67 2H2V13L0 15V0Z' fill='white')
+          path(d='M0 60H69L67 58H2V47L0 45V60Z' fill='white')
+          path(d='M276 0H207L209 2H274V13L276 15V0Z' fill='white')
+          path(d='M276 60H207L209 58H274V46.5L276 45V60Z' fill='white')
+          path(d='M274 30.0527V29.0364L264 24.26V25.8454L272.004 29.4633L264 32.6746V34.26L274 30.0527Z' fill='white')
+          path(d='M157.776 29.592H164.832V36.72C163.072 38.432 160.88 39.288 158.256 39.288C155.52 39.288 153.288 38.368 151.56 36.528C149.864 34.784 149.016 32.576 149.016 29.904C149.016 27.232 149.864 25.016 151.56 23.256C153.288 21.416 155.52 20.496 158.256 20.496C160.064 20.496 161.696 20.928 163.152 21.792V24.576C161.888 23.264 160.256 22.608 158.256 22.608C156.192 22.608 154.504 23.328 153.192 24.768C151.928 26.144 151.296 27.856 151.296 29.904C151.296 31.952 151.928 33.656 153.192 35.016C154.504 36.456 156.192 37.176 158.256 37.176C159.904 37.176 161.336 36.704 162.552 35.76V31.704H157.776V29.592ZM181.624 26.76V39H179.344V33.24H171.376V39H169.096V26.76C169.096 25.016 169.704 23.536 170.92 22.32C172.136 21.104 173.616 20.496 175.36 20.496C177.104 20.496 178.584 21.104 179.8 22.32C181.016 23.536 181.624 25.016 181.624 26.76ZM171.376 26.76V31.128H179.344V26.76C179.344 25.64 178.96 24.672 178.192 23.856C177.408 23.024 176.464 22.608 175.36 22.608C174.272 22.608 173.336 23.024 172.552 23.856C171.768 24.688 171.376 25.656 171.376 26.76ZM182.673 39V36.888C184.193 36.888 185.265 36.376 185.889 35.352C186.129 34.968 186.297 34.528 186.393 34.032C186.473 33.632 186.513 33.256 186.513 32.904V27.024C186.513 25.12 187.065 23.608 188.169 22.488C189.273 21.336 190.769 20.76 192.657 20.76V22.872C191.137 22.872 190.057 23.384 189.417 24.408C189.177 24.792 189.009 25.232 188.913 25.728C188.833 26.128 188.793 26.504 188.793 26.856V32.736C188.793 34.592 188.249 36.104 187.161 37.272C186.025 38.424 184.529 39 182.673 39ZM206.48 33.048V20.784H208.76V33.048C208.76 34.904 208.216 36.416 207.128 37.584C205.992 38.736 204.496 39.312 202.64 39.312C200.784 39.312 199.288 38.736 198.152 37.584C197.048 36.432 196.496 34.92 196.496 33.048V20.784H198.776V33.048C198.776 33.416 198.816 33.8 198.896 34.2C198.992 34.728 199.16 35.184 199.4 35.568C200.056 36.656 201.136 37.2 202.64 37.2C204.128 37.2 205.2 36.656 205.856 35.568C206.096 35.184 206.264 34.728 206.36 34.2C206.44 33.8 206.48 33.416 206.48 33.048ZM212.934 20.76H216.102C218.854 20.76 221.094 21.632 222.822 23.376C224.502 25.088 225.342 27.256 225.342 29.88C225.342 32.504 224.502 34.672 222.822 36.384C221.094 38.128 218.854 39 216.102 39H212.934V20.76ZM215.214 36.888H216.102C218.182 36.888 219.87 36.208 221.166 34.848C222.414 33.52 223.038 31.864 223.038 29.88C223.038 27.88 222.414 26.216 221.166 24.888C219.87 23.544 218.182 22.872 216.102 22.872H215.214V36.888ZM237.521 20.76V22.872H230.681V31.104H236.369V33.216H230.681V36.888H237.521V39H228.401V20.76H237.521ZM237.096 20.76H239.568L244.608 34.128L249.624 20.76H252.096L244.608 39.72L237.096 20.76Z' fill='#EB6B44')
+          path(d='M135.935 29.8881L132.183 25H134.211L137.01 28.7687L139.789 25H141.797L138.045 29.8881L142 35H139.972L137.01 31.0075L134.008 35H132L135.935 29.8881Z' fill='white')
+          path(d='M21.624 39H19.056L24.144 29.4L19.56 20.76H22.152L25.44 27.24L28.752 20.76H31.32L26.736 29.4L31.848 39H29.256L25.44 31.56L21.624 39ZM37.8756 39H35.5956V26.76C35.5956 25 36.2036 23.52 37.4196 22.32C38.6356 21.104 40.1156 20.496 41.8596 20.496C43.6196 20.496 45.0996 21.104 46.2996 22.32C47.5156 23.52 48.1236 25 48.1236 26.76V39H45.8436V33.312H37.8756V39ZM37.8756 26.76V31.032H45.8436V26.76C45.8436 25.64 45.4596 24.696 44.6916 23.928C43.9236 23.16 42.9796 22.776 41.8596 22.776C40.7556 22.776 39.8196 23.16 39.0516 23.928C38.2676 24.712 37.8756 25.656 37.8756 26.76ZM52.2452 39V20.76H54.5252V28.704L62.1812 20.76H65.0612L56.9492 29.184L64.9412 39H62.0132L55.3652 30.84L54.5252 31.704V39H52.2452ZM69.4928 39H67.2128V26.76C67.2128 25 67.8208 23.52 69.0368 22.32C70.2528 21.104 71.7328 20.496 73.4768 20.496C75.2368 20.496 76.7168 21.104 77.9168 22.32C79.1328 23.52 79.7408 25 79.7408 26.76V39H77.4608V33.312H69.4928V39ZM69.4928 26.76V31.032H77.4608V26.76C77.4608 25.64 77.0768 24.696 76.3088 23.928C75.5408 23.16 74.5968 22.776 73.4768 22.776C72.3728 22.776 71.4368 23.16 70.6688 23.928C69.8848 24.712 69.4928 25.656 69.4928 26.76ZM85.3024 22.872H80.7904V20.76H92.0944V22.872H87.5824V39H85.3024V22.872ZM101.542 20.472C103.414 20.472 105.014 21.136 106.342 22.464C107.67 23.792 108.334 25.392 108.334 27.264C108.334 29.136 107.67 30.736 106.342 32.064C105.014 33.392 103.414 34.056 101.542 34.056C99.6539 34.056 98.0539 33.4 96.7419 32.088C95.4299 30.776 94.7739 29.168 94.7739 27.264C94.7739 25.36 95.4299 23.752 96.7419 22.44C98.0539 21.128 99.6539 20.472 101.542 20.472ZM98.3739 30.456C99.2379 31.336 100.294 31.776 101.542 31.776C102.806 31.776 103.87 31.336 104.734 30.456C105.614 29.592 106.054 28.528 106.054 27.264C106.054 26.016 105.614 24.952 104.734 24.072C103.838 23.208 102.774 22.776 101.542 22.776C100.31 22.776 99.2539 23.216 98.3739 24.096C97.4939 24.976 97.0539 26.032 97.0539 27.264C97.0539 28.512 97.4939 29.576 98.3739 30.456ZM107.182 39H95.9019V36.72H107.182V39ZM114.736 33.216V39H112.456V20.76H114.736V31.104H122.704V20.76H124.984V39H122.704V33.216H114.736Z' fill='#EB6B44')
+          path(d='M2 30.0524V29.0362L12 24.2598V25.8451L3.99575 29.463L12 32.6744V34.2598L2 30.0524Z' fill='white')
+          path(d='M67 1H210' stroke='white' stroke-width='2')
+          path(d='M67 59H210' stroke='white' stroke-width='2')
+        defs
+          clippath#clip0_74_295
+            rect(width='276' height='60' fill='white')
+      h3
+        a(href='#HakatonBlock__block' onclick='navMenuClose()') &Ocy; &khcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy;&iecy;
+      h3
+        a(href='#track-info-block' onclick='navMenuClose()') &Mcy;&acy;&tcy;&iecy;&rcy;&icy;&acy;&lcy;&ycy; &khcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy;&acy;
+      h3
+        a(href='#ProgramInfoBlock__block' onclick='navMenuClose()') &Pcy;&rcy;&ocy;&gcy;&rcy;&acy;&mcy;&mcy;&acy;
+    .nav-burger__info
+      div
+        h6 &Pcy;&ocy;&lcy;&icy;&tcy;&icy;&kcy;&acy; &kcy;&ocy;&ncy;&fcy;&icy;&dcy;&iecy;&ncy;&tscy;&icy;&acy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&icy;
+      .social-network
+        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' style='margin-right: 25px')
+          path(fill-rule='evenodd' clip-rule='evenodd' d='M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z' fill='#EB6B44')
+        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z' fill='#EB6B44')
+//
+  <img src="./src/pic1.jpg" alt="img" class="first-pic" />
+  <img src="./src/pic2.jpg" alt="img" class="second-pic" />
+#MainBlock.main-block-wrapper
+  #MainBlock__block.main-block
+    .tagline
+      h3
+        | &Ncy;&Acy; &Pcy;&IEcy;&Rcy;&IEcy;&Kcy;&Rcy;&IEcy;&Scy;&Tcy;&Kcy;&IEcy; &Icy;&Dcy;&IEcy;&Jcy; &Icy; &Icy;&Ncy;&Ocy;&Vcy;&Acy;&TScy;&Icy;&Jcy; 
+        br
+        |             &Rcy;&Acy;&Zcy;&Vcy;&Icy;&Vcy;&Acy;&Jcy; &Scy;&Vcy;&Ocy;&Jcy; &Pcy;&Ocy;&Tcy;&IEcy;&Ncy;&TScy;&Icy;&Acy;&Lcy; &Ncy;&Acy; &Ncy;&Acy;&SHcy;&IEcy;&Mcy; &KHcy;&Acy;&Kcy;&Acy;&Tcy;&Ocy;&Ncy;&IEcy;!
+    .hakaton-name
+      .first-layer
+        h1 &Scy;&tcy;&rcy;&ocy;&jcy;&kcy;&ocy;&dcy;
+        .first-line
+      .second-layer
+        .second-line
+        h1 spbgasu
+    .main-info
+      form(action='#form')
+        button.button
+          h5 &Ucy;&chcy;&acy;&scy;&tcy;&vcy;&ocy;&vcy;&acy;&tcy;&softcy;
+      .date
+        svg.icon(viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M17.5 16.6665V4.99984C17.5 4.08067 16.7525 3.33317 15.8333 3.33317H14.1667V1.6665H12.5V3.33317H7.5V1.6665H5.83333V3.33317H4.16667C3.2475 3.33317 2.5 4.08067 2.5 4.99984V16.6665C2.5 17.5857 3.2475 18.3332 4.16667 18.3332H15.8333C16.7525 18.3332 17.5 17.5857 17.5 16.6665ZM7.5 14.9998H5.83333V13.3332H7.5V14.9998ZM7.5 11.6665H5.83333V9.99984H7.5V11.6665ZM10.8333 14.9998H9.16667V13.3332H10.8333V14.9998ZM10.8333 11.6665H9.16667V9.99984H10.8333V11.6665ZM14.1667 14.9998H12.5V13.3332H14.1667V14.9998ZM14.1667 11.6665H12.5V9.99984H14.1667V11.6665ZM15.8333 7.49984H4.16667V5.83317H15.8333V7.49984Z')
+        h5 9-10 марта 2024 &gcy;&ocy;&dcy;&acy;
+      .location
+        svg.icon(viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M9.99999 1.6665C6.32415 1.6665 3.33332 4.65734 3.33332 8.329C3.30915 13.6998 9.74665 18.1532 9.99999 18.3332C9.99999 18.3332 16.6908 13.6998 16.6667 8.33317C16.6667 4.65734 13.6758 1.6665 9.99999 1.6665ZM9.99999 11.6665C8.15832 11.6665 6.66665 10.1748 6.66665 8.33317C6.66665 6.4915 8.15832 4.99984 9.99999 4.99984C11.8417 4.99984 13.3333 6.4915 13.3333 8.33317C13.3333 10.1748 11.8417 11.6665 9.99999 11.6665Z')
+        h5 &gcy;. &Scy;&acy;&ncy;&kcy;&tcy;-&Pcy;&iecy;&tcy;&iecy;&rcy;&bcy;&ucy;&rcy;&gcy;
+#HakatonBlock.block-wrapper
+  #HakatonBlock__block.hakaton-block
+    div
+      svg.svg-border(viewbox='0 0 1080 61' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M0 0H810L817.826 8.06667H7.82609V52.4333L0 60.5V0Z' fill='white')
+        path(d='M1080 0H810L817.826 8.06667H1072.17V52.4333L1080 60.5V0Z' fill='white')
+      .hakaton
+        .hakaton__hakaton
+          h2 &KHcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy;
+        .hakaton__dash
+          h2 &ndash;
+        .center-wrapper
+          .hakaton__text
+            h3
+              | &ecy;&tcy;&ocy; &mcy;&ocy;&lcy;&ocy;&dcy;&iecy;&zhcy;&ncy;&ycy;&jcy; &tcy;&ucy;&rcy;&ncy;&icy;&rcy;, &scy;&ocy;&rcy;&iecy;&vcy;&ncy;&ocy;&vcy;&acy;&ncy;&icy;&iecy; &mcy;&ocy;&lcy;&ocy;&dcy;&ycy;&khcy;, &acy;&mcy;&bcy;&icy;&tscy;&icy;&ocy;&zcy;&ncy;&ycy;&khcy;
+              | &icy;&nbsp;&pcy;&rcy;&ocy;&acy;&kcy;&tcy;&icy;&vcy;&ncy;&ycy;&khcy;. &Ecy;&tcy;&ocy; &ocy;&tcy;&lcy;&icy;&chcy;&ncy;&ocy;&iecy; &mcy;&iecy;&scy;&tcy;&ocy; &dcy;&lcy;&yacy;&nbsp;&lcy;&yucy;&dcy;&iecy;&jcy; &scy;&nbsp;&tcy;&iecy;&ocy;&rcy;&iecy;&tcy;&icy;&chcy;&iecy;&scy;&kcy;&icy;&mcy;&icy;
+              | &zcy;&ncy;&acy;&ncy;&icy;&yacy;&mcy;&icy;, &zhcy;&iecy;&lcy;&acy;&yucy;&shchcy;&icy;&mcy;&icy; &pcy;&ocy;&lcy;&ucy;&chcy;&icy;&tcy;&softcy; &rcy;&iecy;&acy;&lcy;&softcy;&ncy;&ycy;&jcy; &ocy;&pcy;&ycy;&tcy;.
+      svg.svg-border(viewbox='0 0 1080 61' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg')
+        path(d='M0 0H810L817.826 8.06667H7.82609V52.4333L0 60.5V0Z' fill='white')
+        path(d='M1080 0H810L817.826 8.06667H1072.17V52.4333L1080 60.5V0Z' fill='white')
+    .theme
+      .theme__theme
+        h1 &Tcy;&iecy;&mcy;&acy;:
+      .center-wrapper
+        .theme__text
+          h3(style="text-transform:uppercase;") Развите IT инфроструктуры студенческого совета университета
+.block-wrapper
+  .row-blocks
+    .row-block
+      .row-block__num
+        h1 0&Kcy;
+      .row-block__text
+        h2
+          | &Bcy;&IEcy;&Scy;&Pcy;&Lcy;&Acy;&Tcy;&Ncy;&Ocy;&IEcy;
+          br
+          | &Ucy;&CHcy;&Acy;&Scy;&Tcy;&Icy;&IEcy;
+    .row-block
+      .row-block__num
+        h1#prizeFund 0
+        h1 &Kcy;
+      .row-block__text
+        h2
+          | &Pcy;&Rcy;&Icy;&Zcy;&Ocy;&Vcy;&Ocy;&Jcy;
+          br
+          | &Fcy;&Ocy;&Ncy;&Dcy;
+    .row-block
+      .row-block__num
+        h1#workTime 0
+        h1 &CHcy;
+      .row-block__text
+        h2 &Rcy;&Acy;&Bcy;&Ocy;&Tcy;&Ycy;
+#HakatonInfoBlock.block-wrapper
+  #HakatonInfoBlock__block.hakaton-info-block
+    .hakaton-info__title
+      svg.svg-border(viewbox='0 0 1080 61' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M0 0H810L817.826 8.06667H7.82609V52.4333L0 60.5V0Z' fill='white')
+        path(d='M1080 0H810L817.826 8.06667H1072.17V52.4333L1080 60.5V0Z' fill='white')
+      h2
+        | &Vcy;&acy;&scy; &zhcy;&dcy;&iecy;&tcy; 24 &chcy;&acy;&scy;&acy;
+        br
+        | &rcy;&acy;&bcy;&ocy;&tcy;&ycy; &ncy;&acy;&dcy; &pcy;&rcy;&ocy;&iecy;&kcy;&tcy;&acy;&mcy;&icy;
+      svg.svg-border(viewbox='0 0 1080 61' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg')
+        path(d='M0 0H810L817.826 8.06667H7.82609V52.4333L0 60.5V0Z' fill='white')
+        path(d='M1080 0H810L817.826 8.06667H1072.17V52.4333L1080 60.5V0Z' fill='white')
+    .hakaton-info__text
+      svg.arrow(viewbox='0 0 109 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M109 12L89 0.452994V23.547L109 12ZM0 14H91V10H0V14Z' fill='#EB6B44')
+      .hakaton-info__text__text
+        | Вашей команде будет предоставлен IT эксперт, в зависимости от выбранного трека. В специально отведенное время наставник сможет ответить на вопросы и дать грамотный совет.
+    .hakaton-info__link
+      button.button
+        h5 &Pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+      a(href="mailto:oso@spbgasu.ru" style="color:#eb6b44") 
+        h5 oso@spbgasu.ru
+.block-wrapper
+  .ticker-block
+    marquee(behavior='scrol' scrollamount='10')
+      | ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне
+.block-wrapper
+  #track-info-block.track-info-block
+    .track-info-block__title
+      h2 3 &tcy;&rcy;&iecy;&kcy;&acy;
+    .track-info-block__tracks
+      .track
+        .track__title
+          h2 1 &tcy;&rcy;&iecy;&kcy;
+        .track__text
+          h3 Сайт студсовета
+      .track
+        .track__title
+          h2 2 &tcy;&rcy;&iecy;&kcy;
+        .track__text
+          h3
+            | Телеграм бот
+      .track
+        .track__title
+          h2 3 &tcy;&rcy;&iecy;&kcy;
+        .track__text
+          h3
+            | Web конструктор
+    .tracks-svg-block
+      svg.tracks-svg(viewbox='0 0 996 152' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M499.152 151V72.6891M1 1V61.888C1 67.8534 6.1909 72.6891 12.5942 72.6891H389.406C395.809 72.6891 401 77.5249 401 83.4902V119.812M995 1V61.888C995 67.8534 989.809 72.6891 983.406 72.6891H606.594C600.191 72.6891 595 77.5249 595 83.4902V119.812' stroke='#EB6B44' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+    .track-info__text
+      h3 В каждом треке будет 3 призовых места
+    .center-wrapper
+      svg.track-arrow(viewbox='0 0 59 81' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M29 79.3109V1M29.2843 79.2843L1 51M29 79.2843L57.2843 51' stroke='#EB6B44' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+    .center-wrapper
+      .final-info
+        h2
+          | Награждение
+          br
+          | 11.03.24
+    .center-wrapper
+      .final-info-text
+        h3 Конференц-зал СПБГАСУ
+#ConditionInfoBlock.block-wrapper
+  #ConditionInfoBlock__block.conditions-block
+    .condition-title
+      h2 &Ucy;&scy;&lcy;&ocy;&vcy;&icy;&yacy; &ucy;&chcy;&acy;&scy;&tcy;&icy;&yacy;
+    .conditions
+      .condition
+        svg.condition-border(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+          path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+        .condition__title
+          h2 
+        .condition__text
+          h2 бакалавры магистры
+        svg.condition-border(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg')
+          path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+          path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+      .condition
+        svg.condition-border(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+          path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+        .condition__title
+          h2 &Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy;:
+        .condition__text
+          h2 &ocy;&tcy; 2 &dcy;&ocy; 3
+        svg.condition-border(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg')
+          path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+          path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+      .condition
+        svg.condition-border(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+          path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+        .condition__title
+          h2 &Scy; &scy;&ocy;&bcy;&ocy;&jcy;:
+        .condition__text
+          h2 &Ncy;&ocy;&ucy;&tcy;&bcy;&ucy;&kcy;
+        svg.condition-border(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg')
+          path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+          path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+    .nocomand
+      .nocomand__title
+        h2 &IEcy;&scy;&lcy;&icy; &ncy;&iecy;&tcy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ycy;?
+      svg.nocomand__svg(viewbox='0 0 83 61' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M80.3109 30.2842L2 30.2842M80.2843 29.9999L52 58.2842M80.2843 30.2841L52 1.99988' stroke='#EB6B44' stroke-width='4' stroke-linecap='round' stroke-linejoin='round')
+      .nocomand__text
+        h3
+          | Если вы хотите учавствовать в хакатоне, но команда отсутствует, тогда каждый из вас может найти будущих сокомандников в 
+          a(href="tg://resolve?domain=https://t.me/+HShCzbK9Pi41OGNi" style="color:#eb6b44") беседе телеграм. 
+#RegistrationInfoBlock.block-wrapper
+  #RegistrationInfoBlock__block.registration-info-block
+    .registration-info-block__title
+      h2(style='padding: 5px') &Rcy;&iecy;&gcy;&icy;&scy;&tcy;&rcy;&acy;&tscy;&icy;&yacy; &ucy;&chcy;&acy;&scy;&tcy;&ncy;&icy;&kcy;&ocy;&vcy;
+    .registration-info-block__info
+      .registration-info-block__info__title
+        h3 &Rcy;&iecy;&gcy;&icy;&scy;&tcy;&rcy;&acy;&tscy;&icy;&yacy; &ncy;&acy; &khcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy; &zcy;&acy;&kcy;&rcy;&ocy;&iecy;&tcy;&scy;&yacy;
+      svg.registration-info-block__info__svg(viewbox='0 0 83 61' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M80.3109 30.2842L2 30.2842M80.2843 29.9999L52 58.2842M80.2843 30.2841L52 1.99988' stroke='#EB6B44' stroke-width='4' stroke-linecap='round' stroke-linejoin='round')
+      a(href='#form')
+        button.registration-info-block__info__buttom
+          h3 7 марта 2024 года
+    .registration-info-block__attention
+      div
+        .registration-info-block__attention__title
+          h2 &Vcy;&Ncy;&Icy;&Mcy;&Acy;&Ncy;&Icy;&IEcy;!
+        .registration-info-block__attention__text
+          h3
+            | &Rcy;&iecy;&gcy;&icy;&scy;&tcy;&rcy;&acy;&tscy;&icy;&yucy; &dcy;&ocy;&lcy;&zhcy;&ncy;&ycy; &pcy;&rcy;&ocy;&jcy;&tcy;&icy;
+            br
+            | &vcy;&scy;&iecy; &ucy;&chcy;&acy;&scy;&tcy;&ncy;&icy;&kcy;&icy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;
+            br
+            |                 &icy;&ncy;&dcy;&icy;&vcy;&icy;&dcy;&ucy;&acy;&lcy;&softcy;&ncy;&ocy;.
+      div
+        .registration-info-block__attention__title
+          h2 капитаны
+        .registration-info-block__attention__text
+          h3
+            | Создают команду и получают токен команды.
+            br
+            | Он понадобится остальным участникам
+            br
+            | для подключения к команде
+            
+.block-wrapper
+  .text-block
+    h1 &Pcy;&rcy;&icy;&zcy;&ocy;&vcy;&ocy;&jcy; &fcy;&ocy;&ncy;&dcy;
+.block-wrapper
+  .row-blocks
+    .row-block
+      .row-block__num
+        h1#firstPlace 0
+        h1 K
+      .row-block__text
+        h4
+          | 1 &Mcy;&IEcy;&Scy;&Tcy;&Ocy; &Vcy;
+          br
+          | &Kcy;&Acy;&ZHcy;&Dcy;&Ocy;&Mcy; &Tcy;&Rcy;&IEcy;&Kcy;&IEcy;
+    .row-block
+      .row-block__num
+        h1#prizeFund2 0
+        h1 K
+      .row-block__text
+        h4
+          | &Ocy;&Bcy;&SHCHcy;&Icy;&Jcy;
+          br
+          | &Fcy;&Ocy;&Ncy;&Dcy;
+    //- .row-block
+    //-   .row-block__num
+    //-     h1#specialPrize 0
+    //-     h1 K
+    //-   .row-block__text
+    //-     h4
+    //-       | &Scy;&Pcy;&IEcy;&TScy;&Icy;&Acy;&Lcy;&SOFTcy;&Ncy;&Ycy;&Jcy;
+    //-       br
+    //-       | &Pcy;&Rcy;&Icy;&Zcy;
+.block-wrapper
+  #ProgramInfoBlock__block.program-info-block
+    .program-info__title
+      h1 &Pcy;&rcy;&ocy;&gcy;&rcy;&acy;&mcy;&mcy;&acy;
+    .day-switch
+      #first-day.first-day
+        button.button-wo-color(onclick='firstDayButton()')
+          h2(style='padding: 0 5px') 1 &Dcy;&IEcy;&Ncy;&SOFTcy;
+      #second-day.second-day
+        button.button-wo-color(onclick='secondDayButton()')
+          h2(style='padding: 0 5px') 2 &Dcy;&IEcy;&Ncy;&SOFTcy;
+      #third-day.third-day
+        button.button-wo-color(onclick='thirdDayButton()')
+          h2(style='padding: 0 5px') 3 &Dcy;&IEcy;&Ncy;&SOFTcy;
+    .program-table
+      #first-table.first-day-table
+        .table
+          .table-row
+            .table-row__time
+              h3 10:00
+              h3 11:00
+            .table-row__text
+              h3 &rcy;&iecy;&gcy;&icy;&scy;&tcy;&rcy;&acy;&tscy;&icy;&yacy; &ucy;&chcy;&acy;&scy;&tcy;&ncy;&icy;&kcy;&ocy;&vcy;, &pcy;&rcy;&icy;&vcy;&iecy;&tcy;&scy;&tcy;&vcy;&iecy;&ncy;&ncy;&ycy;&jcy; &kcy;&ocy;&fcy;&iecy;
+          .table-row
+            .table-row__time
+              h3 11:00
+              h3 11:30
+            .table-row__text
+              h3 &ocy;&tcy;&kcy;&rcy;&ycy;&tcy;&icy;&iecy; &khcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy;&acy;, &ucy;&scy;&tcy;&acy;&ncy;&ocy;&vcy;&ocy;&chcy;&ncy;&acy;&yacy; &scy;&iecy;&scy;&scy;&icy;&yacy;
+          .table-row
+            .table-row__time
+              h3 11:30
+              h3 14:00
+            .table-row__text
+              h3 &rcy;&acy;&bcy;&ocy;&tcy;&acy; &ncy;&acy;&dcy; &pcy;&rcy;&ocy;&iecy;&kcy;&tcy;&acy;&mcy;&icy;
+          .table-row
+            .table-row__time
+              h3 14:00
+              h3 15:00
+            .table-row__text
+              h3 &ocy;&bcy;&iecy;&dcy;
+          .table-row
+            .table-row__time
+              h3 15:00
+              h3 19:00
+            .table-row__text
+              h3 &rcy;&acy;&bcy;&ocy;&tcy;&acy; &ncy;&acy;&dcy; &pcy;&rcy;&ocy;&iecy;&kcy;&tcy;&acy;&mcy;&icy;
+          .table-row
+            .table-row__time
+              h3 19:00
+              h3 20:00
+            .table-row__text
+              h3 &ucy;&zhcy;&icy;&ncy;
+          .last-table-row
+            .table-row__time
+              h3 20:00
+              h3 00:00
+            .table-row__text
+              h3 &rcy;&acy;&bcy;&ocy;&tcy;&acy; &ncy;&acy;&dcy; &pcy;&rcy;&ocy;&iecy;&kcy;&tcy;&acy;&mcy;&icy;
+      #second-table.second-day-table
+        .table
+          .table-row
+            .table-row__time
+              h3 10:00
+              h3 11:00
+            .table-row__text
+              h3 &khcy;&acy;&khcy;&acy;&tcy;&ocy;&ncy; &khcy;&acy;&khcy;&acy;&tcy;&ocy;&ncy;
+          .table-row
+            .table-row__time
+              h3 11:00
+              h3 11:30
+            .table-row__text
+              h3 &khcy;&acy;&khcy;&acy;&tcy;&ocy;&ncy; &khcy;&acy;&khcy;&acy;&tcy;&ocy;&ncy;
+          .table-row
+            .table-row__time
+              h3 11:30
+              h3 14:00
+            .table-row__text
+              h3 &khcy;&acy;&khcy;&acy;&tcy;&ocy;&ncy; &khcy;&acy;&khcy;&acy;&tcy;&ocy;&ncy;
+          .table-row
+            .table-row__time
+              h3 14:00
+              h3 15:00
+            .table-row__text
+              h3 &ocy;&bcy;&iecy;&dcy;
+          .table-row
+            .table-row__time
+              h3 15:00
+              h3 19:00
+            .table-row__text
+              h3 &rcy;&khcy;&acy;&khcy;&acy;&tcy;&ocy;&ncy; &khcy;&acy;&khcy;&acy;&tcy;&ocy;&ncy;
+          .table-row
+            .table-row__time
+              h3 19:00
+              h3 20:00
+            .table-row__text
+              h3 &ucy;&zhcy;&icy;&ncy;
+          .last-table-row
+            .table-row__time
+              h3 20:00
+              h3 00:00
+            .table-row__text
+              h3 &khcy;&acy;&khcy;&acy;&tcy;&ocy;&ncy; &khcy;&acy;&khcy;&acy;&tcy;&ocy;&ncy;
+      #third-table.third-day-table
+        .table
+          .table-row
+            .table-row__time
+              h3 10:00
+              h3 11:00
+            .table-row__text
+              h3 &Ecy;&Ecy;&Ecy;&Ecy;&Ecy;&Ecy;&Ecy; &Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;
+          .table-row
+            .table-row__time
+              h3 11:00
+              h3 11:30
+            .table-row__text
+              h3 &Ecy;&Ecy;&Ecy;&Ecy;&Ecy;&Ecy;&Ecy;&Ecy;&Ecy;&Ecy;&Ecy;&Ecy; &Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;
+          .table-row
+            .table-row__time
+              h3 11:30
+              h3 14:00
+            .table-row__text
+              h3 &Ecy;&Ecy;&Ecy;&Ecy;&Ecy; &Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy; &Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;
+          .table-row
+            .table-row__time
+              h3 14:00
+              h3 15:00
+            .table-row__text
+              h3 &ocy;&bcy;&iecy;&dcy;
+          .table-row
+            .table-row__time
+              h3 15:00
+              h3 19:00
+            .table-row__text
+              h3 &Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy; &Ecy;&Ecy;&Ecy;&Ecy;&Ecy;&Ecy;&Ecy; &Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;
+          .table-row
+            .table-row__time
+              h3 19:00
+              h3 20:00
+            .table-row__text
+              h3 &ucy;&zhcy;&icy;&ncy;
+          .last-table-row
+            .table-row__time
+              h3 20:00
+              h3 00:00
+            .table-row__text
+              h3 &Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;
+.block-wrapper
+  .form-block
+    .form-block__title
+      h2 &Ocy;&Scy;&Tcy;&Acy;&Vcy;&SOFTcy;&Tcy;&IEcy; &Zcy;&Acy;&YAcy;&Vcy;&Kcy;&Ucy; &Dcy;&Lcy;&YAcy; &Ucy;&CHcy;&Acy;&Scy;&Tcy;&Icy;&YAcy;
+    .form-switch
+      #first-form.first-form
+        button.form-switch__button(onclick='firstFormButton()')
+          h2 создать команду
+      #second-form.second-form
+        button.form-switch__button(onclick='secondFormButton()')
+          h2 &Pcy;&rcy;&icy;&scy;&ocy;&iecy;&dcy;&icy;&ncy;&icy;&tcy;&softcy;&scy;&yacy; &kcy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&iecy;
+    .forms-container
+      #first-form__block.first-form__block
+        form#form(method='POST' action='http://localhost:3000/addCommand')
+          .form__row
+            .input-text__text
+              h3 &Fcy;&acy;&mcy;&icy;&lcy;&icy;&yacy;
+            input#surname.input-text(type='text' name='surname' required='')
+          .form__row
+            .input-text__text
+              h3 &Icy;&mcy;&yacy;
+            input#name.input-text(type='text' name='name' required='')
+          .form__row
+            .input-text__text
+              h3 &Ocy;&tcy;&chcy;&iecy;&scy;&tcy;&vcy;&ocy;
+            input#patronymic.input-text(type='text' name='patronymic' required='')
+          .form__row
+            .input-text__text
+              h3 &Dcy;&acy;&tcy;&acy; &rcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&yacy;
+            input#birthDay.input-text(type='date' name='birthDay' style='width: 30%' required='')
+          .form__row
+            .input-text__text
+              h3 E-mail
+            input#email.input-text(type='email' name='email' required='')
+          .form__row
+            .input-text__text
+              h3 Телефон
+            input#tel.input-text(type='tel' name='tel' required='')
+          .form__row
+            .input-text__text
+              h3 &Ncy;&acy;&zcy;&vcy;&acy;&ncy;&icy;&iecy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ycy;
+            input#teamName.input-text(type='text' name='teamName' required='')
+          .form__row__radio
+            h3 &Tcy;&rcy;&iecy;&kcy;
+            .radio-row
+              input#first-track.input-radio(type='radio' name='track' value='Track.FIRSTTRACK' required='')
+              label(for='first-track')
+                h6 &Icy;&gcy;&rcy;&ycy; &icy; VR
+            .radio-row
+              input#second-track.input-radio(type='radio' name='track' value='SolutionsAndWebsites' required='')
+              label(for='second-track')
+                h6 &Pcy;&lcy;&acy;&tcy;&fcy;&ocy;&rcy;&mcy;&iecy;&ncy;&ncy;&ycy;&iecy; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&yacy; &icy; &scy;&acy;&jcy;&tcy;&ycy;
+            .radio-row
+              input#third-track.input-radio(type='radio' name='track' value='edcDigitalProjects' required='')
+              label(for='third-track')
+                h6 &Ocy;&bcy;&rcy;&acy;&zcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ycy;&iecy; digital-&pcy;&rcy;&ocy;&iecy;&kcy;&tcy;&ycy;
+          .form__row__checkbox
+            input#first-checkbox(type='checkbox' name='first-checkbox' required='')
+            label.checkbox-label(for='first-checkbox')
+              h6
+                | &Pcy;&ocy;&dcy;&tcy;&vcy;&iecy;&rcy;&zhcy;&dcy;&acy;&yucy;, &chcy;&tcy;&ocy; &ocy;&zcy;&ncy;&acy;&kcy;&ocy;&mcy;&lcy;&iecy;&ncy; &icy; &pcy;&rcy;&icy;&ncy;&icy;&mcy;&acy;&yucy; &ldquo;&Rcy;&iecy;&gcy;&lcy;&acy;&mcy;&iecy;&ncy;&tcy; &pcy;&rcy;&ocy;&vcy;&iecy;&dcy;&iecy;&ncy;&icy;&yacy;
+                | &KHcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy;&acy;&rdquo;
+          .form__row__checkbox
+            input#second-checkbox(type='checkbox' name='second-checkbox' required='')
+            label.checkbox-label(for='second-checkbox')
+              h6
+                | &Ocy;&zcy;&ncy;&acy;&kcy;&ocy;&mcy;&lcy;&iecy;&ncy;, &chcy;&tcy;&ocy; &lcy;&icy;&tscy;&acy;&mcy;, &ncy;&iecy; &dcy;&ocy;&scy;&tcy;&icy;&gcy;&shcy;&icy;&mcy; 18 &lcy;&iecy;&tcy; &ucy;&chcy;&acy;&scy;&tcy;&icy;&iecy; &vcy;
+                | &KHcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy;&iecy; &vcy;&ocy;&zcy;&mcy;&ocy;&zhcy;&ncy;&ocy; &tcy;&ocy;&lcy;&softcy;&kcy;&ocy; &pcy;&rcy;&icy; &ncy;&acy;&lcy;&icy;&chcy;&icy;&icy; &scy;&ocy;&pcy;&rcy;&ocy;&vcy;&ocy;&zhcy;&dcy;&acy;&yucy;&shchcy;&iecy;&gcy;&ocy;
+                | &rcy;&ocy;&dcy;&icy;&tcy;&iecy;&lcy;&yacy; (&zcy;&acy;&kcy;&ocy;&ncy;&ncy;&ocy;&gcy;&ocy; &pcy;&rcy;&iecy;&dcy;&scy;&tcy;&acy;&vcy;&icy;&tcy;&iecy;&lcy;&yacy;) &lcy;&icy;&bcy;&ocy; &scy;&ocy;&pcy;&rcy;&ocy;&vcy;&ocy;&zhcy;&dcy;&acy;&yucy;&shchcy;&iecy;&gcy;&ocy;
+                | &ocy;&rcy;&gcy;&acy;&ncy;&icy;&zcy;&ocy;&vcy;&acy;&ncy;&ncy;&ocy;&jcy; &gcy;&rcy;&ucy;&pcy;&pcy;&ycy;
+          .form__row__checkbox
+            input#third-checkbox(type='checkbox' name='third-checkbox' required='')
+            label.checkbox-label(for='third-checkbox')
+              h6
+                | &Scy;&ocy;&gcy;&lcy;&acy;&scy;&iecy;&ncy; &scy; &pcy;&ocy;&lcy;&icy;&tcy;&icy;&kcy;&ocy;&jcy; &vcy; &ocy;&tcy;&ncy;&ocy;&shcy;&iecy;&ncy;&icy;&yacy;&khcy; &vcy; &ocy;&tcy;&ncy;&ocy;&shcy;&iecy;&ncy;&icy;&icy; &ocy;&bcy;&rcy;&acy;&bcy;&ocy;&tcy;&kcy;&icy;
+                | &pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&lcy;&softcy;&ncy;&ycy;&khcy; &dcy;&acy;&ncy;&ncy;&ycy;&khcy;
+          button.submit-button(type='submit')
+            h3 &Ocy;&tcy;&pcy;&rcy;&acy;&vcy;&icy;&tcy;&softcy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
+      #second-form__block.second-form__block.form-hide
+        form#form(method='POST' action='http://localhost:3000/addMember')
+          .form__row
+            .input-text__text
+              h3 &Fcy;&acy;&mcy;&icy;&lcy;&icy;&yacy;
+            input#surname.input-text(type='text' name='surname' required='')
+          .form__row
+            .input-text__text
+              h3 &Icy;&mcy;&yacy;
+            input#name.input-text(type='text' name='name' required='')
+          .form__row
+            .input-text__text
+              h3 &Ocy;&tcy;&chcy;&iecy;&scy;&tcy;&vcy;&ocy;
+            input#patronymic.input-text(type='text' name='patronymic' required='')
+          .form__row
+            .input-text__text
+              h3 &Dcy;&acy;&tcy;&acy; &rcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&yacy;
+            input#birthDay.input-text(type='date' name='birthDay' style='width: 30%' required='')
+          .form__row
+            .input-text__text
+              h3 E-mail
+            input#email.input-text(type='email' name='email' required='')
+          .form__row
+            .input-text__text
+              h3 Телефон
+            input#tel.input-text(type='tel' name='tel' required='')
+          .form__row
+            .input-text__text
+              h3 &Tcy;&ocy;&kcy;&iecy;&ncy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ycy;
+            input#teamToken.input-text(type='text' name='commandToken' required='')
+          .form__row__checkbox
+            input#first-checkbox-second(type='checkbox' name='first-checkbox' required='')
+            label.checkbox-label(for='first-checkbox-second')
+              h6
+                | &Pcy;&ocy;&dcy;&tcy;&vcy;&iecy;&rcy;&zhcy;&dcy;&acy;&yucy;, &chcy;&tcy;&ocy; &ocy;&zcy;&ncy;&acy;&kcy;&ocy;&mcy;&lcy;&iecy;&ncy; &icy; &pcy;&rcy;&icy;&ncy;&icy;&mcy;&acy;&yucy; &ldquo;&Rcy;&iecy;&gcy;&lcy;&acy;&mcy;&iecy;&ncy;&tcy; &pcy;&rcy;&ocy;&vcy;&iecy;&dcy;&iecy;&ncy;&icy;&yacy;
+                | &KHcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy;&acy;&rdquo;
+          .form__row__checkbox
+            input#second-checkbox-second(type='checkbox' name='second-checkbox' required='')
+            label.checkbox-label(for='second-checkbox-second')
+              h6
+                | &Ocy;&zcy;&ncy;&acy;&kcy;&ocy;&mcy;&lcy;&iecy;&ncy;, &chcy;&tcy;&ocy; &lcy;&icy;&tscy;&acy;&mcy;, &ncy;&iecy; &dcy;&ocy;&scy;&tcy;&icy;&gcy;&shcy;&icy;&mcy; 18 &lcy;&iecy;&tcy; &ucy;&chcy;&acy;&scy;&tcy;&icy;&iecy; &vcy;
+                | &KHcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy;&iecy; &vcy;&ocy;&zcy;&mcy;&ocy;&zhcy;&ncy;&ocy; &tcy;&ocy;&lcy;&softcy;&kcy;&ocy; &pcy;&rcy;&icy; &ncy;&acy;&lcy;&icy;&chcy;&icy;&icy; &scy;&ocy;&pcy;&rcy;&ocy;&vcy;&ocy;&zhcy;&dcy;&acy;&yucy;&shchcy;&iecy;&gcy;&ocy;
+                | &rcy;&ocy;&dcy;&icy;&tcy;&iecy;&lcy;&yacy; (&zcy;&acy;&kcy;&ocy;&ncy;&ncy;&ocy;&gcy;&ocy; &pcy;&rcy;&iecy;&dcy;&scy;&tcy;&acy;&vcy;&icy;&tcy;&iecy;&lcy;&yacy;) &lcy;&icy;&bcy;&ocy; &scy;&ocy;&pcy;&rcy;&ocy;&vcy;&ocy;&zhcy;&dcy;&acy;&yucy;&shchcy;&iecy;&gcy;&ocy;
+                | &ocy;&rcy;&gcy;&acy;&ncy;&icy;&zcy;&ocy;&vcy;&acy;&ncy;&ncy;&ocy;&jcy; &gcy;&rcy;&ucy;&pcy;&pcy;&ycy;
+          .form__row__checkbox
+            input#third-checkbox-second(type='checkbox' name='third-checkbox' required='')
+            label.checkbox-label(for='third-checkbox-second')
+              h6
+                | &Scy;&ocy;&gcy;&lcy;&acy;&scy;&iecy;&ncy; &scy; &pcy;&ocy;&lcy;&icy;&tcy;&icy;&kcy;&ocy;&jcy; &vcy; &ocy;&tcy;&ncy;&ocy;&shcy;&iecy;&ncy;&icy;&yacy;&khcy; &vcy; &ocy;&tcy;&ncy;&ocy;&shcy;&iecy;&ncy;&icy;&icy; &ocy;&bcy;&rcy;&acy;&bcy;&ocy;&tcy;&kcy;&icy;
+                | &pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&lcy;&softcy;&ncy;&ycy;&khcy; &dcy;&acy;&ncy;&ncy;&ycy;&khcy;
+          button.submit-button(type='submit')
+            h3 &Ocy;&tcy;&pcy;&rcy;&acy;&vcy;&icy;&tcy;&softcy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
+footer
+  .footer__first-layer
+    h6 &Pcy;&ocy;&lcy;&icy;&tcy;&icy;&kcy;&acy; &kcy;&ocy;&ncy;&fcy;&icy;&dcy;&iecy;&ncy;&tscy;&icy;&acy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&icy;
+  .footer__second-layer
+    .social-network
+      svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' style='margin-right: 25px')
+        path(fill-rule='evenodd' clip-rule='evenodd' d='M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z' fill='#EB6B44')
+      svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z' fill='#EB6B44')
+    .text
+      h6 &copy; &KHcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy; x GASUDEV, 2023

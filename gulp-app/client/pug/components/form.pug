@@ -1,0 +1,15 @@
+
+mixin form
+    form(method="post")
+        .form__line
+            .input
+                input(type="text", placeholder="Как к Вам обращаться?", id="name_input", name="name", required)
+        .form__line
+            .textarea
+                textarea(maxlength="500", minlength="60", placeholder="Опишите идею в двух предложениях...", id="masg_input", name="message")
+        .form__line
+            .input
+                input(type="email", placeholder="Электронная почта", id="mail_input", name="contact", required)
+                .input__icon
+                    +email_icon
+            button.btn( type="submit") Начать переписку

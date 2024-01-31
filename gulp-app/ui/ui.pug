@@ -1,0 +1,89 @@
+mixin btn(text, type, id)
+  button.btn(class=type, id=id, type="button")&attributes(attributes)= text
+
+mixin btn-link(text, type, href)
+  a(href= href)
+    button.btn(class=type, id=id, type="button")&attributes(attributes)= text
+
+mixin btn_icon(icon, text, type, id)
+  button.btn(class=type, id=id, type="button")&attributes(attributes)
+    if text != ""
+      span= text
+    span.material-symbols-outlined= icon
+
+mixin switch(text, id)
+  .switch
+    label.switch__label(for=id)
+      .switch__circle
+      span= text
+    input.switch__input(id=id, type="checkbox")&attributes(attributes)
+
+mixin radio(group, text, id)
+  .radio
+    label.radio__label(for=id)
+      .radio__circle
+      span= text
+    input.radio__input(name=group, id=id, type="radio")&attributes(attributes)
+
+mixin accardion_item(name, group= name)
+  .accardion-item
+    .accardion-item__header(data-group=group)
+      label(for=name + 'open_radio')
+        span= name
+        span.accardion-item__icon.material-symbols-outlined expand_more
+      input(name=group, id=name + 'open_radio', type="checkbox")
+    .accardion-item__body
+      block
+
+mixin select(keys, values, group, current= keys[0])
+  dev-select.select(value= current)&attributes(attributes)
+    .select__container(id= group)
+      - let i = 0;
+      each key in keys
+        .select__item
+          if key == current
+            input(type="radio", name= group, value=key, id=group + " " + key, checked)
+          else
+            input(type="radio", name= group, value=key, id=group + " " + key)
+          label(for=group + " " + key)= values[i]
+          - i++;
+
+mixin input(icon, text, id, value = "")
+  .input
+    input(type="text", value=value, placeholder=text, id=id)&attributes(attributes)
+    .input__icon
+      span.material-symbols-outlined= icon
+
+mixin textarea(text, id)
+  .textarea
+    textarea(placeholder=text, id=id)&attributes(attributes)
+      block
+    .textarea__icon(
+      onClick="this.parentElement.querySelector('textarea').value = ''"
+    )
+      span.material-symbols-outlined delete
+
+mixin number(text, id)
+  .input
+    input(type="number", placeholder=text, id=id)&attributes(attributes)
+    .input__icon
+      span.material-symbols-outlined celebration
+
+mixin password(text, id)
+  .input
+    input(type="password", placeholder=text, id=id)&attributes(attributes)
+    .input__icon
+      span.material-symbols-outlined lock
+
+mixin notification(type)
+  .notification(class='notification__' + type)
+    block
+    .notification__close(onClick="this.parentElement.remove()")
+      span.material-symbols-outlined close
+ 
+mixin loader
+  .loader__filter
+    .loader__icon
+      .circle.green
+      .circle.red
+      .circle.blue
