@@ -1,22 +1,20 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Command, Member, Order } from './entities/order.entity';
 import {
   CreateCommandDto,
-  CreateMemberDto,
-  CreateOrderDto,
+  CreateMemberDto
 } from './dto/create-order.dto';
 import {
   UpdateCommandDto,
-  UpdateMemberDto,
-  UpdateOrderDto,
+  UpdateMemberDto
 } from './dto/update-order.dto';
-import { MemberStatus, Track, stage } from './data/stage.enum';
 import { convertDate } from './utils/convert_order.util';
 // import * as randomstring from 'randomstring';
 import { v4 as uuidv4 } from 'uuid';
+const NeDB = require('nedb-promises');
+import { MemberStatus } from '../members/data/member.status.enum';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const NeDB = require('nedb-promises');
 
 @Injectable()
 export class OrdersService {
@@ -34,46 +32,6 @@ export class OrdersService {
 
   getAllCommands(): Promise<Command[]> {
     return this.commanddb.find({});
-  }
-
-  //допилить
-  // async getAllCommandsWithDateString(): Promise<Command[]> {//не надо
-  //   const commands = await this.getAllOrders();
-  //   return commands.map((e: Command) => {
-  //     e.dateString = convertDate(e.date);
-  //     return e;
-  //   });
-  // }
-
-  getAllOrders(): Promise<Order[]> {
-    //не надо
-    return this.db.find({});
-  }
-
-  async getAllOrdersWithDateString(): Promise<Order[]> {
-    //не надо
-    const orders = await this.getAllOrders();
-    return orders.map((e: Order) => {
-      e.dateString = convertDate(e.date);
-      return e;
-    });
-  }
-
-  getOrderById(_id: string): Promise<Order> {
-    //не надо
-    return this.db.findOne({ _id });
-  }
-
-  async getOrderByIdWithDateString(_id: string): Promise<Order[]> {
-    //не надо
-    const order = await this.db.findOne({ _id });
-    order.dateString = convertDate(order.date);
-    return order;
-  }
-
-  getOrderWhere(filter: any): Promise<Order> {
-    //не надо
-    return this.db.findOne(filter);
   }
 
   getCommandWhere(filter: any): Promise<Command> {
@@ -195,33 +153,6 @@ export class OrdersService {
 
     return true;
   }
-
-  // addOrder(dto: CreateOrderDto): Promise<Order> {
-  //   const order = new Order();
-  //   order.customer = dto.name;
-  //   order.message = dto.message;
-  //   order.contact = dto.contact;
-  //   order.date = new Date();
-  //   order.comment = '';
-  //   order.name = 'Без названия';
-  //   order.stage = stage.NEW;
-
-  //   return this.db.insert(order);
-  // }
-
-  // async updateOrder(_id: string, newOrder: UpdateOrderDto): Promise<Order> {
-  //   //не надо
-  //   const oldOrder = await this.getOrderById(_id);
-  //   for (const key of Object.keys(newOrder)) {
-  //     oldOrder[key] = newOrder[key];
-  //   }
-  //   return this.db.update({ _id }, oldOrder);
-  // }
-
-  // deleteOrder(_id: string): Promise<Order> {
-  //   //не надо
-  //   return this.db.remove({ _id });
-  // }
 
   async updateCommand(
     _id: string,
