@@ -38,7 +38,7 @@ export class CommandsController {
   @Get()
   @Render('admin/pug/admin')
   async commands() {
-    const commands = this.commandsService.getAllCommands();
+    const commands = await this.commandsService.getAllCommands();
     return { commands, host: process.env.HOST };
   }
 

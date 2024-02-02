@@ -5,21 +5,21 @@ include components/order_raw
 
 +admin_doc(["admin/style/admin.css"], ["admin/js/moment.js", "ui/ui.js", "admin/js/order.js"], host)
     .order-page
-        .order(data-id= order._id)
+        .order(data-id= command._id)
             .order__title(data-key= "teamName")
-                span.order__content= order.teamName
+                span.order__content= command.teamName
                 span.material-symbols-outlined.order__edit edit
             .order__info
                 .order__customer(data-key= "track")
-                    span.order__content= order.track
+                    span.order__content= command.track
                     span.material-symbols-outlined.order__edit edit
                 .order__contact(data-key= "maxMembers")
-                    span.order__content= order.maxMembers
+                    span.order__content= command.maxMembers
                     //- span.material-symbols-outlined.order__edit edit
                 .order__date
-                    span.order__content= order.date
+                    span.order__content= command.date
             .order__description(data-key= "message")
-                span.order__content= order.token
+                span.order__content= command.token
                 //- span.material-symbols-outlined.order__edit edit
             +textarea("Комментарий к команде", "order_comment")
-                | #{order.comment}
+                | #{command.comment}

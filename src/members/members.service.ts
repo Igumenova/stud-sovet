@@ -5,8 +5,10 @@ import { MembersDao } from './dao/members.dao';
 import { Member } from './entity/member.entity';
 import { CommandsDao } from 'src/commands/dao/commands.dao';
 import { Command } from 'src/commands/entity/command.entity';
-import { Exception } from 'sass';
+import { Exception, compileAsync } from 'sass';
 import { MemberStatus } from './data/member.status.enum';
+import { UpdateCommandDto } from 'src/commands/dto/update-command.dto';
+import { Track } from 'src/commands/data/track.enum';
 
 @Injectable()
 export class MembersService {
@@ -45,6 +47,15 @@ export class MembersService {
     // }
 
     if (await this.memberIdentityCheck(newMember)) {
+      let command = await CommandsDao.getInstance().getByFilter({
+        commandToken: createMemberDto.commandToken,
+      });
+      let updateCommandDto = command as UpdateCommandDto;
+      updateCommandDto.members += 1;
+      await CommandsDao.getInstance().update(
+        { _id: command._id },
+        updateCommandDto,
+      );
       return this.dao.insert(newMember);
     }
   }
@@ -58,12 +69,19 @@ export class MembersService {
       console.log(1);
       return false;
     }
-    if (await this.dao.getByFilter({ email: member.email })) {
+    let command = await CommandsDao.getInstance().getByFilter({
+      commandToken: member.commandToken,
+    });
+    if (command.maxMembers == command.members) {
       console.log(2);
       return false;
     }
-    if (await this.dao.getByFilter({ tel: member.tel })) {
+    if (await this.dao.getByFilter({ email: member.email })) {
       console.log(3);
+      return false;
+    }
+    if (await this.dao.getByFilter({ tel: member.tel })) {
+      console.log(4);
       return false;
     }
     return true;

@@ -4,7 +4,7 @@ mixin order_raw(command, host)
     .order(data-order= command._id)
         .order__date(data-date= command.date)= command.date
         .order__name= command.teamName
-        .order__token= command.token
+        .order__token= command.commandToken
         .order__customer= command.track
         .order__contact= command.members
         - keys = ["new", "in-progress", "completed"];
@@ -15,7 +15,7 @@ mixin order_raw(command, host)
             .circle
             .options__container
                 .options__item.open
-                    a(class= "order__open", href= host + "/admin/order/" + command._id) Открыть
+                    a(class= "order__open", href= host + "/admin/commands/" + command._id) Открыть
                 .options__item.remove
                     i Удалить
             .circle
