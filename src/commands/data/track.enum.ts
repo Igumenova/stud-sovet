@@ -1,5 +1,5 @@
 export enum Track {
-    FIRSTTRACK = 'captain',
-    SECONDTRACK = 'member',
-    THIRDTRACK = 'member',
+    FIRSTTRACK = 'Website',
+    SECONDTRACK = 'TGBot',
+    THIRDTRACK = 'WebConstructor',
 }

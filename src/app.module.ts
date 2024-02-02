@@ -12,9 +12,15 @@ import {
   RequestMethod,
 } from '@nestjs/common';
 import { AuthMiddleware } from './common/middleware/auth.middleware';
+import { MemoryStoredFile, NestjsFormDataModule } from 'nestjs-form-data';
 
 @Module({
-  imports: [ConfigModule.forRoot(), MembersModule, CommandsModule],
+  imports: [
+    ConfigModule.forRoot(),
+    MembersModule,
+    CommandsModule,
+    NestjsFormDataModule.config({ storage: MemoryStoredFile }),
+  ],
   controllers: [AppController],
   providers: [
     AppService,
@@ -29,7 +35,7 @@ export class AppModule implements NestModule {
     consumer
       .apply(AuthMiddleware)
       .exclude({ path: '/admin/login', method: RequestMethod.ALL })
-      .exclude({ path: '/admin/commands', method: RequestMethod.POST })
+      // .exclude({ path: '/admin/commands', method: RequestMethod.POST })
       .forRoutes({ path: '/admin/*', method: RequestMethod.ALL });
   }
 }
