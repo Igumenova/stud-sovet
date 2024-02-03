@@ -1,15 +1,15 @@
-include ../../../ui/ui
+include ../../../../ui/ui
 
-mixin order_raw(command, host)
+mixin commands_raw(command, host)
     .order(data-order= command._id)
         .order__date(data-date= command.date)= command.date
         .order__name= command.teamName
         .order__token= command.commandToken
         .order__customer= command.track
         .order__contact= command.members
-        - keys = ["new", "in-progress", "completed"];
-        - values  = ["Новая", "В работе", "Завершенно"];
-        +select(keys, values, command._id, command.stage)(class= "order__select " + command.stage)
+        //- - keys = ["new", "in-progress", "completed"];
+        //- - values  = ["Новая", "В работе", "Завершенно"];
+        //- +select(keys, values, command._id, command.stage)(class= "order__select " + command.stage)
         .order__options.options
             .circle
             .circle

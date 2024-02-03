@@ -1,7 +1,7 @@
-import { IsNotEmpty } from "class-validator";
-import { Track } from "../data/track.enum";
-import { PartialType } from "@nestjs/mapped-types";
-import { CreateCommandDto } from "./create-command.dto";
+import { IsNotEmpty } from 'class-validator';
+import { Track } from '../data/track.enum';
+import { PartialType } from '@nestjs/mapped-types';
+import { CreateCommandDto } from './create-command.dto';
 
 export class UpdateCommandDto extends PartialType(CreateCommandDto) {
   @IsNotEmpty()
@@ -10,4 +10,5 @@ export class UpdateCommandDto extends PartialType(CreateCommandDto) {
   track?: Track;
   members?: number;
   token?: string;
+  comment?: string;
 }

@@ -1,0 +1,21 @@
+include ../../../ui/ui
+
+mixin members_raw(member, host)
+    .order(data-order= member._id)
+        .order__date(data-date= member.date)= member.date
+        .order__name= member.name
+        .order__token= member.surname
+        .order__customer= member.email
+        .order__contact= member.tel
+        - keys = ["new", "in-progress", "completed"];
+        - values  = ["Новая", "В работе", "Завершенно"];
+        +select(keys, values, member._id, member.stage)(class= "order__select " + member.stage)
+        .order__options.options
+            .circle
+            .circle
+            .options__container
+                .options__item.open
+                    a(class= "order__open", href= host + "/admin/members/" + member._id) Открыть
+                .options__item.remove
+                    i Удалить
+            .circle

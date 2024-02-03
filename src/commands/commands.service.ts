@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Redirect } from '@nestjs/common';
 import { UpdateCommandDto } from './dto/update-command.dto';
 import { Command } from './entity/command.entity';
 import { CommandsDao } from './dao/commands.dao';
@@ -25,11 +25,15 @@ export class CommandsService {
     return this.dao.deleteByFilter({ _id });
   }
 
-  updateCommand(
+  async updateCommand(
     _id: string,
-    command: UpdateCommandDto,
+    newCommand: UpdateCommandDto,
   ): Promise<number | Command> {
-    return this.dao.update({ _id }, command);
+    const oldCommand = (await this.getCommandById(_id)) as UpdateCommandDto;
+    for (const key of Object.keys(newCommand)) {
+      oldCommand[key] = newCommand[key];
+    }
+    return this.dao.update({ _id }, oldCommand);
   }
 
   getAllCommands(): Promise<Command[]> {
@@ -65,29 +69,51 @@ export class CommandsService {
     createMemberDto.memberStatus = MemberStatus.CAPTAIN;
     createMemberDto.date = new Date();
 
-    //добавить, чтобы эта ебала выводилась на сайт
-    if (await this.commandIdentityCheck(command)) {
+    let checkResult = await this.commandIdentityCheck(command);
+    if (checkResult == 'kk') {
       MembersDao.getInstance().insert(createMemberDto);
-      return this.dao.insert(createCommandDto);
+      this.dao.insert(createCommandDto);
+      return (
+        'Токен вашей команды: ' +
+        command.commandToken +
+        ' обязательно запомните его, он понадобится для регистрации ваших сокомандников.'
+      );
+    } else {
+      return checkResult;
     }
   }
 
-  //добавить, чтобы эта ебала выводилась на сайт
   private async commandIdentityCheck(
     command: RegisterCommandDto,
-  ): Promise<boolean> {
+  ): Promise<string> {
+    if (this.isAdult(command.birthDay)) {
+      return 'Вам нет 18-ти.';
+    }
     if (await this.dao.getByFilter({ teamName: command.teamName })) {
-      console.log(1);
-      return false;
+      return 'Команда с таким название уже существует.';
     }
     if (await MembersDao.getInstance().getByFilter({ email: command.email })) {
-      console.log(2);
-      return false;
+      return 'Пользователь с такой почтой уже существует.';
     }
     if (await MembersDao.getInstance().getByFilter({ tel: command.tel })) {
-      console.log(3);
-      return false;
+      return 'Пользователь с таким телефоном уже существует.';
     }
-    return true;
+    return 'kk';
+  }
+
+  private isAdult(dateOfBirth: string): boolean {
+    let currentDate = new Date();
+    let birthDate = new Date(dateOfBirth);
+
+    let age = currentDate.getFullYear() - birthDate.getFullYear();
+
+    if (currentDate.getMonth() < birthDate.getMonth()) {
+      age -= 1;
+    } else if (currentDate.getMonth() == birthDate.getMonth()) {
+      if (currentDate.getDate() < birthDate.getDate()) {
+        age -= 1;
+      }
+    }
+    return age >= 18;
   }
 }

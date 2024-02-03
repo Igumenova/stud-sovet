@@ -19,18 +19,19 @@ export class AppController {
 
   @Get()
   @Render('client/pug/index')
-  async home(@Session() session: Record<string, any>, @Res() res: Response) {
-    return { orderIsSend: session.orderIsSend, FirstTrack: Track.FIRSTTRACK, SecondTrack: Track.SECONDTRACK, ThirdTrack: Track.THIRDTRACK };
-  }
-
-  @Get('/showtoken')
-  @Render('client/pug/showToken')
-  async tokenPage(@Session() session: Record<string, any>, @Req() req) {
-    //TODO: дописать страничку для показа токена. и добавить на страничку инструкцию по использованию
-    throw new Error('Страница показа токена еще не реализована.');
-
-    const { token } = req.query || req.params;
-    return { token };
+  async home(
+    @Session() session: Record<string, any>,
+    @Res() res: Response,
+  ) {
+    let message = session.message;
+    session.message = '';
+    return {
+      orderIsSend: session.orderIsSend,
+      FirstTrack: Track.FIRSTTRACK,
+      SecondTrack: Track.SECONDTRACK,
+      ThirdTrack: Track.THIRDTRACK,
+      message: message,
+    };
   }
 
   @Get('admin/login')

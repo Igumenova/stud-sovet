@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, Redirect } from '@nestjs/common';
 import { CreateMemberDto } from './dto/create-member.dto';
 import { UpdateMemberDto } from './dto/update-member.dto';
 import { MembersDao } from './dao/members.dao';
@@ -17,17 +17,51 @@ export class MembersService {
   constructor() {
     this.dao = MembersDao.getInstance();
   }
-  deleteMember(_id: string): Promise<boolean> {
-    return this.dao.deleteByFilter({ _id });
-  }
-  updateMember(
-    _id: string,
-    command: UpdateMemberDto,
-  ): Promise<number | Member> {
-    return this.dao.update({ _id }, command);
+
+  getMemberById(_id: string): Promise<Member> {
+    return this.dao.getByFilter({ _id });
   }
 
-  async addMember(createMemberDto: CreateMemberDto) {
+  async deleteMember(_id: string): Promise<boolean> {
+    let member = await this.dao.getByFilter({ _id });
+    let command = await CommandsDao.getInstance().getByFilter({
+      commandToken: member.commandToken,
+    });
+    let updateCommandDto = command as UpdateCommandDto;
+    updateCommandDto.members -= 1;
+    await CommandsDao.getInstance().update(
+      { _id: command._id },
+      updateCommandDto,
+    );
+
+    if (member.memberStatus == 'captain') {
+      let newCaptain = await this.dao.getByFilter({
+        commandToken: member.commandToken,
+        memberStatus: 'member',
+      });
+      newCaptain.memberStatus = MemberStatus.CAPTAIN;
+      await this.updateMember(newCaptain._id, newCaptain);
+    }
+
+    return this.dao.deleteByFilter({ _id });
+  }
+
+  async updateMember(
+    _id: string,
+    newMember: UpdateMemberDto,
+  ): Promise<number | Member> {
+    const oldMember = (await this.getMemberById(_id)) as UpdateCommandDto;
+    for (const key of Object.keys(newMember)) {
+      oldMember[key] = newMember[key];
+    }
+    return this.dao.update({ _id }, oldMember);
+  }
+
+  getAllMember(): Promise<Member[]> {
+    return this.dao.getAll();
+  }
+
+  async addMember(createMemberDto: CreateMemberDto): Promise<string> {
     const newMember = new CreateMemberDto();
 
     newMember.name = createMemberDto.name;
@@ -40,13 +74,8 @@ export class MembersService {
     newMember.memberStatus = MemberStatus.MEMBER;
     newMember.date = new Date();
 
-    // const command: Command = await CommandsDao.getInstance().getByFilter(commandToken)
-    // if (!command) {
-    //     // TODO создать NotMatchTokenException и фильторок к нему
-    //     throw new NotFoundException('Кастомный exception для несовпадения token');
-    // }
-
-    if (await this.memberIdentityCheck(newMember)) {
+    let result = await this.memberIdentityCheck(newMember);
+    if (result == 'kk') {
       let command = await CommandsDao.getInstance().getByFilter({
         commandToken: createMemberDto.commandToken,
       });
@@ -56,34 +85,52 @@ export class MembersService {
         { _id: command._id },
         updateCommandDto,
       );
-      return this.dao.insert(newMember);
+      this.dao.insert(newMember);
+      return 'Вы успешно присоединились к команде';
+    } else {
+      return result;
     }
   }
 
-  private async memberIdentityCheck(member: CreateMemberDto): Promise<boolean> {
+  private async memberIdentityCheck(member: CreateMemberDto): Promise<string> {
     if (
       !(await CommandsDao.getInstance().getByFilter({
         commandToken: member.commandToken,
       }))
     ) {
-      console.log(1);
-      return false;
+      return 'Команды с таким токеном не существует.';
     }
     let command = await CommandsDao.getInstance().getByFilter({
       commandToken: member.commandToken,
     });
     if (command.maxMembers == command.members) {
-      console.log(2);
-      return false;
+      return 'В команде уже максимальное число участников.';
+    }
+    if (this.isAdult(member.birthDay)) {
+      return 'Вам нет 18-ти.';
     }
     if (await this.dao.getByFilter({ email: member.email })) {
-      console.log(3);
-      return false;
+      return 'Пользователь с такой почтой уже существует.';
     }
     if (await this.dao.getByFilter({ tel: member.tel })) {
-      console.log(4);
-      return false;
+      return 'Пользователь с таким телефоном уже существует.';
     }
-    return true;
+    return 'kk';
+  }
+
+  private isAdult(dateOfBirth: string): boolean {
+    let currentDate = new Date();
+    let birthDate = new Date(dateOfBirth);
+
+    let age = currentDate.getFullYear() - birthDate.getFullYear();
+
+    if (currentDate.getMonth() < birthDate.getMonth()) {
+      age -= 1;
+    } else if (currentDate.getMonth() == birthDate.getMonth()) {
+      if (currentDate.getDate() < birthDate.getDate()) {
+        age -= 1;
+      }
+    }
+    return age >= 18;
   }
 }

@@ -1,9 +1,9 @@
-include ../../ui/ui
-include components/admin_doc
-include components/commands_raw
+include ../../../ui/ui
+include components/members_admin_doc
+include components/members_raw
 
 
-+admin_doc(["admin/style/admin.css"], ["admin/js/moment.js", "ui/ui.js", "admin/js/admin.js"], host)
++admin_doc(["admin/style/admin.css"], ["admin/js/moment.js", "ui/ui.js", "admin/js/member_admin.js"], host)
     .settings
         .settings__item.filter
             h3.settings__title Показать:
@@ -18,6 +18,6 @@ include components/commands_raw
             - sortContent.values  = ["По дате", "По названию", "По стадии"];
             +select(sortContent.keys, sortContent.values,"sort")(class= "settings__select sort")
     .orders-grid
-        for command in commands
-            +commands_raw(command, host)
+        for member in members
+            +members_raw(member, host)
 

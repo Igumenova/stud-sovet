@@ -4,9 +4,10 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Document
   link(rel='stylesheet' type='text/css' href='style.css')
+  link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" )
   script(src='script.js' type='text/javascript' defer)
 nav#nav
-  svg.nav-logo(viewbox='0 0 276 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+  svg.nav-logo(viewbox='0 0 276 60' fill='none' xmlns='http://www.w3.org/2000/svg' id="nav")
     g(clip-path='url(#clip0_74_295)')
       path(d='M0 0H69L67 2H2V13L0 15V0Z' fill='white')
       path(d='M0 60H69L67 58H2V47L0 45V60Z' fill='white')
@@ -67,10 +68,14 @@ nav#nav
       div
         h6 &Pcy;&ocy;&lcy;&icy;&tcy;&icy;&kcy;&acy; &kcy;&ocy;&ncy;&fcy;&icy;&dcy;&iecy;&ncy;&tscy;&icy;&acy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&icy;
       .social-network
-        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' style='margin-right: 25px')
-          path(fill-rule='evenodd' clip-rule='evenodd' d='M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z' fill='#EB6B44')
-        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
-          path(d='M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z' fill='#EB6B44')
+        a(href="")
+          svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' style='margin-right: 25px')
+            path(fill-rule='evenodd' clip-rule='evenodd' d='M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z' fill='#EB6B44')
+        a(href="") 
+          svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z' fill='#EB6B44')
+        
+        //ССЫЛКИ НА ТГ И ВК
 //
   <img src="./src/pic1.jpg" alt="img" class="first-pic" />
   <img src="./src/pic2.jpg" alt="img" class="second-pic" />
@@ -506,7 +511,7 @@ nav#nav
           .form__row
             .input-text__text
               h3 &Dcy;&acy;&tcy;&acy; &rcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&yacy;
-            input#birthDay.input-text(type='date' name='birthDay' style='width: 30%' required='')
+            input#birthDay.input-text(type='date' name='birthDay' style='width: 40%' required='')
           .form__row
             .input-text__text
               h3 E-mail
@@ -572,7 +577,7 @@ nav#nav
           .form__row
             .input-text__text
               h3 &Dcy;&acy;&tcy;&acy; &rcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&yacy;
-            input#birthDay.input-text(type='date' name='birthDay' style='width: 30%' required='')
+            input#birthDay.input-text(type='date' name='birthDay' style='width: 40%' required='')
           .form__row
             .input-text__text
               h3 E-mail
@@ -586,13 +591,13 @@ nav#nav
               h3 &Tcy;&ocy;&kcy;&iecy;&ncy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ycy;
             input#teamToken.input-text(type='text' name='commandToken' required='')
           .form__row__checkbox
-            input#first-checkbox-second(type='checkbox' name='first-checkbox' required='')
-            label.checkbox-label(for='first-checkbox-second')
+            input#first-checkbox-second(type='checkbox' name='first-checkbox' required='' )
+            label.checkbox-label(for='first-checkbox-second' )
               h6
                 | &Pcy;&ocy;&dcy;&tcy;&vcy;&iecy;&rcy;&zhcy;&dcy;&acy;&yucy;, &chcy;&tcy;&ocy; &ocy;&zcy;&ncy;&acy;&kcy;&ocy;&mcy;&lcy;&iecy;&ncy; &icy; &pcy;&rcy;&icy;&ncy;&icy;&mcy;&acy;&yucy; &ldquo;&Rcy;&iecy;&gcy;&lcy;&acy;&mcy;&iecy;&ncy;&tcy; &pcy;&rcy;&ocy;&vcy;&iecy;&dcy;&iecy;&ncy;&icy;&yacy;
                 | &KHcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy;&acy;&rdquo;
           .form__row__checkbox
-            input#second-checkbox-second(type='checkbox' name='second-checkbox' required='')
+            input#second-checkbox-second(type='checkbox' name='second-checkbox' required='' )
             label.checkbox-label(for='second-checkbox-second')
               h6
                 | &Ocy;&zcy;&ncy;&acy;&kcy;&ocy;&mcy;&lcy;&iecy;&ncy;, &chcy;&tcy;&ocy; &lcy;&icy;&tscy;&acy;&mcy;, &ncy;&iecy; &dcy;&ocy;&scy;&tcy;&icy;&gcy;&shcy;&icy;&mcy; 18 &lcy;&iecy;&tcy; &ucy;&chcy;&acy;&scy;&tcy;&icy;&iecy; &vcy;
@@ -607,14 +612,20 @@ nav#nav
                 | &pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&lcy;&softcy;&ncy;&ycy;&khcy; &dcy;&acy;&ncy;&ncy;&ycy;&khcy;
           button.submit-button(type='submit')
             h3 &Ocy;&tcy;&pcy;&rcy;&acy;&vcy;&icy;&tcy;&softcy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
+    .center-wrapper(style="color: #eb6b44" id="message") 
+      h3 #{message}
 footer
   .footer__first-layer
+  a(href="" style="color: #eb6b44") 
     h6 &Pcy;&ocy;&lcy;&icy;&tcy;&icy;&kcy;&acy; &kcy;&ocy;&ncy;&fcy;&icy;&dcy;&iecy;&ncy;&tscy;&icy;&acy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&icy;
   .footer__second-layer
     .social-network
-      svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' style='margin-right: 25px')
-        path(fill-rule='evenodd' clip-rule='evenodd' d='M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z' fill='#EB6B44')
-      svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
-        path(d='M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z' fill='#EB6B44')
+      a(href="") 
+        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' style='margin-right: 25px')
+          path(fill-rule='evenodd' clip-rule='evenodd' d='M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z' fill='#EB6B44')
+      a(href="") 
+        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z' fill='#EB6B44')
+      //ССЫЛКИ НА ВК И ТГ
     .text
       h6 &copy; &KHcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy; x GASUDEV, 2023

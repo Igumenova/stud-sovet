@@ -30,20 +30,21 @@ export class CommandsController {
     @Res() res: Response,
     @Session() session: Record<string, any>,
   ) {
-    const token = await this.commandsService.regCommand(regCommandDto);
+    const regResult = await this.commandsService.regCommand(regCommandDto);
     session.orderIsSend = 1;
-    res.status(302).redirect('/showtoken?token=' + token); //вывод токена команды
+    session.message = regResult;
+    res.status(302).redirect('/#message'); 
   }
 
   @Get()
-  @Render('admin/pug/admin')
+  @Render('admin/pug/commands/commands_admin')
   async commands() {
     const commands = await this.commandsService.getAllCommands();
     return { commands, host: process.env.HOST };
   }
 
   @Get(':id')
-  @Render('admin/pug/order')
+  @Render('admin/pug/commands/command')
   async findOne(@Param('id') id: string) {
     const command = await this.commandsService.getCommandById(id);
     return { command, host: process.env.HOST };
@@ -54,7 +55,6 @@ export class CommandsController {
     @Body() updateCommandDto: UpdateCommandDto,
     @Res() res: Response,
   ) {
-    console.log(updateCommandDto);
     this.commandsService.updateCommand(updateCommandDto._id, updateCommandDto);
     res.status(200).send();
   }

@@ -27,13 +27,9 @@ export abstract class AbstractNeDBDaoImpl<O, CreateDto, UpdateDto>
     return this.db.findOne(filter);
   }
 
-  protected abstract identityCheck(object: CreateDto): Promise<boolean>;
-
   public async insert(object: CreateDto): Promise<string> {
-    // if (await this.identityCheck(object)) {
     await this.db.insert(object);
     return this.getByFilter(object).then((e: O) => (e as { _id: string })._id);
-    // }
   }
 
   public async deleteByFilter(filter: any): Promise<boolean> {

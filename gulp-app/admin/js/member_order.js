@@ -1,10 +1,16 @@
 const _id = document.querySelector('.order').dataset.id;
 const title = document.querySelector('.order__title');
-const customer = document.querySelector('.order__customer');
+const secondTitle = document.querySelector('.order__secondTitle');
+const thirdTitle = document.querySelector('.order__thirdTitle');
+const birthDay = document.querySelector('.order__birthDay');
+const email = document.querySelector('.order__email');
+const tel = document.querySelector('.order__tel');
+const memberStatus = document.querySelector('.order__memberStatus');
+const commandToken = document.querySelector('.order__commandToken');
 // const contact = document.querySelector('.order__contact');
 // const description = document.querySelector('.order__description');
 
-const textarea = document.querySelector('#command_comment');
+const textarea = document.querySelector('#member_comment');
 
 const addEditEvent = (element) => {
   const content = element.querySelector('.order__content');
@@ -20,7 +26,7 @@ const addEditEvent = (element) => {
       let body = { _id };
       body[key] = state;
 
-      fetch(`${host}/admin/commands`, {
+      fetch(`${host}/admin/members`, {
         headers: { 'Content-type': 'application/json;charset=utf-8' },
         method: 'PUT',
         body: JSON.stringify(body),
@@ -47,12 +53,21 @@ const addEditEvent = (element) => {
 //   addEditEvent(el);
 // }
 
-for (const el of [title, customer]) {
+for (const el of [
+  title,
+  secondTitle,
+  thirdTitle,
+  birthDay,
+  email,
+  tel,
+  memberStatus,
+  commandToken,
+]) {
   addEditEvent(el);
 }
 
 textarea.addEventListener('change', () => {
-  fetch(`${host}/admin/commands`, {
+  fetch(`${host}/admin/members`, {
     headers: { 'Content-type': 'application/json;charset=utf-8' },
     method: 'PUT',
     body: JSON.stringify({ _id, comment: textarea.value }),

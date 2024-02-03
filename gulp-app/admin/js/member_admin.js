@@ -45,7 +45,7 @@ for (let el of document.querySelectorAll('.select.settings__select.sort')) {
 
 for (let el of document.querySelectorAll('.order')) {
   const del = el.querySelector('.options__item.remove');
-  const name = el.querySelector('.order__name').textContent;
+  const name = el.querySelector('.order__NSP').textContent;
   // const stage = el.querySelector('.select.order__select');
 
   // stage.addEventListener('change', () => {
@@ -63,8 +63,8 @@ for (let el of document.querySelectorAll('.order')) {
   // });
 
   del.addEventListener('click', () => {
-    if (confirm(`Удаляем задачу: \n${name}`)) {
-      fetch(`${host}/admin/commands`, {
+    if (confirm(`Удаляем участника: \n${name}`)) {
+      fetch(`${host}/admin/members`, {
         headers: { 'Content-type': 'application/json;charset=utf-8' },
         method: 'DELETE',
         body: JSON.stringify({ _id: el.dataset.order }),

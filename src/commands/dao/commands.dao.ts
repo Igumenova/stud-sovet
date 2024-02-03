@@ -14,14 +14,6 @@ export class CommandsDao extends AbstractNeDBDaoImpl<
     super('commands');
   }
 
-  protected async identityCheck(object: CreateCommandDto): Promise<boolean> {
-    if (await this.getByFilter({ teamName: object.teamName })) {
-      console.log(1);
-      return false;
-    }
-    return true;
-  }
-
   public static getInstance(): CommandsDao {
     if (!CommandsDao.instance) {
       CommandsDao.instance = new CommandsDao();

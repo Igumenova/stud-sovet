@@ -6,6 +6,9 @@ import {
   Session,
   Put,
   Delete,
+  Get,
+  Render,
+  Param,
 } from '@nestjs/common';
 import { FormDataRequest } from 'nestjs-form-data';
 import { Response } from 'express';
@@ -24,9 +27,24 @@ export class MembersController {
     @Res() res: Response,
     @Session() session: Record<string, any>,
   ) {
-    await this.membersService.addMember(createMemberDto);
+    const regResult = await this.membersService.addMember(createMemberDto);
     session.orderIsSend = 1;
-    res.status(302).redirect('/');
+    session.message = regResult;
+    res.status(302).redirect('/#message');
+  }
+
+  @Get()
+  @Render('admin/pug/members/members_admin')
+  async members() {
+    const members = await this.membersService.getAllMember();
+    return { members, host: process.env.HOST };
+  }
+
+  @Get(':id')
+  @Render('admin/pug/members/member')
+  async findOne(@Param('id') id: string) {
+    const member = await this.membersService.getMemberById(id);
+    return { member, host: process.env.HOST };
   }
 
   @Put()
