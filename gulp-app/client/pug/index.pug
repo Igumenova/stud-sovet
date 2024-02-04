@@ -6,6 +6,8 @@ head
   link(rel='stylesheet' type='text/css' href='style.css')
   link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" )
   script(src='script.js' type='text/javascript' defer)
+  script( src="https://code.jquery.com/jquery-2.2.4.js")
+  script( src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js")
 nav#nav
   svg.nav-logo(viewbox='0 0 276 60' fill='none' xmlns='http://www.w3.org/2000/svg' id="nav")
     g(clip-path='url(#clip0_74_295)')
@@ -94,7 +96,7 @@ nav#nav
         .second-line
         h1 spbgasu
     .main-info
-      form(action='#form')
+      form(action='#regForm')
         button.button
           h5 Участвовать
       .date
@@ -132,7 +134,7 @@ nav#nav
         .theme__text
           h3(style="text-transform:uppercase;") Развите IT инфроструктуры студенческого совета университета
 .block-wrapper
-  .row-blocks
+  //.row-blocks
     .row-block
       .row-block__num
         h1 0&Kcy;
@@ -182,7 +184,7 @@ nav#nav
 .block-wrapper
   .ticker-block
     marquee(behavior='scrol' scrollamount='10')
-      | ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне
+      | ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне
 .block-wrapper
   #track-info-block.track-info-block
     .track-info-block__title
@@ -278,7 +280,7 @@ nav#nav
         h3 &Rcy;&iecy;&gcy;&icy;&scy;&tcy;&rcy;&acy;&tscy;&icy;&yacy; &ncy;&acy; &khcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy; &zcy;&acy;&kcy;&rcy;&ocy;&iecy;&tcy;&scy;&yacy;
       svg.registration-info-block__info__svg(viewbox='0 0 83 61' fill='none' xmlns='http://www.w3.org/2000/svg')
         path(d='M80.3109 30.2842L2 30.2842M80.2843 29.9999L52 58.2842M80.2843 30.2841L52 1.99988' stroke='#EB6B44' stroke-width='4' stroke-linecap='round' stroke-linejoin='round')
-      a(href='#form')
+      a(href='#regForm')
         button.registration-info-block__info__buttom
           h3 7 марта 2024 года
     .registration-info-block__attention
@@ -485,7 +487,7 @@ nav#nav
 .block-wrapper
   .form-block
     .form-block__title
-      h2 &Ocy;&Scy;&Tcy;&Acy;&Vcy;&SOFTcy;&Tcy;&IEcy; &Zcy;&Acy;&YAcy;&Vcy;&Kcy;&Ucy; &Dcy;&Lcy;&YAcy; &Ucy;&CHcy;&Acy;&Scy;&Tcy;&Icy;&YAcy;
+      h2#regForm &Ocy;&Scy;&Tcy;&Acy;&Vcy;&SOFTcy;&Tcy;&IEcy; &Zcy;&Acy;&YAcy;&Vcy;&Kcy;&Ucy; &Dcy;&Lcy;&YAcy; &Ucy;&CHcy;&Acy;&Scy;&Tcy;&Icy;&YAcy;
     .form-switch
       #first-form.first-form
         button.form-switch__button(onclick='firstFormButton()')
@@ -495,19 +497,19 @@ nav#nav
           h2 &Pcy;&rcy;&icy;&scy;&ocy;&iecy;&dcy;&icy;&ncy;&icy;&tcy;&softcy;&scy;&yacy; &kcy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&iecy;
     .forms-container
       #first-form__block.first-form__block
-        form#form(method='POST' action='https://hahaton.onrender.com/admin/commands')
+        form#form(method='POST' action=`${process.env.HOST}/admin/commands`)
           .form__row
             .input-text__text
               h3 &Fcy;&acy;&mcy;&icy;&lcy;&icy;&yacy;
-            input#surname.input-text(type='text' name='surname' required='')
+            input#surname.input-text(type='text' name='surname' required='' maxlength = "20" onkeypress="noDigits(event)")
           .form__row
             .input-text__text
               h3 &Icy;&mcy;&yacy;
-            input#name.input-text(type='text' name='name' required='')
+            input#name.input-text(type='text' name='name' required='' maxlength = "20" onkeypress="noDigits(event)")
           .form__row
             .input-text__text
               h3 &Ocy;&tcy;&chcy;&iecy;&scy;&tcy;&vcy;&ocy;
-            input#patronymic.input-text(type='text' name='patronymic' required='')
+            input#patronymic.input-text(type='text' name='patronymic' maxlength = "20" onkeypress="noDigits(event)")
           .form__row
             .input-text__text
               h3 &Dcy;&acy;&tcy;&acy; &rcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&yacy;
@@ -519,11 +521,11 @@ nav#nav
           .form__row
             .input-text__text
               h3 Телефон
-            input#tel.input-text(type='tel' name='tel' required='')
+            input#tel.input-text(type='tel'  class = 'tel' name='tel' required='')
           .form__row
             .input-text__text
               h3 &Ncy;&acy;&zcy;&vcy;&acy;&ncy;&icy;&iecy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ycy;
-            input#teamName.input-text(type='text' name='teamName' required='')
+            input#teamName.input-text(type='text' name='teamName' required='' maxlength = "20")
           .form__row__radio
             h3 &Tcy;&rcy;&iecy;&kcy;
             .radio-row
@@ -561,19 +563,19 @@ nav#nav
           button.submit-button(type='submit')
             h3 &Ocy;&tcy;&pcy;&rcy;&acy;&vcy;&icy;&tcy;&softcy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
       #second-form__block.second-form__block.form-hide
-        form#form(method='POST' action='https://hahaton.onrender.com/admin/members')
+        form#form(method='POST' action=`${process.env.HOST}/admin/members`)
           .form__row
             .input-text__text
               h3 &Fcy;&acy;&mcy;&icy;&lcy;&icy;&yacy;
-            input#surname.input-text(type='text' name='surname' required='')
+            input#surname.input-text(type='text' name='surname' required='' maxlength = "20" onkeypress="noDigits(event)")
           .form__row
             .input-text__text
               h3 &Icy;&mcy;&yacy;
-            input#name.input-text(type='text' name='name' required='')
+            input#name.input-text(type='text' name='name' required='' maxlength = "20" onkeypress="noDigits(event)")
           .form__row
             .input-text__text
               h3 &Ocy;&tcy;&chcy;&iecy;&scy;&tcy;&vcy;&ocy;
-            input#patronymic.input-text(type='text' name='patronymic' required='')
+            input#patronymic.input-text(type='text' name='patronymic' maxlength = "20" onkeypress="noDigits(event)")
           .form__row
             .input-text__text
               h3 &Dcy;&acy;&tcy;&acy; &rcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&yacy;
@@ -585,7 +587,7 @@ nav#nav
           .form__row
             .input-text__text
               h3 Телефон
-            input#tel.input-text(type='tel' name='tel' required='')
+            input#tel.input-text(type='tel' class = 'tel' name='tel' required='')
           .form__row
             .input-text__text
               h3 &Tcy;&ocy;&kcy;&iecy;&ncy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ycy;
@@ -612,8 +614,14 @@ nav#nav
                 | &pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&lcy;&softcy;&ncy;&ycy;&khcy; &dcy;&acy;&ncy;&ncy;&ycy;&khcy;
           button.submit-button(type='submit')
             h3 &Ocy;&tcy;&pcy;&rcy;&acy;&vcy;&icy;&tcy;&softcy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
-    .center-wrapper(style="color: #eb6b44" id="message") 
-      h3 #{message}
+    div  
+      .center-wrapper(style="color: #eb6b44" id="message") 
+        h3 #{message} 
+      .center-wrapper(style="color: #eb6b44" id="textToCopy") 
+        h3(id='token') #{token}
+      .center-wrapper() 
+        button.copy-button(onclick='copyToken()' id="copyButton")
+          h3 Скопировать токен
 footer
   .footer__first-layer
   a(href="" style="color: #eb6b44") 

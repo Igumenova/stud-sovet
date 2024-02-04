@@ -125,17 +125,21 @@ body {
       }
 
       &__name {
-        flex-grow: 2;
+        // flex-grow: 2;
+        width: 25%;
         font-weight: 500;
       }
 
       &__token {
-        flex-grow: 2;
+        // flex-grow: 2;
+        width: 40%;
+
         font-weight: 500;
       }
 
       &__customer {
-        flex-grow: 2;
+        // flex-grow: 2;
+        width: 20%;
         font-weight: 500;
       }
 
@@ -145,32 +149,36 @@ body {
       }
 
       &__NSP {
-        flex-grow: 4;
+        // flex-grow: 4;
+        width: 20%;
         font-weight: 500;
       }
 
       &__birthDay {
-        flex-grow: 1;
+        // flex-grow: 1;
+        width: 10%;
         font-weight: 500;
       }
 
       &__email {
-        flex-grow: 1;
+        // flex-grow: 3;
+        width: 15%;
         font-weight: 500;
       }
 
       &__tel {
-        flex-grow: 1;
-        font-weight: 500;
-      }
-
-      &__memberStatus {
-        flex-grow: 1;
+        flex-grow: 2;
         font-weight: 500;
       }
 
       &__commandToken {
-        flex-grow: 2;
+        // flex-grow: 5;
+        width: 25%;
+        font-weight: 500;
+      }
+
+      &__memberStatus {
+        flex-grow: 5;
         font-weight: 500;
       }
 

@@ -16,9 +16,6 @@ import { Response } from 'express';
 import { UpdateCommandDto } from './dto/update-command.dto';
 import { RegisterCommandDto } from './dto/register-command.dto';
 
-/**
- * TODO: переписать pug
- */
 @Controller('admin/commands')
 export class CommandsController {
   constructor(private readonly commandsService: CommandsService) {}
@@ -32,8 +29,13 @@ export class CommandsController {
   ) {
     const regResult = await this.commandsService.regCommand(regCommandDto);
     session.orderIsSend = 1;
-    session.message = regResult;
-    res.status(302).redirect('/#message'); 
+    if (regResult.includes('-')) {
+      session.token = regResult;
+      session.message = "Это токен вашей команды, он понадобится для регистрации остальных участников. Сохраните его и отправьте остальным участникам команды.";
+    } else {
+      session.message = regResult;
+    }
+    res.status(302).redirect('/#message');
   }
 
   @Get()

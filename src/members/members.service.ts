@@ -35,12 +35,19 @@ export class MembersService {
     );
 
     if (member.memberStatus == 'captain') {
-      let newCaptain = await this.dao.getByFilter({
+      let command = await CommandsDao.getInstance().getByFilter({
         commandToken: member.commandToken,
-        memberStatus: 'member',
       });
-      newCaptain.memberStatus = MemberStatus.CAPTAIN;
-      await this.updateMember(newCaptain._id, newCaptain);
+      if (command.members == 0) {
+        await CommandsDao.getInstance().deleteByFilter({ _id: command._id });
+      } else {
+        let newCaptain = await this.dao.getByFilter({
+          commandToken: member.commandToken,
+          memberStatus: 'member',
+        });
+        newCaptain.memberStatus = MemberStatus.CAPTAIN;
+        await this.updateMember(newCaptain._id, newCaptain);
+      }
     }
 
     return this.dao.deleteByFilter({ _id });
@@ -106,8 +113,11 @@ export class MembersService {
     if (command.maxMembers == command.members) {
       return 'В команде уже максимальное число участников.';
     }
-    if (this.isAdult(member.birthDay)) {
-      return 'Вам нет 18-ти.';
+    if (!this.isAdult(member.birthDay)) {
+      return 'Вам нет 18ти.';
+    }
+    if (Number(member.birthDay.slice(0, 4)) <= 1950) {
+      return 'Неверно указан возраст.';
     }
     if (await this.dao.getByFilter({ email: member.email })) {
       return 'Пользователь с такой почтой уже существует.';

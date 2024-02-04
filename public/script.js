@@ -144,12 +144,12 @@ const options = {
   threshold: 0.5,
 };
 
-new IntersectionObserver(handleIntersection0to500, options).observe(
-  document.getElementById('prizeFund'),
-);
-new IntersectionObserver(handleIntersection0to24, options).observe(
-  document.getElementById('workTime'),
-);
+// new IntersectionObserver(handleIntersection0to500, options).observe(
+//   document.getElementById('prizeFund'),
+// );
+// new IntersectionObserver(handleIntersection0to24, options).observe(
+//   document.getElementById('workTime'),
+// );
 new IntersectionObserver(handleIntersection0to150, options).observe(
   document.getElementById('firstPlace'),
 );
@@ -288,3 +288,44 @@ function secondFormButton() {
   secondFormBlock.classList.remove('form-hide');
   firstFormBlock.classList.add('form-hide');
 }
+
+function copyToken() {
+  var root = document.getElementById('token').firstChild;
+  var rng, sel;
+  if (document.createRange) {
+    rng = document.createRange();
+    rng.selectNode(root);
+    sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(rng);
+  } else {
+    var rng = document.body.createTextRange();
+    rng.moveToElementText(root);
+    rng.select();
+  }
+  document.execCommand('copy');
+}
+
+var root = document.getElementById('token').firstChild;
+var rng, sel;
+if (document.createRange) {
+  rng = document.createRange();
+  rng.selectNode(root);
+  sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(rng);
+} else {
+  var rng = document.body.createTextRange();
+  rng.moveToElementText(root);
+  rng.select();
+}
+if (rng != '') {
+  document.getElementById('copyButton').style = 'display:block';
+}
+
+function noDigits(event) {
+  if ('1234567890-+=/.,<>[]{}();:"`!@#$%^&*№? '.indexOf(event.key) != -1)
+    event.preventDefault();
+}
+
+$(".tel").mask("+7(999)999-9999");

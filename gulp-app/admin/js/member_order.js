@@ -6,7 +6,7 @@ const birthDay = document.querySelector('.order__birthDay');
 const email = document.querySelector('.order__email');
 const tel = document.querySelector('.order__tel');
 const memberStatus = document.querySelector('.order__memberStatus');
-const commandToken = document.querySelector('.order__commandToken');
+// const commandToken = document.querySelector('.order__commandToken');
 // const contact = document.querySelector('.order__contact');
 // const description = document.querySelector('.order__description');
 
@@ -61,7 +61,6 @@ for (const el of [
   email,
   tel,
   memberStatus,
-  commandToken,
 ]) {
   addEditEvent(el);
 }

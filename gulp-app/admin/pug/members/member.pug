@@ -30,11 +30,11 @@ include components/members_raw
                     span.material-symbols-outlined.order__edit edit
                 .order__commandToken(data-key= "commandToken")
                     span.order__content= member.commandToken
-                    span.material-symbols-outlined.order__edit edit
+                    //- span.material-symbols-outlined.order__edit edit
                 .order__date
                     span.order__content= member.date
             .order__description(data-key= "message")
                 span.order__content= member.token
                 //- span.material-symbols-outlined.order__edit edit
-            +textarea("Комментарий к команде", "member_comment")
+            +textarea("Комментарий к участнику", "member_comment")
                 | #{member.comment}

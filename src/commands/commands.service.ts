@@ -73,11 +73,7 @@ export class CommandsService {
     if (checkResult == 'kk') {
       MembersDao.getInstance().insert(createMemberDto);
       this.dao.insert(createCommandDto);
-      return (
-        'Токен вашей команды: ' +
-        command.commandToken +
-        ' обязательно запомните его, он понадобится для регистрации ваших сокомандников.'
-      );
+      return command.commandToken;
     } else {
       return checkResult;
     }
@@ -86,11 +82,14 @@ export class CommandsService {
   private async commandIdentityCheck(
     command: RegisterCommandDto,
   ): Promise<string> {
-    if (this.isAdult(command.birthDay)) {
-      return 'Вам нет 18-ти.';
+    if (!this.isAdult(command.birthDay)) {
+      return 'Вам нет 18ти.';
+    }
+    if (Number(command.birthDay.slice(0, 4)) <= 1950) {
+      return 'Неверно указан возраст.';
     }
     if (await this.dao.getByFilter({ teamName: command.teamName })) {
-      return 'Команда с таким название уже существует.';
+      return 'Команда с таким названием уже существует.';
     }
     if (await MembersDao.getInstance().getByFilter({ email: command.email })) {
       return 'Пользователь с такой почтой уже существует.';

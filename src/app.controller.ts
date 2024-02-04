@@ -19,10 +19,7 @@ export class AppController {
 
   @Get()
   @Render('client/pug/index')
-  async home(
-    @Session() session: Record<string, any>,
-    @Res() res: Response,
-  ) {
+  async home(@Session() session: Record<string, any>, @Res() res: Response) {
     let message = session.message;
     session.message = '';
     return {
@@ -31,6 +28,7 @@ export class AppController {
       SecondTrack: Track.SECONDTRACK,
       ThirdTrack: Track.THIRDTRACK,
       message: message,
+      token: session.token,
     };
   }
 
