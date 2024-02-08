@@ -21,7 +21,12 @@ export class CommandsService {
     return this.dao.getByFilter({ _id });
   }
 
-  deleteCommand(_id: string): Promise<boolean> {
+  async deleteCommand(_id: string): Promise<boolean> {
+    let command = await this.getCommandById(_id);
+    await MembersDao.getInstance().deleteByFilter({
+      commandToken: command.commandToken,
+    });
+
     return this.dao.deleteByFilter({ _id });
   }
 
