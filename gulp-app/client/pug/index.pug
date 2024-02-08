@@ -590,6 +590,9 @@ nav#nav
         .center-wrapper(style="color:var(--third-color)")
           h2(style="font-size: 3rem; margin-bottom: 2.5rem") Телеграм бот
         if admin
+
+          .center-wrapper(style="color:var(--third-color)")
+            h2(style="font-size: 3rem; margin-bottom: 2.5rem") Телеграм бот
         
 
 
@@ -663,16 +666,16 @@ nav#nav
           .form__row__radio
             h3 Трек
             .radio-row
-              input#first-track.input-radio(type='radio' name='track' value=FirstTrack required='')
-              label(for='first-track')
+              input#first-track-button.input-radio(type='radio' name='track' value=FirstTrack required='')
+              label(for='first-track-button')
                 h6 Игры и VR
             .radio-row
-              input#second-track.input-radio(type='radio' name='track' value=SecondTrack required='')
-              label(for='second-track')
+              input#second-track-button.input-radio(type='radio' name='track' value=SecondTrack required='')
+              label(for='second-track-button')
                 h6 Платформенные решения и сайты
             .radio-row
-              input#third-track.input-radio(type='radio' name='track' value=ThirdTrack required='')
-              label(for='third-track')
+              input#third-track-button.input-radio(type='radio' name='track' value=ThirdTrack required='')
+              label(for='third-track-button')
                 h6 Образовательные digital-проекты
           .form__row__checkbox
             input#first-checkbox(type='checkbox' name='first-checkbox' required='')
