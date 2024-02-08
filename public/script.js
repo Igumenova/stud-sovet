@@ -1,3 +1,8 @@
+var firstTable = document.getElementById('first-track');
+var infoTable = document.getElementById('info-table');
+
+infoTable.style.height = `${firstTable.offsetHeight}px`;
+
 function handleIntersection0to500(entries, observer) {
   let counter = 0;
   entries.forEach((entry) => {
@@ -328,4 +333,94 @@ function noDigits(event) {
     event.preventDefault();
 }
 
-$(".tel").mask("+7(999)999-9999");
+$('.tel').mask('+7(999)999-9999');
+
+function firstTrackButton() {
+  var firstTable = document.getElementById('first-track');
+  var secondTable = document.getElementById('second-track');
+  var thirdTable = document.getElementById('third-track');
+
+  var firstButton = document.getElementById('first-button');
+  var secondButton = document.getElementById('second-button');
+  var thtirdButton = document.getElementById('third-button');
+
+  var infoTable = document.getElementById('info-table');
+
+  firstButton.style.opacity = '1';
+  secondButton.style.opacity = '0.5';
+  thtirdButton.style.opacity = '0.5';
+
+  firstTable.style.display = 'block';
+  firstTable.style.visibility = 'visible';
+  firstTable.style.opacity = '1';
+
+  secondTable.style.display = 'block';
+  secondTable.style.visibility = 'none';
+  secondTable.style.opacity = '0';
+
+  thirdTable.style.display = 'block';
+  thirdTable.style.visibility = 'none';
+  thirdTable.style.opacity = '0';
+
+  infoTable.style.height = `${firstTable.offsetHeight}px`;
+}
+
+function secondTrackButton() {
+  var firstTable = document.getElementById('first-track');
+  var secondTable = document.getElementById('second-track');
+  var thirdTable = document.getElementById('third-track');
+
+  var firstButton = document.getElementById('first-button');
+  var secondButton = document.getElementById('second-button');
+  var thtirdButton = document.getElementById('third-button');
+
+  var infoTable = document.getElementById('info-table');
+
+  firstButton.style.opacity = '0.5';
+  secondButton.style.opacity = '1';
+  thtirdButton.style.opacity = '0.5';
+
+  firstTable.style.display = 'block';
+  firstTable.style.visibility = 'none';
+  firstTable.style.opacity = '0';
+
+  secondTable.style.display = 'block';
+  secondTable.style.visibility = 'visible';
+  secondTable.style.opacity = '1';
+
+  thirdTable.style.display = 'block';
+  thirdTable.style.visibility = 'none';
+  thirdTable.style.opacity = '0';
+
+  infoTable.style.height = `${secondTable.offsetHeight}px`;
+}
+
+function thirdTrackButton() {
+  var firstTable = document.getElementById('first-track');
+  var secondTable = document.getElementById('second-track');
+  var thirdTable = document.getElementById('third-track');
+
+  var firstButton = document.getElementById('first-button');
+  var secondButton = document.getElementById('second-button');
+  var thtirdButton = document.getElementById('third-button');
+
+  var infoTable = document.getElementById('info-table');
+
+  firstButton.style.opacity = '0.5';
+  secondButton.style.opacity = '0.5';
+  thtirdButton.style.opacity = '1';
+
+  firstTable.style.display = 'block';
+  firstTable.style.visibility = 'none';
+  firstTable.style.opacity = '0';
+
+  secondTable.style.display = 'block';
+  secondTable.style.visibility = 'none';
+  secondTable.style.opacity = '0';
+
+  thirdTable.style.display = 'block';
+  thirdTable.style.visibility = 'visible';
+  thirdTable.style.opacity = '1';
+
+  infoTable.style.height = `${thirdTable.offsetHeight}px`;
+}

@@ -484,6 +484,137 @@ nav#nav
               h3 00:00
             .table-row__text
               h3 &Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;
+
+.block-wrapper
+  #ProgramInfoBlock__block.program-info-block
+    .program-info__title
+      h1 треки
+    .day-switch
+      #first-button.first-day
+        button.button-wo-color(onclick='firstTrackButton()')
+          h2(style='padding: 0 5px') 1 трек
+      #second-button.second-day
+        button.button-wo-color(onclick='secondTrackButton()')
+          h2(style='padding: 0 5px') 2 трек
+      #third-button.third-day
+        button.button-wo-color(onclick='thirdTrackButton()')
+          h2(style='padding: 0 5px') 3 трек
+          
+    #info-table.info-table
+      #first-track.first-track-info
+        .center-wrapper(style="color:var(--third-color)")
+          h2(style="font-size: 3rem; margin-bottom: 2.5rem") Сайт студсовета
+
+        .track-descriptions(style="margin-top:0; margin-bottom: 2.5rem")
+          .track-description
+            svg.track-description__border(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+              path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+            .track-description__filling
+              .track-description__title
+                h2 front + back
+              .track-description__text
+                h2(style="font-size: 1.5rem") html/css
+            svg.track-description__border-down(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg;')
+              path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+              path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+
+          .track-description
+            svg.track-description__border(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+              path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+            .track-description__filling
+              .track-description__title
+                h2 CMS
+              .track-description__text
+                h2(style="font-size: 1.5rem") Wordpress
+              .track-description__text
+                h2(style="font-size: 1.5rem") Drupal
+            svg.track-description__border-down(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg')
+              path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+              path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+
+        .track-descriptions(style="column-gap: 0;")
+          .track-description
+            .track-description__filling
+              .track-description__title
+                h2(style="font-size: 1.5rem") Технологии
+              .track-description__text
+                h2(style="font-size: 1.5rem") python 
+              .track-description__text
+                h2(style="font-size: 1.5rem") js
+              .track-description__text
+                h2(style="font-size: 1.5rem") php
+
+          .track-description
+            .track-description__filling
+              .track-description__title
+                h2(style="font-size: 1.5rem") Фреймворки
+              .track-description__text
+                h2(style="font-size: 1.5rem") Vue
+              .track-description__text
+                h2(style="font-size: 1.5rem") Angular 
+              .track-description__text
+                h2(style="font-size: 1.5rem") React
+  
+          .track-description
+            .track-description__filling
+              .track-description__title
+                h2(style="font-size: 1.5rem") Базы данных
+              .track-description__text
+                h2(style="font-size: 1.5rem") PostgreSQL
+              .track-description__text
+                h2(style="font-size: 1.5rem") Nedb 
+              .track-description__text
+                h2(style="font-size: 1.5rem") MongoDB
+              .track-description__text
+                h2(style="font-size: 1.5rem") Redis
+
+        .track-descriptions
+          .track-description
+            .track-description__filling
+              .track-description__title
+                h2(style="font-size: 1.5rem") Требования
+              .track-description__text
+                h2(style="font-size: 1.5rem") Соответствие брендбуку
+              .track-description__text
+                h2(style="font-size: 1.5rem") Адаптивность
+              .track-description__text
+                h2(style="font-size: 1.5rem") Система мероприятий
+              .track-description__text
+                h2(style="font-size: 1.5rem") Форма редактирования/админка
+
+              
+      #second-track.second-track-info
+        .center-wrapper(style="color:var(--third-color)")
+          h2(style="font-size: 3rem; margin-bottom: 2.5rem") Телеграм бот
+        
+        
+
+
+      #third-track.third-track-info
+        .center-wrapper(style="color:var(--third-color)")
+          h2(style="font-size: 3rem; margin-bottom: 2.5rem")   Web конструктор
+        
+        .track-descriptions(style="margin-top:0; margin-bottom: 2.5rem")
+          .track-description
+            svg.track-description__border(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+              path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+            .track-description__filling
+              .track-description__title
+                h2 Реализация
+              .track-description__text
+                h2(style="font-size: 1.5rem") Json воронок
+              .track-description__text
+                h2(style="font-size: 1.5rem") Опросов
+              .track-description__text
+                h2(style="font-size: 1.5rem") Результатов опросов
+            svg.track-description__border-down(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg;')
+              path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+              path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+
+
 .block-wrapper
   .form-block
     .form-block__title
