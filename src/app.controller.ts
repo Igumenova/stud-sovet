@@ -23,6 +23,7 @@ export class AppController {
     let message = session.message;
     session.message = '';
     return {
+      admin: session.token,
       orderIsSend: session.orderIsSend,
       FirstTrack: Track.FIRSTTRACK,
       SecondTrack: Track.SECONDTRACK,
