@@ -1,6 +1,6 @@
 include ../../ui/ui
 include components/admin_doc
-include components/order_raw
+include components/commands_raw
 
 
 +admin_doc(["admin/style/admin.css"], ["admin/js/moment.js", "ui/ui.js", "admin/js/admin.js"], host)
@@ -19,5 +19,5 @@ include components/order_raw
             +select(sortContent.keys, sortContent.values,"sort")(class= "settings__select sort")
     .orders-grid
         for command in commands
-            +order_raw(command, host)
+            +commands_raw(command, host)
 

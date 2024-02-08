@@ -30,11 +30,6 @@ lerna-debug.log*
 # IDE - VSCode
 .vscode/*
 
-# gasudev
-
-public/**/*.js
-public/**/*.css
-
 db/*.db
 .env
 

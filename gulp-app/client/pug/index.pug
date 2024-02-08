@@ -4,9 +4,12 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Document
   link(rel='stylesheet' type='text/css' href='style.css')
-  script(src='script.js' type='text/javascript' defer='')
+  link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" )
+  script(src='script.js' type='text/javascript' defer)
+  script( src="https://code.jquery.com/jquery-2.2.4.js")
+  script( src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js")
 nav#nav
-  svg.nav-logo(viewbox='0 0 276 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+  svg.nav-logo(viewbox='0 0 276 60' fill='none' xmlns='http://www.w3.org/2000/svg' id="nav")
     g(clip-path='url(#clip0_74_295)')
       path(d='M0 0H69L67 2H2V13L0 15V0Z' fill='white')
       path(d='M0 60H69L67 58H2V47L0 45V60Z' fill='white')
@@ -67,10 +70,14 @@ nav#nav
       div
         h6 &Pcy;&ocy;&lcy;&icy;&tcy;&icy;&kcy;&acy; &kcy;&ocy;&ncy;&fcy;&icy;&dcy;&iecy;&ncy;&tscy;&icy;&acy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&icy;
       .social-network
-        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' style='margin-right: 25px')
-          path(fill-rule='evenodd' clip-rule='evenodd' d='M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z' fill='#EB6B44')
-        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
-          path(d='M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z' fill='#EB6B44')
+        a(href="")
+          svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' style='margin-right: 25px')
+            path(fill-rule='evenodd' clip-rule='evenodd' d='M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z' fill='#EB6B44')
+        a(href="") 
+          svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z' fill='#EB6B44')
+        
+        //ССЫЛКИ НА ТГ И ВК
 //
   <img src="./src/pic1.jpg" alt="img" class="first-pic" />
   <img src="./src/pic2.jpg" alt="img" class="second-pic" />
@@ -78,28 +85,28 @@ nav#nav
   #MainBlock__block.main-block
     .tagline
       h3
-        | &Ncy;&Acy; &Pcy;&IEcy;&Rcy;&IEcy;&Kcy;&Rcy;&IEcy;&Scy;&Tcy;&Kcy;&IEcy; &Icy;&Dcy;&IEcy;&Jcy; &Icy; &Icy;&Ncy;&Ocy;&Vcy;&Acy;&TScy;&Icy;&Jcy; 
+        | НА ПЕРЕКРЕСТКЕ ИДЕЙ И ИНОВАЦИЙ
         br
-        |             &Rcy;&Acy;&Zcy;&Vcy;&Icy;&Vcy;&Acy;&Jcy; &Scy;&Vcy;&Ocy;&Jcy; &Pcy;&Ocy;&Tcy;&IEcy;&Ncy;&TScy;&Icy;&Acy;&Lcy; &Ncy;&Acy; &Ncy;&Acy;&SHcy;&IEcy;&Mcy; &KHcy;&Acy;&Kcy;&Acy;&Tcy;&Ocy;&Ncy;&IEcy;!
+        | РАЗВИВАЙ СВОЙ ПОТЕНЦИАЛ НА НАШЕМ ХАКАТОНЕ!
     .hakaton-name
       .first-layer
-        h1 &Scy;&tcy;&rcy;&ocy;&jcy;&kcy;&ocy;&dcy;
+        h1 стройкод
         .first-line
       .second-layer
         .second-line
         h1 spbgasu
     .main-info
-      form(action='#form')
+      form(action='#regForm')
         button.button
-          h5 &Ucy;&chcy;&acy;&scy;&tcy;&vcy;&ocy;&vcy;&acy;&tcy;&softcy;
+          h5 Участвовать
       .date
         svg.icon(viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
           path(d='M17.5 16.6665V4.99984C17.5 4.08067 16.7525 3.33317 15.8333 3.33317H14.1667V1.6665H12.5V3.33317H7.5V1.6665H5.83333V3.33317H4.16667C3.2475 3.33317 2.5 4.08067 2.5 4.99984V16.6665C2.5 17.5857 3.2475 18.3332 4.16667 18.3332H15.8333C16.7525 18.3332 17.5 17.5857 17.5 16.6665ZM7.5 14.9998H5.83333V13.3332H7.5V14.9998ZM7.5 11.6665H5.83333V9.99984H7.5V11.6665ZM10.8333 14.9998H9.16667V13.3332H10.8333V14.9998ZM10.8333 11.6665H9.16667V9.99984H10.8333V11.6665ZM14.1667 14.9998H12.5V13.3332H14.1667V14.9998ZM14.1667 11.6665H12.5V9.99984H14.1667V11.6665ZM15.8333 7.49984H4.16667V5.83317H15.8333V7.49984Z')
-        h5 9-10 марта 2024 &gcy;&ocy;&dcy;&acy;
+        h5 9-10 марта 2024 года
       .location
         svg.icon(viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
           path(d='M9.99999 1.6665C6.32415 1.6665 3.33332 4.65734 3.33332 8.329C3.30915 13.6998 9.74665 18.1532 9.99999 18.3332C9.99999 18.3332 16.6908 13.6998 16.6667 8.33317C16.6667 4.65734 13.6758 1.6665 9.99999 1.6665ZM9.99999 11.6665C8.15832 11.6665 6.66665 10.1748 6.66665 8.33317C6.66665 6.4915 8.15832 4.99984 9.99999 4.99984C11.8417 4.99984 13.3333 6.4915 13.3333 8.33317C13.3333 10.1748 11.8417 11.6665 9.99999 11.6665Z')
-        h5 &gcy;. &Scy;&acy;&ncy;&kcy;&tcy;-&Pcy;&iecy;&tcy;&iecy;&rcy;&bcy;&ucy;&rcy;&gcy;
+        h5 г. Санкт-Петербург
 #HakatonBlock.block-wrapper
   #HakatonBlock__block.hakaton-block
     div
@@ -127,7 +134,7 @@ nav#nav
         .theme__text
           h3(style="text-transform:uppercase;") Развите IT инфроструктуры студенческого совета университета
 .block-wrapper
-  .row-blocks
+  //.row-blocks
     .row-block
       .row-block__num
         h1 0&Kcy;
@@ -177,7 +184,7 @@ nav#nav
 .block-wrapper
   .ticker-block
     marquee(behavior='scrol' scrollamount='10')
-      | ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне
+      | ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне ждем вас на нашем #хакатоне
 .block-wrapper
   #track-info-block.track-info-block
     .track-info-block__title
@@ -273,7 +280,7 @@ nav#nav
         h3 &Rcy;&iecy;&gcy;&icy;&scy;&tcy;&rcy;&acy;&tscy;&icy;&yacy; &ncy;&acy; &khcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy; &zcy;&acy;&kcy;&rcy;&ocy;&iecy;&tcy;&scy;&yacy;
       svg.registration-info-block__info__svg(viewbox='0 0 83 61' fill='none' xmlns='http://www.w3.org/2000/svg')
         path(d='M80.3109 30.2842L2 30.2842M80.2843 29.9999L52 58.2842M80.2843 30.2841L52 1.99988' stroke='#EB6B44' stroke-width='4' stroke-linecap='round' stroke-linejoin='round')
-      a(href='#form')
+      a(href='#regForm')
         button.registration-info-block__info__buttom
           h3 7 марта 2024 года
     .registration-info-block__attention
@@ -477,10 +484,141 @@ nav#nav
               h3 00:00
             .table-row__text
               h3 &Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;&Ocy;
+
+.block-wrapper
+  #ProgramInfoBlock__block.program-info-block
+    .program-info__title
+      h1 треки
+    .day-switch
+      #first-button.first-day
+        button.button-wo-color(onclick='firstTrackButton()')
+          h2(style='padding: 0 5px') 1 трек
+      #second-button.second-day
+        button.button-wo-color(onclick='secondTrackButton()')
+          h2(style='padding: 0 5px') 2 трек
+      #third-button.third-day
+        button.button-wo-color(onclick='thirdTrackButton()')
+          h2(style='padding: 0 5px') 3 трек
+          
+    #info-table.info-table
+      #first-track.first-track-info
+        .center-wrapper(style="color:var(--third-color)")
+          h2(style="font-size: 3rem; margin-bottom: 2.5rem") Сайт студсовета
+
+        .track-descriptions(style="margin-top:0; margin-bottom: 2.5rem")
+          .track-description
+            svg.track-description__border(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+              path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+            .track-description__filling
+              .track-description__title
+                h2 front + back
+              .track-description__text
+                h2(style="font-size: 1.5rem") html/css
+            svg.track-description__border-down(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg;')
+              path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+              path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+
+          .track-description
+            svg.track-description__border(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+              path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+            .track-description__filling
+              .track-description__title
+                h2 CMS
+              .track-description__text
+                h2(style="font-size: 1.5rem") Wordpress
+              .track-description__text
+                h2(style="font-size: 1.5rem") Drupal
+            svg.track-description__border-down(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg')
+              path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+              path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+
+        .track-descriptions(style="column-gap: 0;")
+          .track-description
+            .track-description__filling
+              .track-description__title
+                h2(style="font-size: 1.5rem") Технологии
+              .track-description__text
+                h2(style="font-size: 1.5rem") python 
+              .track-description__text
+                h2(style="font-size: 1.5rem") js
+              .track-description__text
+                h2(style="font-size: 1.5rem") php
+
+          .track-description
+            .track-description__filling
+              .track-description__title
+                h2(style="font-size: 1.5rem") Фреймворки
+              .track-description__text
+                h2(style="font-size: 1.5rem") Vue
+              .track-description__text
+                h2(style="font-size: 1.5rem") Angular 
+              .track-description__text
+                h2(style="font-size: 1.5rem") React
+  
+          .track-description
+            .track-description__filling
+              .track-description__title
+                h2(style="font-size: 1.5rem") Базы данных
+              .track-description__text
+                h2(style="font-size: 1.5rem") PostgreSQL
+              .track-description__text
+                h2(style="font-size: 1.5rem") Nedb 
+              .track-description__text
+                h2(style="font-size: 1.5rem") MongoDB
+              .track-description__text
+                h2(style="font-size: 1.5rem") Redis
+
+        .track-descriptions
+          .track-description
+            .track-description__filling
+              .track-description__title
+                h2(style="font-size: 1.5rem") Требования
+              .track-description__text
+                h2(style="font-size: 1.5rem") Соответствие брендбуку
+              .track-description__text
+                h2(style="font-size: 1.5rem") Адаптивность
+              .track-description__text
+                h2(style="font-size: 1.5rem") Система мероприятий
+              .track-description__text
+                h2(style="font-size: 1.5rem") Форма редактирования/админка
+
+              
+      #second-track.second-track-info
+        .center-wrapper(style="color:var(--third-color)")
+          h2(style="font-size: 3rem; margin-bottom: 2.5rem") Телеграм бот
+        
+        
+
+
+      #third-track.third-track-info
+        .center-wrapper(style="color:var(--third-color)")
+          h2(style="font-size: 3rem; margin-bottom: 2.5rem")   Web конструктор
+        
+        .track-descriptions(style="margin-top:0; margin-bottom: 2.5rem")
+          .track-description
+            svg.track-description__border(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+              path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+            .track-description__filling
+              .track-description__title
+                h2 Реализация
+              .track-description__text
+                h2(style="font-size: 1.5rem") Json воронок
+              .track-description__text
+                h2(style="font-size: 1.5rem") Опросов
+              .track-description__text
+                h2(style="font-size: 1.5rem") Результатов опросов
+            svg.track-description__border-down(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg;')
+              path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+              path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+
+
 .block-wrapper
   .form-block
     .form-block__title
-      h2 &Ocy;&Scy;&Tcy;&Acy;&Vcy;&SOFTcy;&Tcy;&IEcy; &Zcy;&Acy;&YAcy;&Vcy;&Kcy;&Ucy; &Dcy;&Lcy;&YAcy; &Ucy;&CHcy;&Acy;&Scy;&Tcy;&Icy;&YAcy;
+      h2#regForm &Ocy;&Scy;&Tcy;&Acy;&Vcy;&SOFTcy;&Tcy;&IEcy; &Zcy;&Acy;&YAcy;&Vcy;&Kcy;&Ucy; &Dcy;&Lcy;&YAcy; &Ucy;&CHcy;&Acy;&Scy;&Tcy;&Icy;&YAcy;
     .form-switch
       #first-form.first-form
         button.form-switch__button(onclick='firstFormButton()')
@@ -490,23 +628,23 @@ nav#nav
           h2 &Pcy;&rcy;&icy;&scy;&ocy;&iecy;&dcy;&icy;&ncy;&icy;&tcy;&softcy;&scy;&yacy; &kcy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&iecy;
     .forms-container
       #first-form__block.first-form__block
-        form#form(method='POST' action='http://localhost:3000/addCommand')
+        form#form(method='POST' action=`${process.env.HOST}/admin/commands`)
           .form__row
             .input-text__text
               h3 &Fcy;&acy;&mcy;&icy;&lcy;&icy;&yacy;
-            input#surname.input-text(type='text' name='surname' required='')
+            input#surname.input-text(type='text' name='surname' required='' maxlength = "20" onkeypress="noDigits(event)")
           .form__row
             .input-text__text
               h3 &Icy;&mcy;&yacy;
-            input#name.input-text(type='text' name='name' required='')
+            input#name.input-text(type='text' name='name' required='' maxlength = "20" onkeypress="noDigits(event)")
           .form__row
             .input-text__text
               h3 &Ocy;&tcy;&chcy;&iecy;&scy;&tcy;&vcy;&ocy;
-            input#patronymic.input-text(type='text' name='patronymic' required='')
+            input#patronymic.input-text(type='text' name='patronymic' maxlength = "20" onkeypress="noDigits(event)")
           .form__row
             .input-text__text
               h3 &Dcy;&acy;&tcy;&acy; &rcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&yacy;
-            input#birthDay.input-text(type='date' name='birthDay' style='width: 30%' required='')
+            input#birthDay.input-text(type='date' name='birthDay' style='width: 40%' required='')
           .form__row
             .input-text__text
               h3 E-mail
@@ -514,23 +652,23 @@ nav#nav
           .form__row
             .input-text__text
               h3 Телефон
-            input#tel.input-text(type='tel' name='tel' required='')
+            input#tel.input-text(type='tel'  class = 'tel' name='tel' required='')
           .form__row
             .input-text__text
               h3 &Ncy;&acy;&zcy;&vcy;&acy;&ncy;&icy;&iecy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ycy;
-            input#teamName.input-text(type='text' name='teamName' required='')
+            input#teamName.input-text(type='text' name='teamName' required='' maxlength = "20")
           .form__row__radio
             h3 &Tcy;&rcy;&iecy;&kcy;
             .radio-row
-              input#first-track.input-radio(type='radio' name='track' value='Track.FIRSTTRACK' required='')
+              input#first-track.input-radio(type='radio' name='track' value=FirstTrack required='')
               label(for='first-track')
                 h6 &Icy;&gcy;&rcy;&ycy; &icy; VR
             .radio-row
-              input#second-track.input-radio(type='radio' name='track' value='SolutionsAndWebsites' required='')
+              input#second-track.input-radio(type='radio' name='track' value=SecondTrack required='')
               label(for='second-track')
                 h6 &Pcy;&lcy;&acy;&tcy;&fcy;&ocy;&rcy;&mcy;&iecy;&ncy;&ncy;&ycy;&iecy; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&yacy; &icy; &scy;&acy;&jcy;&tcy;&ycy;
             .radio-row
-              input#third-track.input-radio(type='radio' name='track' value='edcDigitalProjects' required='')
+              input#third-track.input-radio(type='radio' name='track' value=ThirdTrack required='')
               label(for='third-track')
                 h6 &Ocy;&bcy;&rcy;&acy;&zcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ycy;&iecy; digital-&pcy;&rcy;&ocy;&iecy;&kcy;&tcy;&ycy;
           .form__row__checkbox
@@ -556,23 +694,23 @@ nav#nav
           button.submit-button(type='submit')
             h3 &Ocy;&tcy;&pcy;&rcy;&acy;&vcy;&icy;&tcy;&softcy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
       #second-form__block.second-form__block.form-hide
-        form#form(method='POST' action='http://localhost:3000/addMember')
+        form#form(method='POST' action=`${process.env.HOST}/admin/members`)
           .form__row
             .input-text__text
               h3 &Fcy;&acy;&mcy;&icy;&lcy;&icy;&yacy;
-            input#surname.input-text(type='text' name='surname' required='')
+            input#surname.input-text(type='text' name='surname' required='' maxlength = "20" onkeypress="noDigits(event)")
           .form__row
             .input-text__text
               h3 &Icy;&mcy;&yacy;
-            input#name.input-text(type='text' name='name' required='')
+            input#name.input-text(type='text' name='name' required='' maxlength = "20" onkeypress="noDigits(event)")
           .form__row
             .input-text__text
               h3 &Ocy;&tcy;&chcy;&iecy;&scy;&tcy;&vcy;&ocy;
-            input#patronymic.input-text(type='text' name='patronymic' required='')
+            input#patronymic.input-text(type='text' name='patronymic' maxlength = "20" onkeypress="noDigits(event)")
           .form__row
             .input-text__text
               h3 &Dcy;&acy;&tcy;&acy; &rcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&yacy;
-            input#birthDay.input-text(type='date' name='birthDay' style='width: 30%' required='')
+            input#birthDay.input-text(type='date' name='birthDay' style='width: 40%' required='')
           .form__row
             .input-text__text
               h3 E-mail
@@ -580,19 +718,19 @@ nav#nav
           .form__row
             .input-text__text
               h3 Телефон
-            input#tel.input-text(type='tel' name='tel' required='')
+            input#tel.input-text(type='tel' class = 'tel' name='tel' required='')
           .form__row
             .input-text__text
               h3 &Tcy;&ocy;&kcy;&iecy;&ncy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ycy;
             input#teamToken.input-text(type='text' name='commandToken' required='')
           .form__row__checkbox
-            input#first-checkbox-second(type='checkbox' name='first-checkbox' required='')
-            label.checkbox-label(for='first-checkbox-second')
+            input#first-checkbox-second(type='checkbox' name='first-checkbox' required='' )
+            label.checkbox-label(for='first-checkbox-second' )
               h6
                 | &Pcy;&ocy;&dcy;&tcy;&vcy;&iecy;&rcy;&zhcy;&dcy;&acy;&yucy;, &chcy;&tcy;&ocy; &ocy;&zcy;&ncy;&acy;&kcy;&ocy;&mcy;&lcy;&iecy;&ncy; &icy; &pcy;&rcy;&icy;&ncy;&icy;&mcy;&acy;&yucy; &ldquo;&Rcy;&iecy;&gcy;&lcy;&acy;&mcy;&iecy;&ncy;&tcy; &pcy;&rcy;&ocy;&vcy;&iecy;&dcy;&iecy;&ncy;&icy;&yacy;
                 | &KHcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy;&acy;&rdquo;
           .form__row__checkbox
-            input#second-checkbox-second(type='checkbox' name='second-checkbox' required='')
+            input#second-checkbox-second(type='checkbox' name='second-checkbox' required='' )
             label.checkbox-label(for='second-checkbox-second')
               h6
                 | &Ocy;&zcy;&ncy;&acy;&kcy;&ocy;&mcy;&lcy;&iecy;&ncy;, &chcy;&tcy;&ocy; &lcy;&icy;&tscy;&acy;&mcy;, &ncy;&iecy; &dcy;&ocy;&scy;&tcy;&icy;&gcy;&shcy;&icy;&mcy; 18 &lcy;&iecy;&tcy; &ucy;&chcy;&acy;&scy;&tcy;&icy;&iecy; &vcy;
@@ -607,14 +745,26 @@ nav#nav
                 | &pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&lcy;&softcy;&ncy;&ycy;&khcy; &dcy;&acy;&ncy;&ncy;&ycy;&khcy;
           button.submit-button(type='submit')
             h3 &Ocy;&tcy;&pcy;&rcy;&acy;&vcy;&icy;&tcy;&softcy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
+    div  
+      .center-wrapper(style="color: #eb6b44" id="message") 
+        h3 #{message} 
+      .center-wrapper(style="color: #eb6b44" id="textToCopy") 
+        h3(id='token') #{token}
+      .center-wrapper() 
+        button.copy-button(onclick='copyToken()' id="copyButton")
+          h3 Скопировать токен
 footer
   .footer__first-layer
+  a(href="" style="color: #eb6b44") 
     h6 &Pcy;&ocy;&lcy;&icy;&tcy;&icy;&kcy;&acy; &kcy;&ocy;&ncy;&fcy;&icy;&dcy;&iecy;&ncy;&tscy;&icy;&acy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&icy;
   .footer__second-layer
     .social-network
-      svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' style='margin-right: 25px')
-        path(fill-rule='evenodd' clip-rule='evenodd' d='M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z' fill='#EB6B44')
-      svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
-        path(d='M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z' fill='#EB6B44')
+      a(href="") 
+        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' style='margin-right: 25px')
+          path(fill-rule='evenodd' clip-rule='evenodd' d='M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z' fill='#EB6B44')
+      a(href="") 
+        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z' fill='#EB6B44')
+      //ССЫЛКИ НА ВК И ТГ
     .text
       h6 &copy; &KHcy;&acy;&kcy;&acy;&tcy;&ocy;&ncy; x GASUDEV, 2023
