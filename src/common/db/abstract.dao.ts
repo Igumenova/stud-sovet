@@ -33,7 +33,7 @@ export abstract class AbstractNeDBDaoImpl<O, CreateDto, UpdateDto>
   }
 
   public async deleteByFilter(filter: any): Promise<boolean> {
-    await this.db.deleteOne(filter);
+    await this.db.remove(filter, { multi: true });
     return this.getByFilter(filter).then((e: O) => !e);
   }
 }
