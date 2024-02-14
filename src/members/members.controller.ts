@@ -52,12 +52,8 @@ export class MembersController {
     @Body() updateMemberDto: UpdateMemberDto,
     @Res() res: Response,
   ) {
-    try {
-      this.membersService.updateMember(updateMemberDto._id, updateMemberDto);
-      res.status(200).send();
-    } catch (e: any) {
-      res.status(502).send();
-    }
+    this.membersService.updateMember(updateMemberDto._id, updateMemberDto);
+    res.status(200).send();
   }
 
   @Delete()

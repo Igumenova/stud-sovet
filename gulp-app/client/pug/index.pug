@@ -1,3 +1,4 @@
+include components/partner.pug
 doctype html
 head
   meta(charset='UTF-8')
@@ -132,7 +133,7 @@ nav#nav
         h1 Тема:
       .center-wrapper
         .theme__text
-          h3(style="text-transform:uppercase;") Развите IT инфроструктуры студенческого совета университета
+          h3(style="text-transform:uppercase;") Развитие IT инфроструктуры студенческого совета университета
 .block-wrapper
   //.row-blocks
     .row-block
@@ -485,6 +486,7 @@ nav#nav
             .table-row__text
               h3 ОООООООООООООО
 
+
 .block-wrapper
   #ProgramInfoBlock__block.program-info-block
     .program-info__title
@@ -619,6 +621,13 @@ nav#nav
               svg.track-description__border-down(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg;')
                 path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
                 path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+
+.block-wrapper#partners
+  .center-wrapper
+    h1 Партнеры
+  .row-partners
+    +partner('/img/GASUdev.png', "GASUdev", "Отдел разработки СПБГАСУ")
+    +partner('/img/st_m.png', "Стеденческий совет", "Студенческий совет СПБГАСУ")
 
 
 .block-wrapper

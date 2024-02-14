@@ -31,7 +31,8 @@ export class CommandsController {
     session.orderIsSend = 1;
     if (regResult.includes('-')) {
       session.token = regResult;
-      session.message = "Это токен вашей команды, он понадобится для регистрации остальных участников. Сохраните его и отправьте остальным участникам команды.";
+      session.message =
+        'Это токен вашей команды, он понадобится для регистрации остальных участников. Сохраните его и отправьте остальным участникам команды.';
     } else {
       session.message = regResult;
     }
@@ -66,13 +67,7 @@ export class CommandsController {
     @Body() updateCommandDto: UpdateCommandDto,
     @Res() res: Response,
   ) {
-    const resultOperation = await this.commandsService.deleteCommand(
-      updateCommandDto._id,
-    );
-    if (resultOperation) {
-      return res.status(200).send();
-    } else {
-      return res.status(403).send('Ошибка удаления команды');
-    }
+    this.commandsService.deleteCommand(updateCommandDto._id);
+    return res.status(200).send();
   }
 }
