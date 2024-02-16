@@ -22,11 +22,10 @@ export class CommandsService {
   }
 
   async deleteCommand(_id: string): Promise<boolean> {
-    let command = await this.getCommandById(_id);
+    let command = await this.dao.getByFilter({ _id });
     await MembersDao.getInstance().deleteByFilter({
       commandToken: command.commandToken,
     });
-
     return this.dao.deleteByFilter({ _id });
   }
 
