@@ -1065,6 +1065,11 @@ button {
 
   margin: 1.25rem 0;
 }
+.form__row__select {
+  color: var(--third-color);
+
+  margin: 1.25rem 0;
+}
 
 .form__row__checkbox {
   display: flex;
@@ -1102,6 +1107,25 @@ button {
 
   color: var(--third-color);
   margin-top: 10px;
+}
+.select-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+
+  color: var(--third-color);
+  margin-top: 10px;
+}
+
+.select-row select {
+  margin-left: 8px;
+  width: 100%;
+  font-size: 0.6rem;
+  outline: none;
+  border: none;
+  padding: 8px 4px;
+  border-radius: 4px;
 }
 
 input[type='radio'] {

@@ -1,4 +1,3 @@
-
 var firstTable = document.getElementById('first-track');
 var infoTable = document.getElementById('info-table');
 infoTable.style.height = `${firstTable.offsetHeight}px`;
