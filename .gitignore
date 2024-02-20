@@ -33,3 +33,6 @@ lerna-debug.log*
 db/*.db
 .env
 
+gulp-app/chat
+gulp-app/client/pug/components
+
