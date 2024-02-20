@@ -30,7 +30,7 @@ export class CommandsController {
     const regResult = await this.commandsService.regCommand(regCommandDto);
     session.orderIsSend = 1;
     if (regResult.includes('-')) {
-      session.token = regResult;
+      session.commandToken = regResult;
       session.message =
         'Это токен вашей команды, он понадобится для регистрации остальных участников. Сохраните его и отправьте остальным участникам команды.';
     } else {
@@ -67,6 +67,7 @@ export class CommandsController {
     @Body() updateCommandDto: UpdateCommandDto,
     @Res() res: Response,
   ) {
+    
     this.commandsService.deleteCommand(updateCommandDto._id);
     return res.status(200).send();
   }

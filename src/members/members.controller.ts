@@ -30,6 +30,7 @@ export class MembersController {
     const regResult = await this.membersService.addMember(createMemberDto);
     session.orderIsSend = 1;
     session.message = regResult;
+    session.commandToken = '';
     res.status(302).redirect('/#message');
   }
 

@@ -29,7 +29,7 @@ export class AppController {
       SecondTrack: Track.SECONDTRACK,
       ThirdTrack: Track.THIRDTRACK,
       message: message,
-      token: session.token,
+      token: session.commandToken,
     };
   }
 

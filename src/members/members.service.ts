@@ -93,7 +93,7 @@ export class MembersService {
         updateCommandDto,
       );
       this.dao.insert(newMember);
-      return 'Вы успешно присоединились к команде';
+      return `Вы успешно присоединились к команде ${command.teamName}`;
     } else {
       return result;
     }
