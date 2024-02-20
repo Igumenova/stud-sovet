@@ -584,7 +584,7 @@ nav#nav
           .form__row
             .input-text__text
               h3 Дата рождения
-            input#birthDay.input-text(type='date' name='birthDay' style='width: 40%' required='')
+            input#birthDay.input-text(type='date' name='birthDay' required='')
           .form__row
             .input-text__text
               h3 E-mail
@@ -593,16 +593,16 @@ nav#nav
             .input-text__text
               h3 Телефон
             input#tel.input-text(type='tel'  class = 'tel' name='tel' required='')
-          .form__row
+          .form__row.long
             .input-text__text
               h3 Название команды
             input#teamName.input-text(type='text' name='teamName' required='' maxlength = "20")
-          .form__row__select 
+          .form__row.long 
             h3 Приоритет треков
             .select-row 
               label(for='first-track-button')
                 h6 1. 
-              select#first-track-button(name='firstTrack', required)
+              select#first-track-button.input-text(name='firstTrack', required)
                 option(value="") Выберите трек
                 option(value=FirstTrack) Игры и VR
                 option(value=SecondTrack) Платформенные решения и сайты
@@ -610,7 +610,7 @@ nav#nav
             .select-row 
               label(for='second-track-button')
                 h6 2. 
-              select#second-track-button(name='secondTrack', required)
+              select#second-track-button.input-text(name='secondTrack', required)
                 option(value="") Выберите трек
                 option(value=FirstTrack) Игры и VR
                 option(value=SecondTrack) Платформенные решения и сайты
@@ -618,18 +618,18 @@ nav#nav
             .select-row 
               label(for='third-track-button')
                 h6 3. 
-              select#third-track-button(name='thirdTrack', required)
+              select#third-track-button.input-text(name='thirdTrack', required)
                 option(value="") Выберите трек
                 option(value=FirstTrack) Игры и VR
                 option(value=SecondTrack) Платформенные решения и сайты
                 option(value=ThirdTrack) Образовательные digital-проекты
-          .form__row__checkbox
+          .form__row__checkbox.long
             input#first-checkbox(type='checkbox' name='first-checkbox' required='')
             label.checkbox-label(for='first-checkbox')
               h6
                 | Подтверждаю, что ознакомлен и принимаю “Регламент проведения
                 | Хакатона”
-          .form__row__checkbox
+          .form__row__checkbox.long
             input#second-checkbox(type='checkbox' name='second-checkbox' required='')
             label.checkbox-label(for='second-checkbox')
               h6
@@ -637,13 +637,13 @@ nav#nav
                 | Хакатоне возможно только при наличии сопровождающего
                 | родителя (законного представителя) либо сопровождающего
                 | организованной группы
-          .form__row__checkbox
+          .form__row__checkbox.long
             input#third-checkbox(type='checkbox' name='third-checkbox' required='')
             label.checkbox-label(for='third-checkbox')
               h6
                 | Согласен с политикой в отношениях в отношении обработки
                 | персональных данных
-          button.submit-button(type='submit')
+          button.submit-button.long(type='submit')
             h3 Отправить заявку
       #second-form__block.second-form__block.form-hide
         form#form(method='POST' action=`${process.env.HOST}/admin/members`)
@@ -662,7 +662,7 @@ nav#nav
           .form__row
             .input-text__text
               h3 Дата рождения
-            input#birthDay.input-text(type='date' name='birthDay' style='width: 40%' required='')
+            input#birthDay.input-text(type='date' name='birthDay' required='')
           .form__row
             .input-text__text
               h3 E-mail
@@ -675,13 +675,13 @@ nav#nav
             .input-text__text
               h3 Токен команды
             input#teamToken.input-text(type='text' name='commandToken' required='')
-          .form__row__checkbox
+          .form__row__checkbox.long
             input#first-checkbox-second(type='checkbox' name='first-checkbox' required='' )
             label.checkbox-label(for='first-checkbox-second' )
               h6
                 | Подтверждаю, что ознакомлен и принимаю “Регламент проведения
                 | Хакатона”
-          .form__row__checkbox
+          .form__row__checkbox.long
             input#second-checkbox-second(type='checkbox' name='second-checkbox' required='' )
             label.checkbox-label(for='second-checkbox-second')
               h6
@@ -689,13 +689,13 @@ nav#nav
                 | Хакатоне возможно только при наличии сопровождающего
                 | родителя (законного представителя) либо сопровождающего
                 | организованной группы
-          .form__row__checkbox
+          .form__row__checkbox.long
             input#third-checkbox-second(type='checkbox' name='third-checkbox' required='')
             label.checkbox-label(for='third-checkbox-second')
               h6
                 | Согласен с политикой в отношениях в отношении обработки
                 | персональных данных
-          button.submit-button(type='submit')
+          button.submit-button.long(type='submit')
             h3 Отправить заявку
     div  
       .center-wrapper(style="color: #eb6b44" id="message") 
