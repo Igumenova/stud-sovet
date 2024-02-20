@@ -382,6 +382,11 @@ button {
   display: flex;
   justify-content: center;
 }
+@media (max-width: 453px) {
+  .center-wrapper h1 {
+    font-size: 2.4rem;
+  }
+}
 
 .theme__text {
   color: var(--third-color);
