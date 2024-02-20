@@ -67,7 +67,6 @@ export class CommandsController {
     @Body() updateCommandDto: UpdateCommandDto,
     @Res() res: Response,
   ) {
-    
     this.commandsService.deleteCommand(updateCommandDto._id);
     return res.status(200).send();
   }

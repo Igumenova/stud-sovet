@@ -1,6 +1,8 @@
 const _id = document.querySelector('.order').dataset.id;
 const title = document.querySelector('.order__title');
 const customer = document.querySelector('.order__customer');
+const customerII = document.querySelector('.order__customerII');
+const customerIII = document.querySelector('.order__customerII');
 // const contact = document.querySelector('.order__contact');
 // const description = document.querySelector('.order__description');
 
@@ -47,7 +49,7 @@ const addEditEvent = (element) => {
 //   addEditEvent(el);
 // }
 
-for (const el of [title, customer]) {
+for (const el of [title, customer, customerII, customerIII]) {
   addEditEvent(el);
 }
 

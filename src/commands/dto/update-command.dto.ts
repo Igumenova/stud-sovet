@@ -7,7 +7,9 @@ export class UpdateCommandDto extends PartialType(CreateCommandDto) {
   @IsNotEmpty()
   _id: string;
   teamName?: string;
-  track?: Track;
+  firstTrack?: Track;
+  secondTrack?: Track;
+  thirdTrack?: Track;
   members?: number;
   token?: string;
   comment?: string;

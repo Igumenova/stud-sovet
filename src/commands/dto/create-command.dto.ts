@@ -5,7 +5,11 @@ export class CreateCommandDto {
   @IsString()
   teamName: string;
   @IsEnum(Track)
-  track: Track;
+  firstTrack: Track;
+  @IsEnum(Track)
+  secondTrack: Track;
+  @IsEnum(Track)
+  thirdTrack: Track;
   @IsString()
   commandToken: string;
   @IsNumber()

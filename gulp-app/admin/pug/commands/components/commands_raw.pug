@@ -5,7 +5,7 @@ mixin commands_raw(command, host)
         .order__date(data-date= command.date)= command.date
         .order__name= command.teamName
         .order__token= command.commandToken
-        .order__customer= command.track
+        .order__customer= command.firstTrack
         .order__contact= command.members
         //- - keys = ["new", "in-progress", "completed"];
         //- - values  = ["Новая", "В работе", "Завершенно"];

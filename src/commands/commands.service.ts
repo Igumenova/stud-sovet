@@ -59,7 +59,9 @@ export class CommandsService {
     command.commandToken = uuidv4();
 
     createCommandDto.teamName = command.teamName;
-    createCommandDto.track = command.track;
+    createCommandDto.firstTrack = command.firstTrack;
+    createCommandDto.secondTrack = command.secondTrack;
+    createCommandDto.thirdTrack = command.thirdTrack;
     createCommandDto.commandToken = command.commandToken;
     createCommandDto.date = new Date();
 
@@ -100,6 +102,9 @@ export class CommandsService {
     }
     if (await MembersDao.getInstance().getByFilter({ tel: command.tel })) {
       return 'Пользователь с таким телефоном уже существует.';
+    }
+    if (command.firstTrack==command.secondTrack || command.firstTrack==command.thirdTrack || command.secondTrack==command.thirdTrack) {
+      return 'Выберите разные треки в приоритетах.';
     }
     return 'kk';
   }
