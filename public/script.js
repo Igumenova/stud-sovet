@@ -154,9 +154,9 @@ const options = {
 // new IntersectionObserver(handleIntersection0to24, options).observe(
 //   document.getElementById('workTime'),
 // );
-new IntersectionObserver(handleIntersection0to150, options).observe(
-  document.getElementById('firstPlace'),
-);
+// new IntersectionObserver(handleIntersection0to150, options).observe(
+//   document.getElementById('firstPlace'),
+// );
 new IntersectionObserver(handleIntersection0to500second, options).observe(
   document.getElementById('prizeFund2'),
 );

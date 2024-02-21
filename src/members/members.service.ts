@@ -125,6 +125,12 @@ export class MembersService {
     if (await this.dao.getByFilter({ tel: member.tel })) {
       return 'Пользователь с таким телефоном уже существует.';
     }
+    if (/[a-zA-Z]/.test(member.tel) || /[а-яА-Я]/.test(member.tel)) {
+      return 'Телефон содержит недопустимые символы.';
+    }
+    if (member.tel.match(/\d/g).length!=11){
+      return 'Недопустимый номер телефона.';
+    } 
     return 'kk';
   }
 

@@ -979,7 +979,18 @@ button {
   grid-template-columns: auto auto;
 }
 
+.second-form__block form {
+  display: grid;
+  column-gap: 0.8rem;
+  row-gap: 0.8rem;
+  grid-template-columns: auto auto;
+}
+
 .first-form__block form .long {
+  grid-column: span 2;
+}
+
+.second-form__block form .long {
   grid-column: span 2;
 }
 
@@ -1806,6 +1817,10 @@ marquee {
     width: 100%;
     padding-left: 5%;
     padding-right: 5%;
+  }
+
+  .nav-burger__filling {
+    padding: 2.5rem 0.5rem;
   }
 }
 

@@ -103,8 +103,18 @@ export class CommandsService {
     if (await MembersDao.getInstance().getByFilter({ tel: command.tel })) {
       return 'Пользователь с таким телефоном уже существует.';
     }
-    if (command.firstTrack==command.secondTrack || command.firstTrack==command.thirdTrack || command.secondTrack==command.thirdTrack) {
+    if (
+      command.firstTrack == command.secondTrack ||
+      command.firstTrack == command.thirdTrack ||
+      command.secondTrack == command.thirdTrack
+    ) {
       return 'Выберите разные треки в приоритетах.';
+    }
+    if (/[a-zA-Z]/.test(command.tel) || /[а-яА-Я]/.test(command.tel)) {
+      return 'Телефон содержит недопустимые символы.';
+    }
+    if (command.tel.match(/\d/g).length != 11) {
+      return 'Недопустимый номер телефона.';
     }
     return 'kk';
   }
