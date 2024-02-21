@@ -29,11 +29,11 @@ nav#nav
         rect(width='276' height='60' fill='white')
   .navigation
     h3
-      a(href='#HakatonBlock__block') О хакатоне
+      a(href='#hakatonBlock-anchor') О хакатоне
     h3(style='margin-left: 2.5rem; margin-right: 2.5rem')
       a(href='#track-info-block') Материалы хакатона
     h3
-      a(href='#ProgramInfoBlock__block') Программа
+      a(href='#ProgramInfoBlock-anchor') Программа
   button.button-wo-color(onclick='navMenuOpen()')
     svg.nav-burger(viewbox='0 0 48 28' fill='none' xmlns='http://www.w3.org/2000/svg')
       rect(width='48' height='2' fill='white')
@@ -63,11 +63,11 @@ nav#nav
           clippath#clip0_74_295
             rect(width='276' height='60' fill='white')
       h3
-        a(href='#HakatonBlock__block' onclick='navMenuClose()') О хакатоне
+        a(href='#hakatonBlock-anchor' onclick='navMenuClose()') О хакатоне
       h3
         a(href='#track-info-block' onclick='navMenuClose()') Материалы хакатона
       h3
-        a(href='#ProgramInfoBlock__block' onclick='navMenuClose()') Программа
+        a(href='#ProgramInfoBlock-anchor' onclick='navMenuClose()') Программа
     .nav-burger__info
       div
         //- a(href="" style="color: #eb6b44") 
@@ -112,6 +112,7 @@ nav#nav
         h5 г. Санкт-Петербург
 #HakatonBlock.block-wrapper
   #HakatonBlock__block.hakaton-block
+    <a class="anchor" id="hakatonBlock-anchor"></a>
     div
       svg.svg-border(viewbox='0 0 1080 61' fill='none' xmlns='http://www.w3.org/2000/svg')
         path(d='M0 0H810L817.826 8.06667H7.82609V52.4333L0 60.5V0Z' fill='white')
@@ -339,6 +340,7 @@ nav#nav
     //-       | ПРИЗ
 .block-wrapper
   #ProgramInfoBlock__block.program-info-block
+    <a class="anchor" id="ProgramInfoBlock-anchor"></a>
     .program-info__title
       h1 Программа
     .day-switch

@@ -988,7 +988,7 @@ button {
 }
 
 .form__row h3 {
-  margin-bottom: .2rem;
+  margin-bottom: 0.2rem;
 }
 
 .form__row .input-text {
@@ -996,14 +996,13 @@ button {
   border: none;
   cursor: pointer;
 
-  border-radius: .1rem;
+  border-radius: 0.1rem;
   background-color: white;
   color: var(--second-color);
   font-size: 16px;
   height: 36px;
   padding: 0 8px;
   width: 100%;
-
 }
 
 .input-text option {
@@ -1013,7 +1012,7 @@ button {
 }
 
 .form__row h6 {
-  margin-right: .4rem;
+  margin-right: 0.4rem;
 }
 
 .form-block {
@@ -1229,8 +1228,8 @@ input[type='checkbox']:not(:checked) {
   display: none;
 }
 
-input[type='checkbox']:checked+label,
-input[type='checkbox']:not(:checked)+label {
+input[type='checkbox']:checked + label,
+input[type='checkbox']:not(:checked) + label {
   display: inline-block;
   position: relative;
   padding-left: 32px;
@@ -1238,25 +1237,25 @@ input[type='checkbox']:not(:checked)+label {
   cursor: pointer;
 }
 
-input[type='checkbox']:checked+label:before,
-input[type='checkbox']:not(:checked)+label:before {
+input[type='checkbox']:checked + label:before,
+input[type='checkbox']:not(:checked) + label:before {
   content: '';
   position: absolute;
   left: 4px;
-  top: .1rem;
+  top: 0.1rem;
   width: 16px;
   height: 16px;
   border: 2px solid #dddddd;
   background-color: var(--second-color);
 }
 
-input[type='checkbox']:checked+label:before,
-input[type='checkbox']:not(:checked)+label:before {
+input[type='checkbox']:checked + label:before,
+input[type='checkbox']:not(:checked) + label:before {
   border-radius: 2px;
 }
 
-input[type='checkbox']:checked+label:after,
-input[type='checkbox']:not(:checked)+label:after {
+input[type='checkbox']:checked + label:after,
+input[type='checkbox']:not(:checked) + label:after {
   content: '';
   position: absolute;
   -webkit-transition: all 0.2s ease;
@@ -1265,21 +1264,20 @@ input[type='checkbox']:not(:checked)+label:after {
   transition: all 0.2s ease;
 }
 
-input[type='checkbox']:checked+label:after,
-input[type='checkbox']:not(:checked)+label:after {
+input[type='checkbox']:checked + label:after,
+input[type='checkbox']:not(:checked) + label:after {
   font-family: 'Material Symbols Outlined';
   content: '\e876';
   left: 1.5px;
-  top: .1rem;
+  top: 0.1rem;
   overflow: hidden;
 }
 
-
-input[type='checkbox']:not(:checked)+label:after {
+input[type='checkbox']:not(:checked) + label:after {
   opacity: 0;
 }
 
-input[type='checkbox']:checked+label:after {
+input[type='checkbox']:checked + label:after {
   opacity: 1;
 }
 
@@ -1521,7 +1519,6 @@ marquee {
 }
 
 @media (max-width: 1000px) {
-
   .form__row .input-text {
     font-size: 12px;
     height: 32px;
@@ -1569,8 +1566,8 @@ marquee {
     text-align: center;
   }
 
-  input[type='checkbox']:checked+label:after,
-  input[type='checkbox']:not(:checked)+label:after {
+  input[type='checkbox']:checked + label:after,
+  input[type='checkbox']:not(:checked) + label:after {
     left: 4px;
   }
 }
@@ -1784,8 +1781,8 @@ marquee {
     row-gap: 1.25rem;
   }
 
-  input[type='checkbox']:checked+label:after,
-  input[type='checkbox']:not(:checked)+label:after {
+  input[type='checkbox']:checked + label:after,
+  input[type='checkbox']:not(:checked) + label:after {
     left: 5px;
   }
 
@@ -1828,7 +1825,7 @@ marquee {
   min-height: 25rem;
 }
 
-.block-wrapper#partners .content>h1 {
+.block-wrapper#partners .content > h1 {
   font-size: 4em;
   font-weight: 700;
   text-align: center;
@@ -1886,15 +1883,15 @@ marquee {
     padding: 4px;
   }
 
-  input[type='checkbox']:checked+label:before,
-  input[type='checkbox']:not(:checked)+label:before {
+  input[type='checkbox']:checked + label:before,
+  input[type='checkbox']:not(:checked) + label:before {
     width: 12px;
     height: 12px;
     top: 8px;
   }
 
-  input[type='checkbox']:checked+label:after,
-  input[type='checkbox']:not(:checked)+label:after {
+  input[type='checkbox']:checked + label:after,
+  input[type='checkbox']:not(:checked) + label:after {
     top: 8px;
   }
 }
@@ -1965,3 +1962,19 @@ marquee {
 }
 
 /*# sourceMappingURL=style.css.map */
+a.anchor {
+  display: block;
+  position: relative;
+  visibility: hidden;
+}
+#hakatonBlock-anchor {
+  top: -156px;
+}
+#ProgramInfoBlock-anchor {
+  top: -56px;
+}
+@media (max-width: 453px) {
+  #ProgramInfoBlock-anchor {
+    top: -120px;
+  }
+}
