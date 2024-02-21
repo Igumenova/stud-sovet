@@ -2,6 +2,48 @@ var firstTable = document.getElementById('first-track');
 var infoTable = document.getElementById('info-table');
 infoTable.style.height = `${firstTable.offsetHeight}px`;
 
+var firstProgramTable = document.getElementById('first-table');
+var programInfoTable = document.getElementById(
+  'ProgramInfoBlock__block__table',
+);
+programInfoTable.style.height = `${firstProgramTable.offsetHeight}px`;
+
+function check() {
+  var checkboxMessage = document.getElementById('checkboxMessage');
+  var firstCheckbox = document.getElementById('first-checkbox');
+  var secondCheckbox = document.getElementById('second-checkbox');
+  var thirdCheckbox = document.getElementById('third-checkbox');
+
+  if (
+    !firstCheckbox.checked ||
+    !secondCheckbox.checked ||
+    !thirdCheckbox.checked
+  ) {
+    checkboxMessage.textContent =
+      'Для участия вы должны согласиться со всеми условиями проведения хакатона.';
+  } else {
+    checkboxMessage.textContent = '';
+  }
+}
+
+function checkII() {
+  var checkboxMessage = document.getElementById('checkboxMessage');
+  var firstCheckboxII = document.getElementById('first-checkbox-second');
+  var secondCheckboxII = document.getElementById('second-checkbox-second');
+  var thirdCheckboxII = document.getElementById('third-checkbox-second');
+
+  if (
+    !firstCheckboxII.checked ||
+    !secondCheckboxII.checked ||
+    !thirdCheckboxII.checked
+  ) {
+    checkboxMessage.textContent =
+      'Для участия вы должны согласиться со всеми условиями проведения хакатона.';
+  } else {
+    checkboxMessage.textContent = '';
+  }
+}
+
 function handleIntersection0to500(entries, observer) {
   let counter = 0;
   entries.forEach((entry) => {
@@ -212,6 +254,8 @@ function firstDayButton() {
   thirdTable.style.display = 'block';
   thirdTable.style.visibility = 'none';
   thirdTable.style.opacity = '0';
+
+  programInfoTable.style.height = `${firstProgramTable.offsetHeight}px`;
 }
 
 function secondDayButton() {
@@ -238,6 +282,8 @@ function secondDayButton() {
   thirdTable.style.display = 'block';
   thirdTable.style.visibility = 'none';
   thirdTable.style.opacity = '0';
+
+  programInfoTable.style.height = `${secondTable.offsetHeight}px`;
 }
 
 function thirdDayButton() {
@@ -264,6 +310,8 @@ function thirdDayButton() {
   thirdTable.style.display = 'block';
   thirdTable.style.visibility = 'visible';
   thirdTable.style.opacity = '1';
+
+  programInfoTable.style.height = `${thirdTable.offsetHeight}px`;
 }
 
 function firstFormButton() {

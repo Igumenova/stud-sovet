@@ -879,7 +879,7 @@ button {
 
 .program-table {
   margin-bottom: 2.5rem;
-  height: 14rem;
+  transition: 0.5s;
 }
 
 .first-day-table {
