@@ -360,21 +360,22 @@ function copyToken() {
 
 var root = document.getElementById('token').firstChild;
 var rng, sel;
-if (document.createRange) {
-  rng = document.createRange();
-  rng.selectNode(root);
-  sel = window.getSelection();
-  sel.removeAllRanges();
-  sel.addRange(rng);
-} else {
-  var rng = document.body.createTextRange();
-  rng.moveToElementText(root);
-  rng.select();
+if (root) {
+  if (document.createRange) {
+    rng = document.createRange();
+    rng.selectNode(root);
+    sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(rng);
+  } else {
+    var rng = document.body.createTextRange();
+    rng.moveToElementText(root);
+    rng.select();
+  }
+  if (rng != '') {
+    document.getElementById('copyButton').style = 'display:block';
+  }
 }
-if (rng != '') {
-  document.getElementById('copyButton').style = 'display:block';
-}
-
 function noDigits(event) {
   if ('1234567890-+=/.,<>[]{}();:"`!@#$%^&*№? '.indexOf(event.key) != -1)
     event.preventDefault();
