@@ -1218,7 +1218,7 @@ footer {
   align-items: flex-end;
   flex-wrap: wrap;
   column-gap: 2.1%;
-  row-gap: 1.25rem;
+  row-gap: 0.5rem;
 
   color: var(--main-color);
   text-align: left;
@@ -2011,4 +2011,9 @@ a.anchor {
   #ProgramInfoBlock-anchor {
     top: -120px;
   }
+}
+
+.text {
+  display: flex;
+  flex-direction: row;
 }
