@@ -1214,6 +1214,12 @@ footer {
 }
 
 .footer__first-layer {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  column-gap: 2.1%;
+  row-gap: 1.25rem;
+
   color: var(--main-color);
   text-align: left;
 }

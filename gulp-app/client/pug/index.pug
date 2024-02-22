@@ -612,7 +612,7 @@ nav#nav
             input#second-checkbox(type='checkbox' name='second-checkbox' required='')
             label.checkbox-label(for='second-checkbox')
               h6
-                | Ознакомлен, что лицам, не достигшим 18 лет участие в
+                | Ознакомлен, что лицам, не достигшим 18 лет, участие в
                 | Хакатоне возможно только при наличии сопровождающего
                 | родителя (законного представителя) либо сопровождающего
                 | организованной группы
@@ -664,7 +664,7 @@ nav#nav
             input#second-checkbox-second(type='checkbox' name='second-checkbox' required='')
             label.checkbox-label(for='second-checkbox-second')
               h6
-                | Ознакомлен, что лицам, не достигшим 18 лет участие в
+                | Ознакомлен, что лицам, не достигшим 18 лет, участие в
                 | Хакатоне возможно только при наличии сопровождающего
                 | родителя (законного представителя) либо сопровождающего
                 | организованной группы
@@ -687,6 +687,11 @@ nav#nav
         button.copy-button(onclick='copyToken()' id="copyButton")
           h3 Скопировать токен
 footer
+  .footer__first-layer
+    a(href="/docs/Политика конфиденциальности.pdf" download style="color: #eb6b44") 
+      h6 Политика конфиденциальности
+    a(href="/docs/Регламент Хакатона.docx" download style="color: #eb6b44") 
+      h6 Регламент проведения хакатона
   .footer__second-layer
     .social-network
       a(href="https://vk.com/ssspbgasu" target="_blank") 
