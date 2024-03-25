@@ -402,7 +402,7 @@ nav#nav
       #second-button.second-day
         button.button-wo-color(onclick='secondTrackButton()')
           h2(style='padding: 0 5px') 2 трек
-      #third-button.third-day
+      #third-button.third-day( style="display:none")
         button.button-wo-color(onclick='thirdTrackButton()')
           h2(style='padding: 0 5px') 3 трек
           
@@ -421,7 +421,7 @@ nav#nav
                 .track-description__title
                   h2 front + back
                 .track-description__text
-                  h2(style="font-size: 1.5rem") html/css
+                  h2(style="font-size: 1.5rem") 
               svg.track-description__border-down(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg;')
                 path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
                 path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
@@ -490,15 +490,58 @@ nav#nav
                   h2(style="font-size: 1.5rem") Система мероприятий
                 .track-description__text
                   h2(style="font-size: 1.5rem") Форма редактирования/админка
+                  
 
+          .track-descriptions
+            .track-description
+              .track-description__filling
+                .track-description__title
+                  a(href="/docs/brandbook.pdf" target="_blank" style="color: #eb6b44") 
+                    h2(style="font-size: 1.5rem; text-decoration: underline;") Брендбук
               
       #second-track.second-track-info
         .center-wrapper(style="color:var(--third-color)")
           h2(style="margin-bottom: 2.5rem") Телеграм бот
+        
+        
         if admin
+          .track-descriptions(style="margin-top:0; margin-bottom: 2.5rem")
+            .track-description
+              svg.track-description__border(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+                path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
+              .track-description__filling
+                .track-description__title
+                  h2 Технологии
+                .track-description__text
+                  h2(style="font-size: 1.5rem") python/javascript
+              svg.track-description__border-down(viewbox='0 0 330 60' fill='none' xmlns='http://www.w3.org/2000/svg' style='rotate: 180deg;')
+                path(d='M0 0H247.5V4L4 3.5V56L0 60V0Z' fill='white')
+                path(d='M330 0H247.5V4H326V56L330 60V0Z' fill='white')
 
-          .center-wrapper(style="color:var(--third-color)")
-            h2(style="font-size: 3rem; margin-bottom: 2.5rem") Телеграм бот
+            
+          .track-descriptions
+            .track-description
+              .track-description__filling
+                .track-description__title
+                  h2(style="font-size: 1.5rem") Требования
+                .track-description__text
+                  h2(style="font-size: 1.5rem") Многоуровневое древо вопросов и ответов
+                .track-description__text
+                  h2(style="font-size: 1.5rem") Проведение опросов
+                .track-description__text
+                  h2(style="font-size: 1.5rem") Вывод статистики опросов
+
+          .track-descriptions
+            .track-description
+              .track-description__filling
+                .track-description__title
+                  h2(style="font-size: 1.5rem") Прветствуется
+                .track-description__text
+                  h2(style="font-size: 1.5rem") Наличие встроенного веб интерфейса для администрирования бота
+
+
+
         
 
 
