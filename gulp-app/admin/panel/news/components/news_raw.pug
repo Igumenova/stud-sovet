@@ -1,0 +1,16 @@
+include ../../components/ui
+
+mixin news_raw(news, host)
+    .order(data-order= news._id)
+        .order__date(data-date= news.date)= news.date
+        .order__name= news.title
+        .order__customer= news.author
+        .order__options.options
+            .circle
+            .circle
+            .options__container
+                .options__item.open
+                    a(class= "order__open", href= host + "/admin/news/" + news._id) Открыть
+                .options__item.remove
+                    i Удалить
+            .circle

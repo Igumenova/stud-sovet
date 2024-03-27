@@ -1,0 +1,18 @@
+include ../components/ui
+include ../components/admin_doc
+include components/news_raw
+
+
++admin_doc(["admin/panel/admin.css"], ["admin/panel/lib/moment.js", "ui/ui.js","admin/panel/news/news.js"], host)
+    .settings
+        +btn-link('добавить', 'info-inv', host + "/admin/news/addNews")
+        .settings__item.sort
+            h3.settings__title Сортировать:
+            - let sortContent = {};
+            - sortContent.keys = ["date", "title"];
+            - sortContent.values  = ["По дате", "По заголовку"];
+            +select(sortContent.keys, sortContent.values,"sort")(class= "settings__select sort")
+    .orders-grid
+        for news in allNews
+            +news_raw(news, host)
+

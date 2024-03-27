@@ -1,0 +1,16 @@
+include ../components/ui
+include ../components/admin_doc
+
++admin_doc(["admin/panel/admin.css"], ["admin/panel/news/news.js"], host)
+    .order-page 
+        form(method="post", enctype="multipart/form-data")
+            .form__line
+                .input
+                    input(type="text", placeholder="Заголовок", id="title", name="title", required)
+                .input
+                    input(type="text", placeholder="Описание", id="descryption", name="descryption", required)  
+                .input
+                    input(type="text", placeholder="Автор", id="author", name="author", required)  
+                .input
+                    input(type="file", id="img", name="file", required)  
+                button.btn( type="submit") Отправить

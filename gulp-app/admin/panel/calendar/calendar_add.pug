@@ -1,0 +1,18 @@
+include ../components/ui
+include ../components/admin_doc
+
++admin_doc(["admin/panel/admin.css"], ["admin/panel/calendar/calendar.js"], host)
+    .order-page 
+        form(method="post")
+                        .form__line
+                            .input
+                                input(type="text", placeholder="Заголовок", id="title", name="title", required)
+                            .input
+                                input(type="text", placeholder="Описание", id="descryption", name="descryption", required)  
+                            .input
+                                input(type="text", placeholder="Автор", id="author", name="author")  
+                            .input
+                                input(type="date", id="eventDate", name="eventDate", required)  
+                            .input
+                                input(type="time", id="eventTime", name="eventTime", required)  
+                            button.btn( type="submit") Отправить

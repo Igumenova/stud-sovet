@@ -1,0 +1,23 @@
+mixin memberCard(composition)
+  .member-card
+    .photo
+      img(src="/main/src/"+composition.file)
+    .quote__signature
+      .person
+        if composition.vk
+          a(href=composition.vk)
+            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+              path(fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.4772 15.5228 0 10 0C4.4772 0 0 4.4772 0 10C0 15.5228 4.4772 20 10 20ZM5 6.8C5.0812 10.6976 7.03 13.04 10.4466 13.04H10.6402V10.81C11.8958 10.935 12.845 11.8532 13.2262 13.04H15C14.5128 11.266 13.2324 10.2854 12.4328 9.9106C13.2324 9.4484 14.3566 8.324 14.6252 6.8H13.0136C12.6638 8.0368 11.6272 9.161 10.6402 9.2672V6.8H9.0288V11.1222C8.0294 10.8724 6.7676 9.6608 6.7112 6.8H5Z" fill="url(#paint0_linear_9_2550)")
+              defs
+                linearGradient(id="paint0_linear_9_2550" x1="10" y1="0" x2="10" y2="20" gradientUnits="userSpaceOnUse")
+                  stop(stop-color="#E2D7D3")
+                  stop(offset="1" stop-color="#7DAAE3")
+        h5= composition.name + " " + composition.surname
+      .post
+        p= composition.job
+    .picture__dots
+      img(src='../main/src/GroupOfDots.png' alt='dots')
+    .picture__dots-vertical
+      img(src='../main/src/GroupOfDotsVertical.png' alt='dots')
+    .picture__star
+      img(src='../main/src/star.png' alt='dots')

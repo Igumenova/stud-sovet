@@ -1,0 +1,18 @@
+include ../components/ui
+include ../components/admin_doc
+include components/composition_raw
+
+
++admin_doc(["admin/panel/admin.css"], ["admin/panel/lib/moment.js", "ui/ui.js","admin/panel/composition/composition.js"], host)
+    .settings
+        +btn-link('добавить', 'info-inv', host + "/admin/composition/addComposition")
+        .settings__item.sort
+            h3.settings__title Сортировать:
+            - let sortContent = {};
+            - sortContent.keys = ["date", "surname"];
+            - sortContent.values  = ["По дате", "По фамилии"];
+            +select(sortContent.keys, sortContent.values,"sort")(class= "settings__select sort")
+    .orders-grid
+        for composition in allComposition
+            +composition_raw(composition, host)
+

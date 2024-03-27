@@ -1,0 +1,19 @@
+html(lang="ru")
+    head
+        meta(charset='UTF-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet' type='text/css' href='style.css')
+        link(rel="icon" href="../icons/favicon.ico")
+        script(src='script.js' type='text/javascript')
+        title Вход в админ панель
+    body
+        .wrapper
+            .block
+                .content
+                    if error 
+                        h2 Токен не верный!
+                    form(method="post")
+                        .form__line
+                            .input
+                                input(type="text", placeholder="Токен входа", id="token_input", name="token")
+                            button.btn( type="submit") Авторизоваться

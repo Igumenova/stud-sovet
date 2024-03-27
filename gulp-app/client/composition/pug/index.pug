@@ -1,0 +1,174 @@
+include ./components/member
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' type='text/css' href='main/style.css')
+body 
+    header.header
+        .container
+            .header__content
+                .logo
+                .header__main
+
+                    .header__section._down
+                        a(href='/' title='Главная страница')
+                            img(src='main/src/Logo-m.png')
+                        nav.header__nav 
+                            ul 
+                                li
+                                    a(href=host) Главная
+                                li
+                                    a(href=host+'/composition') Состав
+                                li
+                                    a(href=host+'/news') Новости
+                                li
+                                    a(href=host+'/calendar') Календарь событий
+                                li
+                                    a(href=host+'/contacts') Контакты
+
+
+                        #burger-menu.burger-menu
+                            .burger__header 
+                                a(href='/' title='Главная страница')
+                                    img(src='main/src/Logo.png')
+                                button.burger-btn(onclick='navMenuClose()')
+                                    img(src='main/src/close.png')
+                            .burger__nav 
+                                a(href=host) Главная
+                                a(href=host+'/composition') Состав
+                                a(href=host+'/news') Новости
+                                a(href=host+'/calendar') Календарь событий
+                                a(href=host+'/contacts') Контакты
+                            .burger__footer 
+                                    .footer__info 
+                                        .contacts 
+                                            .contacts-item 
+                                                .contacts-item__label 
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M20 10L18.8318 10.08C16.5613 10.2341 14.4235 11.2055 12.8142 12.8146C11.205 14.4237 10.2332 16.5613 10.0788 18.8318L10 20L9.92 18.8318C9.76594 16.5613 8.79445 14.4235 7.1854 12.8142C5.57634 11.205 3.4387 10.2332 1.16824 10.0788L0 10L1.16824 9.92C3.43872 9.76594 5.57649 8.79445 7.18576 7.1854C8.79504 5.57634 9.76681 3.4387 9.92118 1.16824L10 0L10.08 1.16824C10.2341 3.43872 11.2055 5.57649 12.8146 7.18576C14.4237 8.79504 16.5613 9.76681 18.8318 9.92118L20 10Z" fill="#7994C2" />
+                                                    </svg>
+                                                    | Адрес
+                                                .contacts-item__value Санкт-Петербург, 2-я Красноармейская ул., д. 4, каб. 136
+                                            .contacts-item 
+                                                .contacts-item__label
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M20 10L18.8318 10.08C16.5613 10.2341 14.4235 11.2055 12.8142 12.8146C11.205 14.4237 10.2332 16.5613 10.0788 18.8318L10 20L9.92 18.8318C9.76594 16.5613 8.79445 14.4235 7.1854 12.8142C5.57634 11.205 3.4387 10.2332 1.16824 10.0788L0 10L1.16824 9.92C3.43872 9.76594 5.57649 8.79445 7.18576 7.1854C8.79504 5.57634 9.76681 3.4387 9.92118 1.16824L10 0L10.08 1.16824C10.2341 3.43872 11.2055 5.57649 12.8146 7.18576C14.4237 8.79504 16.5613 9.76681 18.8318 9.92118L20 10Z" fill="#7994C2" />
+                                                    </svg>
+                                                    | E-mail
+                                                a.contacts-item__value(href="mailto:oso@spbgasu.ru") oso@spbgasu.ru
+
+                                    .footer__bottom 
+                                        .social-networks 
+                                            a(href="https://vk.com/ssspbgasu")
+                                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z" fill="url(#paint0_linear_7_108)" />
+                                                    <defs>
+                                                        <linearGradient id="paint0_linear_7_108" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#E2D7D3" />
+                                                        <stop offset="1" stop-color="#7DAAE3" />
+                                                        </linearGradient>
+                                                    </defs>
+                                                </svg>
+                                            a(href="https://t.me/studsovetgasu")
+                                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z" fill="url(#paint0_linear_7_109)" />
+                                                    <defs>
+                                                        <linearGradient id="paint0_linear_7_109" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#E2D7D3" />
+                                                        <stop offset="1" stop-color="#7DAAE3" />
+                                                        </linearGradient>
+                                                    </defs>
+                                                </svg>
+                                        .text  © СПБГАСУ / 
+                                            span(style="color: var(--greyBlue);") GasuDev 
+                                            | 2024
+
+                            
+                        button.burger-btn(onclick='navMenuOpen()') 
+                            img(src='main/src/menu.png')
+
+                                        
+                                        
+    main.main   
+            picture.img-background
+                    source(media='(max-width:1028px)' srcset='main/src/FonDots-m.png')
+                    //- source(media='(min-width:465px)' srcset='img_white_flower.jpg')
+                    img(src='main/src/FonDots.png' alt='dots' style='width:auto;')
+            .container
+                .members-block 
+                    .members-block__title 
+                        h1 Состав студенческого совета
+                    .members                     
+                        for composition in compositionsSS
+                            +memberCard(composition)
+
+                .members-block 
+                    .members-block__title 
+                        h1 Отделы
+                    .members                     
+                        for composition in compositionsOt
+                            +memberCard(composition)
+
+                .members-block 
+                    .members-block__title 
+                        h1 Председатели факультетов
+                    .members                     
+                        for composition in compositionsPre
+                            +memberCard(composition)
+
+                .members-block 
+                    .members-block__title 
+                        h1 Отделы
+                    .members                     
+                        for composition in compositionsPro
+                            +memberCard(composition)
+
+
+    footer.footer 
+        .container 
+            .footer__info 
+                .contacts 
+                    .contacts-item 
+                        .contacts-item__label 
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 10L18.8318 10.08C16.5613 10.2341 14.4235 11.2055 12.8142 12.8146C11.205 14.4237 10.2332 16.5613 10.0788 18.8318L10 20L9.92 18.8318C9.76594 16.5613 8.79445 14.4235 7.1854 12.8142C5.57634 11.205 3.4387 10.2332 1.16824 10.0788L0 10L1.16824 9.92C3.43872 9.76594 5.57649 8.79445 7.18576 7.1854C8.79504 5.57634 9.76681 3.4387 9.92118 1.16824L10 0L10.08 1.16824C10.2341 3.43872 11.2055 5.57649 12.8146 7.18576C14.4237 8.79504 16.5613 9.76681 18.8318 9.92118L20 10Z" fill="#7994C2" />
+                            </svg>
+                            | Адрес
+                        .contacts-item__value Санкт-Петербург, 2-я Красноармейская ул., д. 4, каб. 136
+                    .contacts-item 
+                        .contacts-item__label
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 10L18.8318 10.08C16.5613 10.2341 14.4235 11.2055 12.8142 12.8146C11.205 14.4237 10.2332 16.5613 10.0788 18.8318L10 20L9.92 18.8318C9.76594 16.5613 8.79445 14.4235 7.1854 12.8142C5.57634 11.205 3.4387 10.2332 1.16824 10.0788L0 10L1.16824 9.92C3.43872 9.76594 5.57649 8.79445 7.18576 7.1854C8.79504 5.57634 9.76681 3.4387 9.92118 1.16824L10 0L10.08 1.16824C10.2341 3.43872 11.2055 5.57649 12.8146 7.18576C14.4237 8.79504 16.5613 9.76681 18.8318 9.92118L20 10Z" fill="#7994C2" />
+                            </svg>
+                            | E-mail
+                        a.contacts-item__value(href="mailto:oso@spbgasu.ru") oso@spbgasu.ru
+
+            .footer__bottom 
+                .social-networks 
+                    a(href="https://vk.com/ssspbgasu")
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z" fill="url(#paint0_linear_7_108)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_7_108" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#E2D7D3" />
+                                <stop offset="1" stop-color="#7DAAE3" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    a(href="https://t.me/studsovetgasu")
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z" fill="url(#paint0_linear_7_109)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_7_109" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#E2D7D3" />
+                                <stop offset="1" stop-color="#7DAAE3" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                .text  © СПБГАСУ / 
+                    span(style="color: var(--greyBlue);") GasuDev 
+                    | 2024
+
+
+//- ???
+script(src='main/script.js')

@@ -1,0 +1,23 @@
+include ../components/ui
+include ../components/admin_doc
+include components/calendar_raw
+
+
++admin_doc(["admin/panel/admin.css"], ["admin/panel/calendar/calendar_update.js"], host)
+    .order-page 
+        .order(data-id= calendar._id)
+            .order__title(data-key= "title")
+                span.order__content= calendar.title
+                span.material-symbols-outlined.order__edit edit
+            +textarea("Описание", "calendar_descryption")
+                | #{calendar.descryption}
+            .order__info
+                .order__author(data-key= "author")
+                    span.order__content= calendar.author
+                    span.material-symbols-outlined.order__edit edit
+                .order__eventDate(data-key= "eventDate")
+                    span.order__content= calendar.eventDate
+                    span.material-symbols-outlined.order__edit edit
+                .order__eventTime(data-key= "eventTime")
+                    span.order__content= calendar.eventTime
+                    span.material-symbols-outlined.order__edit edit

@@ -1,0 +1,18 @@
+include ../../components/ui
+
+mixin calendar_raw(calendar, host)
+    .order(data-order= calendar._id)
+        .order__date(data-date= calendar.date)= calendar.date
+        .order__title= calendar.title
+        .order__author= calendar.author
+        .order__eventDate= calendar.eventDate
+        .order__enetTime= calendar.eventTime
+        .order__options.options
+            .circle
+            .circle
+            .options__container
+                .options__item.open
+                    a(class= "order__open", href= host + "/admin/calendar/" + calendar._id) Открыть
+                .options__item.remove
+                    i Удалить
+            .circle

@@ -17,6 +17,8 @@ async function bootstrap() {
   app.setBaseViewsDir(join(__dirname, '..', 'gulp-app'));
   app.setViewEngine('pug');
 
+  //app.use(multer({ dest: '../public/src' }).single('filedata'));
+
   app.use(
     session({
       secret: process.env.SECRET_KEY,

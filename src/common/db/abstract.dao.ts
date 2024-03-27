@@ -27,6 +27,10 @@ export abstract class AbstractNeDBDaoImpl<O, CreateDto, UpdateDto>
     return this.db.findOne(filter);
   }
 
+  public getAllByFilter(filter: any): Promise<O[]> {
+    return this.db.find(filter);
+  }
+
   public async insert(object: CreateDto): Promise<string> {
     await this.db.insert(object);
     return this.getByFilter(object).then((e: O) => (e as { _id: string })._id);

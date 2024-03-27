@@ -30,6 +30,5 @@ lerna-debug.log*
 # IDE - VSCode
 .vscode/*
 
-db/*.db
 .env
 

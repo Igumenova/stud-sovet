@@ -1,0 +1,24 @@
+include ../components/ui
+include ../components/admin_doc
+include components/composition_raw
+
+
++admin_doc(["admin/panel/admin.css"], ["admin/panel/composition/composition_update.js"], host)
+    .order-page 
+        .order(data-id= composition._id)
+            .order__title(data-key= "name")
+                span.order__content= composition.name
+                span.material-symbols-outlined.order__edit edit
+            .order__secondTitle(data-key= "surname")
+                span.order__content= composition.surname
+                span.material-symbols-outlined.order__edit edit
+            .order__info
+                .order__vk(data-key= "vk")
+                    span.order__content= composition.vk
+                    span.material-symbols-outlined.order__edit edit
+                .order__job(data-key= "job")
+                    span.order__content= composition.job
+                    span.material-symbols-outlined.order__edit edit
+                .order__departament(data-key= "departament")
+                    span.order__content= composition.departament
+                    span.material-symbols-outlined.order__edit edit

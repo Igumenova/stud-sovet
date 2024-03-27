@@ -1,0 +1,13 @@
+include ../components/ui
+include ../components/admin_doc
+include components/news_raw
+
+
++admin_doc(["admin/panel/admin.css"], ["admin/panel/news/news_update.js"], host)
+    .order-page
+        .order(data-id= news._id)
+            .order__title(data-key= "title")
+                span.order__content= news.title
+                span.material-symbols-outlined.order__edit edit
+            +textarea("Описание", "news_descryption")
+                | #{news.descryption}

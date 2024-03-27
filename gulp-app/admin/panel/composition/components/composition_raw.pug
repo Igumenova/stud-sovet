@@ -1,0 +1,18 @@
+include ../../components/ui
+
+mixin composition_raw(composition, host)
+    .order(data-order= composition._id)
+        .order__date(data-date= composition.date)= composition.date
+        .order__name= composition.name
+        .order__surname= composition.surname
+        .order__job= composition.job
+        .order__departament= composition.departament
+        .order__options.options
+            .circle
+            .circle
+            .options__container
+                .options__item.open
+                    a(class= "order__open", href= host + "/admin/composition/" + composition._id) Открыть
+                .options__item.remove
+                    i Удалить
+            .circle

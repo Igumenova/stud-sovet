@@ -1,0 +1,20 @@
+include ../components/ui
+include ../components/admin_doc
+
++admin_doc(["admin/panel/admin.css"], ["admin/panel/composition/composition.js"], host)
+    .order-page 
+        form(method="post", enctype="multipart/form-data")
+            .form__line
+                .input
+                    input(type="text", placeholder="Имя", id="name", name="name", required)
+                .input
+                    input(type="text", placeholder="Фамилия", id="surname", name="surname", required)  
+                .input
+                    input(type="text", placeholder="Ссылка на вк", id="vk", name="vk")  
+                .input
+                    input(type="text", placeholder="Должность", id="job", name="job", required)  
+                .input
+                    input(type="text", placeholder="Отдел (студСовет, отделы, председатели, проекты)", id="departament", name="departament", required)  
+                .input
+                    input(type="file", id="img", name="file", required)  
+                button.btn( type="submit") Отправить
