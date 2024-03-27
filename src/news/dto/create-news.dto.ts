@@ -9,4 +9,5 @@ export class CreateNewsDto {
   @IsString()
   author: string;
   file: string;
+  dateString: string;
 }

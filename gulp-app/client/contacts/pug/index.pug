@@ -12,7 +12,7 @@ body
 
                     .header__section._down
                         a(href=host title='Главная страница')
-                            img(src='main/src/Logo-m.png')
+                            img(src='main/src/Logo-m.svg')
                         nav.header__nav 
                             ul 
                                 li
@@ -29,7 +29,7 @@ body
                         #burger-menu.burger-menu
                             .burger__header 
                                 a(href='/' title='Главная страница')
-                                    img(src='main/src/Logo.png')
+                                    img(src='main/src/Logo.svg')
                                 button.burger-btn(onclick='navMenuClose()')
                                     img(src='main/src/close.png')
                             .burger__nav 
@@ -95,57 +95,58 @@ body
                     img(src='main/src/FonDots.png' alt='dots' style='width:auto;')
             .container
                 .contacts-block 
-                    .contacts__title 
-                        p контакты для связи с нами
-                    .contacts__info 
-                        .email 
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 4H2V20H22V4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="url(#paint0_linear_160_315)" />
-                                <defs>
-                                    <linearGradient id="paint0_linear_160_315" x1="12" y1="4" x2="12" y2="20" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#E2D7D3" />
-                                    <stop offset="1" stop-color="#7DAAE3" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                            a(href="mailto:oso@spbgasu.ru") oso@spbgasu
-                        .adress
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 1.5C9.81276 1.50258 7.71584 2.3726 6.16923 3.91922C4.62261 5.46584 3.75259 7.56276 3.75001 9.75C3.74739 11.5374 4.33124 13.2763 5.41201 14.7C5.41201 14.7 5.63701 14.9963 5.67376 15.039L12 22.5L18.3293 15.0353C18.3623 14.9955 18.588 14.7 18.588 14.7L18.5888 14.6978C19.669 13.2747 20.2526 11.5366 20.25 9.75C20.2474 7.56276 19.3774 5.46584 17.8308 3.91922C16.2842 2.3726 14.1873 1.50258 12 1.5V1.5ZM12 12.75C11.4067 12.75 10.8266 12.5741 10.3333 12.2444C9.83995 11.9148 9.45543 11.4462 9.22837 10.8981C9.00131 10.3499 8.9419 9.74667 9.05765 9.16473C9.17341 8.58279 9.45913 8.04824 9.87869 7.62868C10.2982 7.20912 10.8328 6.9234 11.4147 6.80764C11.9967 6.69189 12.5999 6.7513 13.1481 6.97836C13.6962 7.20542 14.1648 7.58994 14.4944 8.08329C14.8241 8.57664 15 9.15666 15 9.75C14.999 10.5453 14.6826 11.3078 14.1202 11.8702C13.5578 12.4326 12.7954 12.749 12 12.75V12.75Z" fill="url(#paint0_linear_160_319)" />
-                                <defs>
-                                    <linearGradient id="paint0_linear_160_319" x1="12" y1="1.5" x2="12" y2="22.5" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#E2D7D3" />
-                                    <stop offset="1" stop-color="#7DAAE3" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                            p Санкт-Петербург, 2-я Красноармейская ул., д. 4, каб. 136
-
-                    .contacts__socials 
-                        a(src='/') 
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z" fill="url(#paint0_linear_104_43324)" />
-                                <defs>
-                                    <linearGradient id="paint0_linear_104_43324" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#E2D7D3" />
-                                    <stop offset="1" stop-color="#7DAAE3" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>  
-                        a(src='/')
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z" fill="url(#paint0_linear_104_43325)" />
-                                <defs>
-                                    <linearGradient id="paint0_linear_104_43325" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#E2D7D3" />
-                                    <stop offset="1" stop-color="#7DAAE3" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>   
+                    .contacts 
+                        .contacts__title 
+                          p контакты для связи с нами
+                        .contacts__info 
+                            .email 
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 4H2V20H22V4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="url(#paint0_linear_160_315)" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_160_315" x1="12" y1="4" x2="12" y2="20" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#E2D7D3" />
+                                        <stop offset="1" stop-color="#7DAAE3" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                a(href="mailto:oso@spbgasu.ru") oso@spbgasu
+                            .adress
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 1.5C9.81276 1.50258 7.71584 2.3726 6.16923 3.91922C4.62261 5.46584 3.75259 7.56276 3.75001 9.75C3.74739 11.5374 4.33124 13.2763 5.41201 14.7C5.41201 14.7 5.63701 14.9963 5.67376 15.039L12 22.5L18.3293 15.0353C18.3623 14.9955 18.588 14.7 18.588 14.7L18.5888 14.6978C19.669 13.2747 20.2526 11.5366 20.25 9.75C20.2474 7.56276 19.3774 5.46584 17.8308 3.91922C16.2842 2.3726 14.1873 1.50258 12 1.5V1.5ZM12 12.75C11.4067 12.75 10.8266 12.5741 10.3333 12.2444C9.83995 11.9148 9.45543 11.4462 9.22837 10.8981C9.00131 10.3499 8.9419 9.74667 9.05765 9.16473C9.17341 8.58279 9.45913 8.04824 9.87869 7.62868C10.2982 7.20912 10.8328 6.9234 11.4147 6.80764C11.9967 6.69189 12.5999 6.7513 13.1481 6.97836C13.6962 7.20542 14.1648 7.58994 14.4944 8.08329C14.8241 8.57664 15 9.15666 15 9.75C14.999 10.5453 14.6826 11.3078 14.1202 11.8702C13.5578 12.4326 12.7954 12.749 12 12.75V12.75Z" fill="url(#paint0_linear_160_319)" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_160_319" x1="12" y1="1.5" x2="12" y2="22.5" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#E2D7D3" />
+                                        <stop offset="1" stop-color="#7DAAE3" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                p Санкт-Петербург, 2-я Красноармейская ул., д. 4, каб. 136
                         .picture__dots
                             img(src='main/src/GroupOfDots.png' alt='dots')
                         .picture__dots-vertical
                             img(src='main/src/GroupOfDotsVertical.png' alt='dots')
+                        .contacts__socials 
+                            a(src='/') 
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z" fill="url(#paint0_linear_104_43324)" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_104_43324" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#E2D7D3" />
+                                        <stop offset="1" stop-color="#7DAAE3" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>  
+                            a(src='/')
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM29.8233 13.7017L26.54 29.1683C26.2983 30.265 25.645 30.5317 24.7333 30.015L19.7333 26.3317L17.3233 28.655C17.2052 28.8079 17.0537 28.9317 16.8804 29.0169C16.707 29.1021 16.5165 29.1465 16.3233 29.1467H16.315L16.67 24.0567L25.9367 15.6867C26.3367 15.3317 25.8467 15.13 25.315 15.485L13.8667 22.695L8.93333 21.155C7.86667 20.8167 7.83667 20.0883 9.15833 19.565L28.435 12.135C29.3317 11.8083 30.1117 12.3483 29.8217 13.7033L29.8233 13.7017Z" fill="url(#paint0_linear_104_43325)" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_104_43325" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#E2D7D3" />
+                                        <stop offset="1" stop-color="#7DAAE3" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>   
+
 
     footer.footer 
         .container 

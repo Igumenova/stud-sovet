@@ -23,6 +23,10 @@ export abstract class AbstractNeDBDaoImpl<O, CreateDto, UpdateDto>
     return this.db.find({});
   }
 
+  public getAllSorted(): Promise<O[]> {
+    return this.db.find({}).sort({ date: -1 });
+  }
+
   public getByFilter(filter: any): Promise<O> {
     return this.db.findOne(filter);
   }

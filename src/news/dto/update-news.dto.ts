@@ -9,4 +9,5 @@ export class UpdateNewsDto extends PartialType(CreateNewsDto) {
   descryption?: string;
   author?: string;
   file?: string;
+  dateString?: string;
 }

@@ -35,7 +35,8 @@ export class AppController {
     @Session() session: Record<string, any>,
     @Res() res: Response,
   ) {
-    return { host: process.env.HOST };
+    let allEvents = await this.calendarService.getAllCalendar();
+    return { allEvents, host: process.env.HOST };
   }
 
   @Get('/composition')
@@ -64,7 +65,8 @@ export class AppController {
   @Get('/news')
   @Render('client/news/pug/index.pug')
   async news(@Session() session: Record<string, any>, @Res() res: Response) {
-    return { host: process.env.HOST };
+    let allNews = await this.newsService.getAllNews();
+    return { allNews, host: process.env.HOST };
   }
 
   @Get('/contacts')

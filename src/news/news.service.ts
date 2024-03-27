@@ -35,7 +35,7 @@ export class NewsService {
   }
 
   getAllNews(): Promise<News[]> {
-    return this.dao.getAll();
+    return this.dao.getAllSorted();
   }
 
   async createNews(
@@ -43,6 +43,10 @@ export class NewsService {
     file: Express.Multer.File,
   ): Promise<string> {
     news.date = new Date();
+    news.dateString =
+      news.date.toLocaleDateString() +
+      ' в ' +
+      news.date.toLocaleTimeString().substring(0, 5);
     news.file = file.filename;
 
     this.dao.insert(news);
