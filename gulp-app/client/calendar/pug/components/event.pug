@@ -2,9 +2,11 @@ mixin eventInfo(eventData)
   if eventData
     .info(id=eventData.eventDate)
       .info__title
-        p= eventData.title
+        //- p= eventData.title
+        p(style="text-align: start;") #{eventData.title}
       .info__text
-          p= eventData.descryption
+          //- p= eventData.descryption
+          p(style="text-align: justify;") !{eventData.descryption}
       .info__details
         .author 
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">

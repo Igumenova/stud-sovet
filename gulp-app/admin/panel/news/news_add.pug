@@ -7,8 +7,7 @@ include ../components/admin_doc
             .form__line
                 .input
                     input(type="text", placeholder="Заголовок", id="title", name="title", required)
-                .input
-                    input(type="text", placeholder="Описание", id="descryption", name="descryption", required)  
+                +textarea("Описание", "descryption")(type="text", name="descryption", required)
                 .input
                     input(type="text", placeholder="Автор", id="author", name="author", required)  
                 .input

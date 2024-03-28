@@ -87,7 +87,6 @@ h5 {
   color: var(--black);
 }
 p {
-  text-align: justify;
   font-family: var(--geologica-font-family);
   font-weight: 300;
   font-size: 12px;
@@ -617,6 +616,7 @@ a.contacts-item__value {
   margin: 44px 0;
 }
 .calendar-section {
+  margin-top: 20px;
   overflow: hidden;
   display: flex;
   max-width: 994px;
@@ -729,7 +729,7 @@ a.contacts-item__value {
 }
 
 .year-change:hover {
-  background-color: #9796f0;
+  background-color: var(--grey-bliue-shadow);
   transition: all 0.2s ease-in-out;
   transform: scale(1.12);
 }
@@ -797,7 +797,7 @@ a.contacts-item__value {
   font-family: Microsoft JhengHei UI;
   font-size: 1.4rem;
   padding-right: 5%;
-  border-right: 3px solid #9796f0;
+  border-right: 3px solid var(--greyBlue);
 }
 
 .date-time-value {

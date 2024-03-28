@@ -12,9 +12,9 @@ mixin memberCard(composition)
                 linearGradient(id="paint0_linear_9_2550" x1="10" y1="0" x2="10" y2="20" gradientUnits="userSpaceOnUse")
                   stop(stop-color="#E2D7D3")
                   stop(offset="1" stop-color="#7DAAE3")
-        h5= composition.name + " " + composition.surname
+        h5(style="text-align: right;")= composition.name + " " + composition.surname
       .post
-        p= composition.job
+        p(style="text-align: right;")= composition.job
     .picture__dots
       img(src='../main/src/GroupOfDots.png' alt='dots')
     .picture__dots-vertical
