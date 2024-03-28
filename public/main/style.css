@@ -408,6 +408,7 @@ a.contacts-item__value {
 .news-block__title {
   max-width: 720px;
   margin-bottom: 20px;
+  padding-left: 24px;
 }
 .news {
   display: flex;
