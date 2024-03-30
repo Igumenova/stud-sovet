@@ -156,6 +156,8 @@ const updateEventInfo = (data) => {
 };
 calendarDays.forEach((day) => {
   day.addEventListener('click', () => {
+    let noneEvent = document.querySelector('#noneEvent');
+    let count = 0;
     let thisMonth = Number(currentMonth.value) + 1;
     if ((thisMonth < 10) & (day.innerText < 10)) {
       var selectedDay =
@@ -173,10 +175,18 @@ calendarDays.forEach((day) => {
 
     dates.forEach(function (e) {
       if (e.id == selectedDay) {
+        noneEvent.style.display = 'none';
         e.style.display = 'flex';
+        count = count + 1;
       } else {
         e.style.display = 'none';
       }
     });
+
+    if (count == 0) {
+      noneEvent.style.display = 'flex';
+    }
   });
 });
+
+noneEvent.style.display = 'flex';
