@@ -672,15 +672,15 @@ a.contacts-item__value {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   font-weight: 600;
-  cursor: pointer;
+  /* cursor: pointer; */
   color: rgb(104, 104, 104);
 }
 
-.calendar-week-days div:hover {
+/* .calendar-week-days div:hover {
   color: black;
   transform: scale(1.2);
   transition: all 0.2s ease-in-out;
-}
+} */
 
 .calendar-week-days div {
   display: grid;
@@ -696,6 +696,10 @@ a.contacts-item__value {
   color: #0a0921;
 }
 
+.calendar-days .empty-day{
+  cursor: default;
+}
+
 .calendar-days div {
   width: 37px;
   height: 33px;
@@ -709,9 +713,10 @@ a.contacts-item__value {
 }
 
 .month-picker {
+  width: 100px;
   padding: 5px 10px;
   border-radius: 10px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .year-picker {
@@ -742,11 +747,11 @@ a.contacts-item__value {
   align-items: center;
 }
 
-#year:hover {
+/* #year:hover {
   cursor: pointer;
   transform: scale(1.2);
   transition: all 0.2 ease-in-out;
-}
+} */
 
 .calendar-days div span {
   position: absolute;
