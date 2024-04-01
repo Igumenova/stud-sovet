@@ -1045,3 +1045,36 @@ a.contacts-item__value {
 ::-webkit-scrollbar {
   width: 0px;
 }
+
+@media (max-width: 400px) {
+  .news {
+    max-width: 100vw;
+  }
+  .news-card .section-first {
+    max-width: 100vw;
+    padding: 30px 24px;
+  }
+  .info .info__title p {
+    font-size: 26px;
+  }
+  .news-card .section-sec {
+    height: auto;
+  }
+  .news-card .section-sec img {
+    max-width: 100vw;
+    height: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .calendar-body {
+    padding: 0 10px;
+  }
+  .calendar-section .section-sec {
+    padding: 24px 0;
+  }
+  .calendar-days {
+    grid-template-columns: repeat(7, 30px);
+    justify-content: space-between;
+  }
+}
