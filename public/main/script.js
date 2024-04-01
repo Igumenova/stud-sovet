@@ -99,6 +99,43 @@ const generateCalendar = (month, year) => {
     }
     calendar_days.appendChild(day);
   }
+
+  let calendarDays = document.querySelectorAll('.calendar-days div')
+
+  calendarDays.forEach((day) => {
+    day.addEventListener('click', () => {
+      let noneEvent = document.querySelector('#noneEvent');
+      let count = 0;
+      let thisMonth = Number(currentMonth.value) + 1;
+      if ((thisMonth < 10) & (day.innerText < 10)) {
+        var selectedDay =
+          currentYear.value + '-0' + thisMonth + '-0' + day.innerText;
+      } else if (thisMonth < 10) {
+        var selectedDay =
+          currentYear.value + '-0' + thisMonth + '-' + day.innerText;
+      } else if (day.innerText < 10) {
+        var selectedDay =
+          currentYear.value + '-' + thisMonth + '-0' + day.innerText;
+      } else {
+        var selectedDay =
+          currentYear.value + '-' + thisMonth + '-' + day.innerText;
+      }
+  
+      dates.forEach(function (e) {
+        if (e.id == selectedDay) {
+          noneEvent.style.display = 'none';
+          e.style.display = 'flex';
+          count = count + 1;
+        } else {
+          e.style.display = 'none';
+        }
+      });
+  
+      if (count == 0) {
+        noneEvent.style.display = 'flex';
+      }
+    });
+  });
 };
 
 generateCalendar(currentMonth.value, currentYear.value);
@@ -154,39 +191,19 @@ const updateEventInfo = (data) => {
   eventInfo.innerHTML = `+eventInfo(${JSON.stringify(data)})`;
   eventInfoDiv.appendChild(eventInfo);
 };
-calendarDays.forEach((day) => {
-  day.addEventListener('click', () => {
-    let noneEvent = document.querySelector('#noneEvent');
-    let count = 0;
-    let thisMonth = Number(currentMonth.value) + 1;
-    if ((thisMonth < 10) & (day.innerText < 10)) {
-      var selectedDay =
-        currentYear.value + '-0' + thisMonth + '-0' + day.innerText;
-    } else if (thisMonth < 10) {
-      var selectedDay =
-        currentYear.value + '-0' + thisMonth + '-' + day.innerText;
-    } else if (day.innerText < 10) {
-      var selectedDay =
-        currentYear.value + '-' + thisMonth + '-0' + day.innerText;
-    } else {
-      var selectedDay =
-        currentYear.value + '-' + thisMonth + '-' + day.innerText;
-    }
-
-    dates.forEach(function (e) {
-      if (e.id == selectedDay) {
-        noneEvent.style.display = 'none';
-        e.style.display = 'flex';
-        count = count + 1;
-      } else {
-        e.style.display = 'none';
-      }
-    });
-
-    if (count == 0) {
-      noneEvent.style.display = 'flex';
-    }
-  });
-});
 
 noneEvent.style.display = 'flex';
+
+dates.forEach(function (e) {
+  if (e.id == selectedDay) {
+    noneEvent.classList.remove('show');
+    e.classList.add('show');
+    count = count + 1;
+  } else {
+    e.classList.remove('show');
+  }
+});
+
+if (count == 0) {
+  noneEvent.classList.add('show');
+}

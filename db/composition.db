@@ -27,3 +27,8 @@
 {"$$deleted":true,"_id":"eHNZDRvlHcubFBbG"}
 {"name":"Алмаз","surname":"Абоба","vk":"https://vk.com/lenchik200","job":"Главный редактор","departament":"отделы","date":{"$$date":1711637700020},"file":"5530a076-541f-4e18-a6b0-63f16b489844.png","_id":"C5KnO0DVArEqbXfv"}
 {"$$deleted":true,"_id":"C5KnO0DVArEqbXfv"}
+{"name":"Лис","surname":"-","vk":"-","job":"талисман","departament":"-","date":{"$$date":1711961583945},"file":"d0758120-17c4-4578-b2e9-ddae79c38e6a.png","_id":"F6SKQv1UIRJ508E6"}
+{"name":"Лис","surname":"-","vk":"-","job":"талисман","departament":"студСовет-","date":{"$$date":1711961583945},"file":"d0758120-17c4-4578-b2e9-ddae79c38e6a.png","_id":"F6SKQv1UIRJ508E6"}
+{"name":"Лис","surname":"-","vk":"-","job":"талисман","departament":"студСовет","date":{"$$date":1711961583945},"file":"d0758120-17c4-4578-b2e9-ddae79c38e6a.png","_id":"F6SKQv1UIRJ508E6"}
+{"name":"Лис","surname":"","vk":"-","job":"талисман","departament":"студСовет","date":{"$$date":1711961583945},"file":"d0758120-17c4-4578-b2e9-ddae79c38e6a.png","_id":"F6SKQv1UIRJ508E6"}
+{"name":"Лис","surname":"","vk":"https://ru.wikipedia.org/wiki/Обыкновенная_лисица","job":"талисман","departament":"студСовет","date":{"$$date":1711961583945},"file":"d0758120-17c4-4578-b2e9-ddae79c38e6a.png","_id":"F6SKQv1UIRJ508E6"}

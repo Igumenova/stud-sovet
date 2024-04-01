@@ -568,6 +568,9 @@ a.contacts-item__value {
   gap: 16px;
   align-items: center;
 }
+.contacts__info .adress svg {
+  min-width: 24px;
+}
 .contacts__socials {
   display: flex;
   gap: 12px;
@@ -927,7 +930,7 @@ a.contacts-item__value {
   .calendar-section .section-sec {
     border-radius: 0;
     width: 100%;
-    height: 370px;
+    height: 400px;
     order: 0;
     max-width: 810px;
   }
@@ -936,6 +939,9 @@ a.contacts-item__value {
   }
   .calendar-section .section-sec {
     padding: 24px 14px;
+  }
+  .news {
+    width: min-content;
   }
 }
 
@@ -964,6 +970,9 @@ a.contacts-item__value {
   .main-block .photo {
     position: absolute;
     right: 44px;
+  }
+  .main-block .quote .photo img {
+    z-index: 1;
   }
   .main-block .photo img {
     width: 214px;
@@ -1031,4 +1040,8 @@ a.contacts-item__value {
     font-size: 30px;
     line-height: 86%;
   }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
